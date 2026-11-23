@@ -1,12 +1,26 @@
 {
   "name": "antigravity-tieng-viet",
-  "version": "2.0.3",
+  "version": "2.1.0",
   "private": true,
   "license": "MIT",
   "scripts": {
-    "test": "node tests/test-integration.cjs && node tests/test-lifecycle.cjs"
+    "test": "node tests/test-integration.cjs && node tests/test-lifecycle.cjs",
+    "build:plugin": "node scripts/build-plugin.mjs",
+    "test:plugin": "node tests/test-plugin.mjs && node tests/test-office-ui.mjs"
   },
   "devDependencies": {
+    "esbuild": "0.28.2",
     "playwright": "1.56.1"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/ext-apps": "2.0.4",
+    "@modelcontextprotocol/sdk": "1.32.2",
+    "docx-preview": "0.4.1",
+    "exceljs": "4.4.0",
+    "jszip": "3.10.2",
+    "zod": "4.6.7"
+  },
+  "overrides": {
+    "uuid": "11.1.1"
   }
 }

@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.1.0
+
+- Office Preview: DOCX/XLSX/PPTX, chỉ xem, trong tab bằng plugin chính thức.
+- Windows MCP bằng Node/C#; trạng thái UI hết hạn sau mỗi thao tác hoặc 30 giây.
+- Hai MCP tách riêng để tắt Windows và giữ preview.
+- Bộ cài tự chứa, giữ các cấu hình plugin khác; không cần Node/Python cài riêng cho người dùng.
+- Kèm kiểm tra MCP/UI, hướng dẫn máy khác, bật/tắt và giới hạn.
+
 ## 2.0.3
 
 - Chỉ nạp mô hình khi có câu chưa có trong từ điển/cache.

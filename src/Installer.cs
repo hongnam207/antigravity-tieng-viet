@@ -15,7 +15,7 @@ internal static class Program {
     static readonly string UserInstall = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "AntigravityVietnamese");
     static string Here { get { return Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location); } }
     static string Self { get { return Assembly.GetExecutingAssembly().Location; } }
-    static readonly string[] PayloadFiles = { "node.exe", "NODE-LICENSE.txt", "patcher.cjs", "renderer.js", "native.js", "vi.json", "translator.py", "HUONG-DAN.txt", "BUILD.txt", "MODEL-NOTICE.txt" };
+    static readonly string[] PayloadFiles = { "node.exe", "NODE-LICENSE.txt", "patcher.cjs", "renderer.js", "native.js", "vi.json", "translator.py", "HUONG-DAN.txt", "BUILD.txt", "MODEL-NOTICE.txt", "install-plugin.cjs" };
     static string Q(string value) { return "\"" + value.Replace("\"", "\\\"") + "\""; }
 
     [STAThread] static int Main(string[] args) {
@@ -78,7 +78,7 @@ internal static class Program {
             using (var zip = new ZipArchive(embedded, ZipArchiveMode.Read)) {
                 foreach (var entry in zip.Entries) {
                     string name=entry.FullName.Replace('\\','/');
-                    if (!PayloadFiles.Contains(name) && !name.StartsWith("runtime/") && !name.StartsWith("model/") && !name.StartsWith("licenses/")) throw new Exception("Tên tệp không hợp lệ trong bộ cài.");
+                    if (!PayloadFiles.Contains(name) && !name.StartsWith("runtime/") && !name.StartsWith("model/") && !name.StartsWith("licenses/") && !name.StartsWith("plugin/")) throw new Exception("Tên tệp không hợp lệ trong bộ cài.");
                     string path = Path.GetFullPath(Path.Combine(destination,name.Replace('/',Path.DirectorySeparatorChar)));
                     string safeRoot=Path.GetFullPath(destination).TrimEnd(Path.DirectorySeparatorChar)+Path.DirectorySeparatorChar;
                     if(!path.StartsWith(safeRoot,StringComparison.OrdinalIgnoreCase))throw new Exception("Đường dẫn giải nén không hợp lệ.");
@@ -97,6 +97,7 @@ internal static class Program {
         RunProcess(Path.Combine(destination, "node.exe"), "--version", destination);
         RunProcess(Path.Combine(destination, "node.exe"), "--check " + Q(Path.Combine(destination, "patcher.cjs")), destination);
         RunProcess(Path.Combine(destination,"runtime","python.exe"),"-I "+Q(Path.Combine(destination,"translator.py"))+" --self-test",destination);
+        RunProcess(Path.Combine(destination,"node.exe"),Q(Path.Combine(destination,"install-plugin.cjs"))+" --verify",destination);
         File.WriteAllText(Path.Combine(destination, "verification.txt"), "Embedded payload extraction and bundled Node.js execution passed.\r\n", Encoding.UTF8);
     }
 
@@ -190,6 +191,7 @@ internal static class Program {
         }
         RunProcess(Path.Combine(destination,"runtime","python.exe"),"-I "+Q(Path.Combine(destination,"translator.py"))+" --self-test",destination);
         RunNode(destination, "apply", app);
+        if(shortcuts) RunProcess(Path.Combine(destination,"node.exe"),Q(Path.Combine(destination,"install-plugin.cjs")),destination);
         string installedExe = Path.Combine(destination, "AntigravityVietnamese.exe");
         if (!String.Equals(Self, installedExe, StringComparison.OrdinalIgnoreCase)) File.Copy(Self, installedExe, true);
         File.WriteAllText(Path.Combine(destination, "antigravity-path.txt"), app, new UTF8Encoding(false));
@@ -223,7 +225,7 @@ internal static class Program {
             StartPosition = FormStartPosition.CenterScreen; Font = new Font("Segoe UI",10);
             BackColor = Color.White; AutoScaleMode = AutoScaleMode.None; MaximizeBox = false;
             Controls.Add(new Label { Text = "Cài đặt Antigravity tiếng Việt", Font = new Font("Segoe UI",18,FontStyle.Bold), Location=new Point(28,23), Size=new Size(640,42) });
-            Controls.Add(new Label { Text = "Tự dịch chữ giao diện mới bằng mô hình Anh–Việt chạy trên máy.\r\nDùng CPU, không cần mạng, GPU hay API key. Bản gốc được sao lưu.", Location=new Point(30,77),Size=new Size(640,53) });
+            Controls.Add(new Label { Text = "Việt hóa giao diện + Office Preview + điều khiển Windows qua MCP.\r\nKèm bộ chạy; không cần cài Python, Node.js hoặc API key riêng.", Location=new Point(30,77),Size=new Size(640,53) });
             Controls.Add(new Label { Text="Thư mục chứa Antigravity.exe",Location=new Point(30,145),Size=new Size(600,25) });
             appPath = new TextBox { Text=FindApp(), Location=new Point(30,175),Size=new Size(525,28) };Controls.Add(appPath);
             var browse = new Button { Text="Chọn…",Location=new Point(565,172),Size=new Size(100,32) };Controls.Add(browse);
@@ -232,7 +234,7 @@ internal static class Program {
                     if (picker.ShowDialog(this)==DialogResult.OK) appPath.Text=Path.GetDirectoryName(picker.FileName);
                 }
             };
-            Controls.Add(new Label { Text="Trước khi cài, hãy thoát Antigravity, kể cả ở khay hệ thống.\r\nWindows 10/11 64-bit. Mô hình INT8 khoảng 74 MB, chạy ẩn theo ứng dụng.\r\nHỗ trợ họ desktop có app.asar; không áp dụng cho IDE dựa trên VS Code.", Location=new Point(30,225),Size=new Size(640,70), ForeColor=Color.FromArgb(65,65,65) });
+            Controls.Add(new Label { Text="Thoát Antigravity trước khi cài. Windows 10/11 x64; App 2.34.0+.\r\nPreview chỉ xem DOCX/XLSX/PPTX. Công cụ Windows dùng mô hình của App.\r\nBộ dịch chạy local, mô hình tự tắt khi hết việc. Không dành cho bản IDE.", Location=new Point(30,225),Size=new Size(640,70), ForeColor=Color.FromArgb(65,65,65) });
             status = new Label { Text="Bộ Việt hóa tự tạo, không phải sản phẩm chính thức của Google.", Location=new Point(30,305),Size=new Size(640,40) };Controls.Add(status);
             var oldBundle = new Button { Text="Chọn bộ Việt hóa cũ…",Location=new Point(30,355),Size=new Size(220,34) };Controls.Add(oldBundle);
             oldBundle.Click += delegate {
@@ -253,7 +255,7 @@ internal static class Program {
                 try {
                     await Task.Run(()=>InstallCore(chosen,UserInstall,true,previousBundle));
                     status.Text="Đã cài xong. Mở bằng biểu tượng Antigravity tiếng Việt trên Desktop.";
-                    MessageBox.Show(this,"Cài đặt thành công.\r\n\r\nMở biểu tượng Antigravity tiếng Việt trên Desktop. Sau khi ứng dụng cập nhật, dùng biểu tượng đó để áp dụng lại bản dịch.\r\n\r\nTrong Start có mục Khôi phục giao diện gốc.",Title,MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    MessageBox.Show(this,"Cài đặt thành công.\r\n\r\nMở Antigravity tiếng Việt trên Desktop. Trong Customizations > Installed, kiểm tra plugin Windows & Office. Bấm Office Preview ở thanh bên rồi Chọn tài liệu để xem DOCX/XLSX/PPTX.\r\n\r\nCông cụ Windows có thể thao tác máy; giữ chế độ duyệt công cụ phù hợp. Nếu chưa thấy plugin, thoát hẳn rồi mở lại App.\r\n\r\nKhôi phục giao diện gốc trong Start chỉ gỡ bản Việt hóa; tắt/gỡ plugin riêng trong Customizations.",Title,MessageBoxButtons.OK,MessageBoxIcon.Information);
                 } catch (Exception error) {
                     status.Text="Chưa hoàn tất. Xem thông báo rồi thử lại.";
                     MessageBox.Show(this,error.Message,Title,MessageBoxButtons.OK,MessageBoxIcon.Warning);

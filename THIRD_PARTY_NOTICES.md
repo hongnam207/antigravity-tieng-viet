@@ -1,5 +1,7 @@
 # Thành phần bên thứ ba
 
+Plugin Windows & Office 2.1.0 dùng `@modelcontextprotocol/sdk`, `@modelcontextprotocol/ext-apps`, `zod`, `docx-preview`, `exceljs`, `jszip` và phụ thuộc theo `package-lock.json`. Giấy phép đầy đủ được gom trong `plugin/THIRD-PARTY-LICENSES.txt` ở bộ cài. Windows bridge là mã C# của dự án dùng API Windows/.NET; không phân phối CursorTouch/Windows-MCP.
+
 MIT ở gốc chỉ áp dụng cho mã do dự án tạo. Thành phần đi kèm giữ giấy phép riêng:
 
 | Thành phần | Phiên bản/revision | Giấy phép / nguồn |

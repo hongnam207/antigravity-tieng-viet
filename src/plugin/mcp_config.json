@@ -1,0 +1,1 @@
+{"mcpServers":{"office-preview":{"command":"node","args":["${PLUGIN_ROOT}/server.cjs","--office"]},"windows-control":{"command":"node","args":["${PLUGIN_ROOT}/server.cjs","--windows"]}}}

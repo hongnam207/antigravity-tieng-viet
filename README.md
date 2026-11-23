@@ -1,6 +1,8 @@
-# Antigravity tiếng Việt — Offline
+# Antigravity tiếng Việt · Windows MCP & Office Preview
 
 Việt hóa menu, nút bấm và cài đặt của **Antigravity desktop Electron (`app.asar`)** trên Windows x64, bằng từ điển giao diện và mô hình dịch chạy tại máy.
+
+Từ **2.1.0**, bộ cài tích hợp thêm điều khiển Windows qua MCP và preview DOCX/XLSX/PPTX trong tab. **[Hướng dẫn Windows & Office: cài máy khác, ví dụ, bật/tắt và giới hạn](docs/WINDOWS-OFFICE.md)**.
 
 **[Tải bộ cài mới nhất](https://github.com/hongnam207/antigravity-tieng-viet/releases/latest)** · [Xử lý lỗi](docs/TROUBLESHOOTING.md) · [Phát triển](docs/DEVELOPMENT.md)
 
@@ -8,6 +10,8 @@ Việt hóa menu, nút bấm và cài đặt của **Antigravity desktop Electro
 
 ## Tính năng
 
+- **Windows MCP:** quan sát cửa sổ, chụp màn hình, click, nhập Unicode, phím tắt, cuộn và mở ứng dụng.
+- **Office Preview:** chỉ xem DOCX/XLSX/PPTX, không cần Office cho preview cơ bản.
 - Ưu tiên từ điển tiếng Việt; giữ tên mô hình Gemini, Claude, GPT.
 - Dịch câu giao diện mới bằng OPUS-MT Anh–Việt INT8 trên CPU.
 - Chỉ nạp mô hình khi thiếu bản dịch; tiến trình dịch tự thoát khi xử lý hết các lô đang chờ.
@@ -19,17 +23,25 @@ Việt hóa menu, nút bấm và cài đặt của **Antigravity desktop Electro
 
 - Windows 10/11 **x64**, đã cài Antigravity desktop Electron thuộc họ được hỗ trợ.
 - Có quyền ghi vào thư mục Antigravity. Nên để trống ít nhất 1 GB cho bộ chạy, mô hình và bản sao lưu.
-- Bộ cài khoảng 144 MB (137 MiB), kèm mô hình và phụ thuộc.
+- Bộ cài khoảng 150 MB, kèm mô hình, plugin và phụ thuộc.
 
 ## Cài đặt
 
-1. Mở [Releases](https://github.com/hongnam207/antigravity-tieng-viet/releases/latest), tải **`Antigravity-Tieng-Viet-Offline-Setup-x64-v2.0.3.exe`** trong **Assets**. Không cần tải Source code hoặc `payload.zip`.
+1. Mở [Releases](https://github.com/hongnam207/antigravity-tieng-viet/releases/latest), tải **`Antigravity-Tieng-Viet-Setup-x64-v2.1.0.exe`** trong **Assets**. Không cần tải Source code hoặc payload cho nhà phát triển.
 2. Thoát hẳn Antigravity, kể cả biểu tượng ở khay hệ thống.
 3. Chạy bộ cài. Kiểm tra thư mục được nhận; nếu chưa đúng, bấm **Chọn…** và chọn thư mục chứa `Antigravity.exe`.
 4. Bấm **Cài đặt**, đợi thông báo hoàn tất.
 5. Mở bằng biểu tượng **Antigravity tiếng Việt** trên Desktop hoặc trong Start.
 
 Cài theo từng tài khoản Windows. Nếu ứng dụng ở thư mục được bảo vệ, tài khoản chạy bộ cài cần quyền ghi phù hợp. Bộ cài chưa ký số; nếu Windows chặn, kiểm tra nguồn tải và SHA-256 trước khi quyết định chạy.
+
+## Windows MCP và Office Preview
+
+Sau khi cài, vào **Tùy chỉnh → Đã cài → Antigravity tiếng Việt · Windows & Office → MCP**; kiểm tra `office-preview` và `windows-control` ở trạng thái Ready. Bấm **Office Preview** dưới mục **Tiện ích** ở thanh bên, rồi **Chọn tài liệu** để xem DOCX/XLSX/PPTX ngay trong App. Yêu cầu agent dùng `windows_list` để bắt đầu điều khiển Windows.
+
+Plugin cũng đăng ký viewer theo đuôi tệp, nhưng việc tự thay viewer ở tab file cũ chưa ổn định trên bản 2.34.0 đã thử. Nếu tab vẫn báo không hỗ trợ, dùng mục **Office Preview** đã kiểm chứng thay vì tải file hoặc mở viewer mặc định.
+
+Preview tối đa **10 MiB**, chỉ xem; XLSX dùng kết quả công thức đã lưu, PPTX là bản xem chữ/ảnh cơ bản. Công cụ Windows dùng mô hình đang chọn của Antigravity; ảnh/nội dung UI có thể gửi tới dịch vụ mô hình đó, nên phần điều khiển không phải offline. Hai server tách riêng để tắt Windows mà vẫn giữ preview; bộ cài không đổi thiết lập xét duyệt công cụ của bạn. Xem [hướng dẫn đầy đủ](docs/WINDOWS-OFFICE.md).
 
 ## Sử dụng
 
@@ -69,11 +81,13 @@ Nếu thiếu shortcut hoặc bấm không thấy phản hồi, xem [hướng d�
 
 Sau khi khôi phục, mở bằng shortcut **Antigravity tiếng Việt** sẽ áp dụng lại bản Việt hóa nếu ứng dụng còn tương thích. Muốn giữ giao diện gốc, hãy dùng shortcut gốc của Antigravity.
 
+Khôi phục giao diện gốc **không gỡ plugin Windows & Office**; hãy tắt/gỡ plugin riêng trong Tùy chỉnh → Đã cài.
+
 Khôi phục dùng bản gốc khớp hash, không ghi đè một phiên bản đã đổi không xác định. Muốn xóa hoàn toàn bộ dịch, chỉ xóa `%LOCALAPPDATA%\AntigravityVietnamese` và shortcut sau khi khôi phục thành công. Xóa trước sẽ mất bản sao lưu cần cho khôi phục.
 
 ## Dữ liệu và quyền riêng tư
 
-Bộ dịch không gửi văn bản tới dịch vụ dịch và không mở máy chủ/cổng mạng. Antigravity vẫn có hoạt động mạng riêng.
+Bộ dịch và Office Preview không gửi văn bản tới dịch vụ dịch và không mở máy chủ/cổng mạng. Công cụ Windows trả trạng thái/ảnh cho agent và có thể gửi tới dịch vụ mô hình của Antigravity.
 
 Tệp trong `%LOCALAPPDATA%\AntigravityVietnamese`:
 
