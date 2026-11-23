@@ -1,0 +1,11 @@
+{
+  "autocad": {"version":"1.8.0","package":"autocad-mcp-pro","repository":"https://github.com/U-C4N/Autocad-MCP","requirements":"autocad-requirements.txt"},
+  "computerUse": {
+    "version":"1.0.6",
+    "repository":"https://github.com/shayann07/antigravity-computer-use",
+    "url":"https://github.com/shayann07/antigravity-computer-use/releases/download/v1.0.6/AntigravityComputerUse-1.0.6-windows-x64.zip",
+    "sha256":"b7b463a0b36f1155bafb2f5fa0ea3684f799cbb4e2ff8c45478af4bc1657a5a4",
+    "helperUrl":"https://raw.githubusercontent.com/shayann07/antigravity-computer-use/4335f06a56d5bba0ba039ca887f7103a9210fe11/scripts/quick-install.mjs",
+    "helperSha256":"4f2548620e136c7c84ea39b348a279ab611f302c9e53aa9d03d24553d1fc0889"
+  }
+}

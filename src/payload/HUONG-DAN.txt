@@ -1,4 +1,4 @@
-ANTIGRAVITY TIẾNG VIỆT 2.1.2
+ANTIGRAVITY TIẾNG VIỆT 2.2.0
 
 Cài đặt
 Thoát Antigravity, kể cả ở khay hệ thống. Chạy bộ cài, chọn đúng Antigravity.exe,
@@ -44,6 +44,18 @@ NODE-LICENSE.txt và các thư mục giấy phép của thư viện kèm theo.
 
 Bản 2.0.2 giữ nguyên tên mô hình AI và không dịch lại các bản dịch chuẩn. Nhãn một từ chưa có trong từ điển được giữ tiếng Anh để tránh đoán sai nghĩa.
 
-Bản 2.1.2 tích hợp Windows MCP và Office Preview. Vào Tùy chỉnh > Đã cài > Antigravity tiếng Việt · Windows & Office > MCP để kiểm tra. Hai server office-preview và windows-control tách riêng. Preview chỉ xem PDF/DOCX/XLSX/PPTX tối đa 10 MiB; có thể mở panel Office Preview và chọn tài liệu nếu tab mặc định chưa nhận viewer. Điều khiển Windows dùng mô hình của Antigravity; ảnh và nội dung UI có thể gửi tới dịch vụ đó. Khôi phục giao diện gốc không gỡ plugin: tắt/gỡ riêng trong Tùy chỉnh. Hướng dẫn: https://github.com/hongnam207/antigravity-tieng-viet/blob/main/docs/WINDOWS-OFFICE.md
+Bản 2.2.0 tích hợp Windows MCP và Office Preview. Vào Tùy chỉnh > Đã cài > Antigravity tiếng Việt · Windows & Office > MCP để kiểm tra. Hai server office-preview và windows-control tách riêng. Preview chỉ xem PDF/DOCX/XLSX/PPTX tối đa 10 MiB; có thể mở panel Office Preview và chọn tài liệu nếu tab mặc định chưa nhận viewer. Điều khiển Windows dùng mô hình của Antigravity; ảnh và nội dung UI có thể gửi tới dịch vụ đó. Khôi phục giao diện gốc không gỡ plugin: tắt/gỡ riêng trong Tùy chỉnh. Hướng dẫn: https://github.com/hongnam207/antigravity-tieng-viet/blob/main/docs/WINDOWS-OFFICE.md
 
-Từ 2.1.2: bấm tệp local trong hội thoại để xem ngay trong khung bên phải. Không cần mở trang Office Preview hoặc chọn lại tệp. Cần cài EXE đầy đủ. Khôi phục ASAR gốc tắt cả Việt hóa và preview trực tiếp; plugin Windows & Office được tắt/gỡ riêng.
+Từ 2.2.0: bấm tệp local trong hội thoại để xem ngay trong khung bên phải. Không cần mở trang Office Preview hoặc chọn lại tệp. Cần cài EXE đầy đủ. Khôi phục ASAR gốc tắt cả Việt hóa và preview trực tiếp; plugin Windows & Office được tắt/gỡ riêng.
+
+BẢN TÍCH HỢP 2.2.0
+- Preview: bấm file DOCX/XLSX/PPTX/PDF trong hội thoại. Sau nâng cấp, bấm ↻.
+  XLSX có biểu đồ vẫn đọc được bảng; chưa hiển thị biểu đồ/ảnh của sheet.
+- AutoCAD MCP Pro 1.8.0: cấu hình mới tự chọn COM nếu có AutoCAD đăng ký,
+  nếu chưa có dùng ezdxf. Mục autocad đã có được giữ nguyên, không ép đổi.
+- Computer Use 1.0.6: mở chat mới, gọi /computer-use rồi mô tả công việc.
+  Tích hợp skill + sidecar, không phải MCP riêng. Giữ chế độ quyền hiện có.
+  Esc hoặc Ctrl+Alt+F12 để dừng theo cơ chế upstream. Không chạy đồng thời
+  hai công cụ điều khiển chuột/phím trong một công việc.
+Bộ cài không kèm ứng dụng/giấy phép AutoCAD hoặc Microsoft Office.
+Hướng dẫn đầy đủ: https://github.com/hongnam207/antigravity-tieng-viet/blob/main/docs/INTEGRATED-SETUP.md

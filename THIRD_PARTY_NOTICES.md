@@ -1,5 +1,11 @@
 # Thành phần bên thứ ba
 
+Từ 2.2.0, bộ cài đầy đủ phân phối thêm:
+
+- **AutoCAD MCP Pro 1.8.0**, MIT, [U-C4N/Autocad-MCP](https://github.com/U-C4N/Autocad-MCP). Runtime giữ toàn bộ metadata và giấy phép wheel; danh sách đóng băng ở `scripts/autocad-requirements.txt`. Python site-packages riêng có cả pywin32, matplotlib, Pillow và openpyxl.
+- **Antigravity Computer Use 1.0.6**, MIT, [shayann07/antigravity-computer-use](https://github.com/shayann07/antigravity-computer-use), giữ nguyên bundle cùng `LICENSE`, `licenses/`, manifest và các thông báo upstream. Dự án này dựa trên ridelink0/claude-computer-use theo thông báo của upstream. Node và các helper native trong bundle có giấy phép riêng đi kèm.
+- Nguồn ZIP và helper chính xác, revision helper và SHA-256 nằm ở `scripts/integrations-lock.json` và `integrations/SOURCES.json` trong bộ cài. Không phân phối Autodesk AutoCAD, giấy phép Autodesk hay Microsoft Office.
+
 Plugin Windows & Office 2.1.0 dùng `@modelcontextprotocol/sdk`, `@modelcontextprotocol/ext-apps`, `zod`, `docx-preview`, `exceljs`, `jszip` và phụ thuộc theo `package-lock.json`. Giấy phép đầy đủ được gom trong `plugin/THIRD-PARTY-LICENSES.txt` ở bộ cài. Windows bridge là mã C# của dự án dùng API Windows/.NET; không phân phối CursorTouch/Windows-MCP.
 
 MIT ở gốc chỉ áp dụng cho mã do dự án tạo. Thành phần đi kèm giữ giấy phép riêng:

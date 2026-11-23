@@ -21,12 +21,17 @@ if ($LASTEXITCODE -ne 0) { throw 'Plugin build failed. Run npm ci first.' }
 $pluginTarget = Join-Path $payloadDir 'plugin'
 New-Item -ItemType Directory -Force $pluginTarget | Out-Null
 Copy-Item (Join-Path $buildDir 'plugin/*') $pluginTarget -Recurse -Force
+& (Join-Path $PSScriptRoot 'build-integrations.ps1')
+if ($LASTEXITCODE -ne 0) { throw 'Integration build failed.' }
+$integrationTarget=Join-Path $payloadDir 'integrations'
+New-Item -ItemType Directory -Force $integrationTarget | Out-Null
+Copy-Item (Join-Path $buildDir 'integrations/*') $integrationTarget -Recurse -Force
 $packed = Join-Path $buildDir 'payload-build.zip'
 & (Join-Path $payloadDir 'runtime/python.exe') -I -X utf8 (Join-Path $PSScriptRoot 'pack-payload.py') $payloadDir $packed
 if ($LASTEXITCODE -ne 0) { throw 'Payload packaging failed.' }
 $compiler = Join-Path $env:WINDIR 'Microsoft.NET/Framework64/v4.0.30319/csc.exe'
 if (!(Test-Path -LiteralPath $compiler)) { throw '.NET Framework x64 C# compiler not found.' }
-$output = Join-Path $distDir 'Antigravity-Tieng-Viet-Setup-x64-v2.1.2.exe'
+$output = Join-Path $distDir 'Antigravity-Tieng-Viet-Setup-x64-v2.2.0.exe'
 $compileArgs = @('/nologo','/target:winexe','/platform:x64','/optimize+','/codepage:65001',
     '/reference:System.Windows.Forms.dll','/reference:System.Drawing.dll',
     '/reference:System.IO.Compression.dll','/reference:System.IO.Compression.FileSystem.dll',

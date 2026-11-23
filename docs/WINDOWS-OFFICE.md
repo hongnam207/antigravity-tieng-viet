@@ -1,9 +1,11 @@
-# Windows MCP và Office Preview (2.1.2)
+# Windows MCP và Office Preview (2.2.0)
+
+Bộ 2.2.0 cài thêm **AutoCAD MCP** và **Computer Use**. Xem [hướng dẫn tích hợp đầy đủ](INTEGRATED-SETUP.md).
 
 ## Cài trên máy khác
 
 1. Máy cần Windows 10/11 x64 và **Antigravity App desktop 2.34.0+**, không phải bản IDE dựa trên VS Code.
-2. Tải `Antigravity-Tieng-Viet-Setup-x64-v2.1.2.exe` từ Releases. Không cần tải payload hoặc cài Node/Python riêng.
+2. Tải `Antigravity-Tieng-Viet-Setup-x64-v2.2.0.exe` từ Releases. Không cần tải payload hoặc cài Node/Python riêng.
 3. Lưu công việc và thoát hẳn Antigravity, kể cả khay hệ thống.
 4. Chạy bộ cài, chọn thư mục chứa `Antigravity.exe`, bấm **Cài đặt**.
 5. Mở **Antigravity tiếng Việt** trên Desktop.
@@ -33,11 +35,11 @@ Giữ chế độ duyệt công cụ phù hợp với công việc. Không đưa
 
 ## Xem PDF/DOCX/XLSX/PPTX trong tab
 
-Cách mặc định từ bộ cài EXE **2.1.2**: bấm tệp local trong hội thoại để xem ngay trong tab tệp ở khung bên phải. Không phải mở trang Office Preview hoặc chọn lại file. Đã kiểm tra trực tiếp với tệp Word tiếng Việt và tab khôi phục từ phiên cũ trên App 2.34.0.
+Cách mặc định từ bộ cài EXE **2.2.0**: bấm tệp local trong hội thoại để xem ngay trong tab tệp ở khung bên phải. Không phải mở trang Office Preview hoặc chọn lại file. Đã kiểm tra trực tiếp với tệp Word tiếng Việt và tab khôi phục từ phiên cũ trên App 2.34.0.
 
 Khi viewer mặc định báo không hỗ trợ, hook tương thích sẽ đọc đúng file của tab đang được chọn và hiển thị tại chỗ trong iframe cách ly. Chỉ nhận PDF/DOCX/XLSX/PPTX local tối đa 10 MiB; không đọc URL web, UNC/network share hoặc loại tệp khác. Không truyền đường dẫn tùy ý từ trang sang main process. Nội dung không gửi tới mô hình hoặc dịch vụ preview ngoài.
 
-Trang Office Preview ở thanh bên vẫn dùng được để chọn một tệp khác thủ công. ZIP plugin rời chỉ cung cấp trang/panel này; cần EXE đầy đủ để cài hook preview trong khung gốc. Nếu vẫn thấy thông báo cũ sau nâng cấp, thoát hẳn App và mở qua shortcut Antigravity tiếng Việt; kiểm tra đã dùng EXE 2.1.2, không chỉ ZIP. Cấu trúc/phiên bản App tương lai có thể cần bản tương thích mới.
+Trang Office Preview ở thanh bên vẫn dùng được để chọn một tệp khác thủ công. ZIP plugin rời chỉ cung cấp trang/panel này; cần EXE đầy đủ để cài hook preview trong khung gốc. Nếu vẫn thấy thông báo cũ sau nâng cấp, thoát hẳn App và mở qua shortcut Antigravity tiếng Việt; kiểm tra đã dùng EXE 2.2.0, không chỉ ZIP. Cấu trúc/phiên bản App tương lai có thể cần bản tương thích mới.
 
 | Loại | Hỗ trợ | Giới hạn |
 | --- | --- | --- |

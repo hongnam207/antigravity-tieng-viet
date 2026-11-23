@@ -1,15 +1,19 @@
-# Antigravity tiếng Việt · Windows MCP & Office Preview
+# Antigravity tiếng Việt · Office/PDF · AutoCAD · Computer Use
 
 Việt hóa menu, nút bấm và cài đặt của **Antigravity desktop Electron (`app.asar`)** trên Windows x64, bằng từ điển giao diện và mô hình dịch chạy tại máy.
 
-Bộ cài **2.1.2** tích hợp điều khiển Windows qua MCP và preview PDF/DOCX/XLSX/PPTX **ngay trong khung tệp bên phải khi bấm vào file trong hội thoại**. Không cần mở trang Office Preview hoặc chọn lại tệp. **[Hướng dẫn Windows & Office](docs/WINDOWS-OFFICE.md)**.
+Bộ cài **2.2.0** tích hợp AutoCAD MCP Pro và skill **`/computer-use`**, sửa lỗi XLSX có biểu đồ, chuyển nhanh giữa tệp và thứ tự slide PPTX. Đồng thời giữ điều khiển Windows qua MCP và preview PDF/DOCX/XLSX/PPTX **ngay trong khung tệp bên phải khi bấm vào file trong hội thoại**. Không cần mở trang Office Preview hoặc chọn lại tệp. **[Hướng dẫn Windows & Office](docs/WINDOWS-OFFICE.md)**.
 
 **[Tải bộ cài mới nhất](https://github.com/hongnam207/antigravity-tieng-viet/releases/latest)** · [Xử lý lỗi](docs/TROUBLESHOOTING.md) · [Phát triển](docs/DEVELOPMENT.md)
 
 > Dự án cộng đồng, không liên kết với Google. Đã kiểm tra với Antigravity desktop **2.34.0**. Không dành cho bản IDE dựa trên VS Code; không bảo đảm tương thích mọi phiên bản tương lai.
 
+**[Hướng dẫn cài đầy đủ, AutoCAD và Computer Use](docs/INTEGRATED-SETUP.md)**
+
 ## Tính năng
 
+- **Computer Use 1.0.6:** skill `/computer-use` và sidecar từ shayann07/antigravity-computer-use.
+- **AutoCAD MCP Pro 1.8.0:** phụ thuộc đi kèm; tự chọn COM nếu có AutoCAD, DXF nếu chưa có.
 - **Windows MCP:** quan sát cửa sổ, chụp màn hình, click, nhập Unicode, phím tắt, cuộn và mở ứng dụng.
 - **Office Preview:** chỉ xem PDF/DOCX/XLSX/PPTX, không cần Office cho preview cơ bản.
 - Ưu tiên từ điển tiếng Việt; giữ tên mô hình Gemini, Claude, GPT.
@@ -22,12 +26,12 @@ Bộ cài **2.1.2** tích hợp điều khiển Windows qua MCP và preview PDF/
 ## Yêu cầu
 
 - Windows 10/11 **x64**, đã cài Antigravity desktop Electron thuộc họ được hỗ trợ.
-- Có quyền ghi vào thư mục Antigravity. Nên để trống ít nhất 1 GB cho bộ chạy, mô hình và bản sao lưu.
-- Bộ cài khoảng 150 MB, kèm mô hình, plugin và phụ thuộc.
+- Có quyền ghi vào thư mục Antigravity. Nên để trống ít nhất 3 GB cho bộ chạy, mô hình và bản sao lưu.
+- Bộ cài đầy đủ kèm mô hình, plugin, Computer Use và phụ thuộc AutoCAD; xem kích thước thực tế ở Releases. Sau khi tải, có thể cài các thành phần tích hợp mà không tải thêm Python/Node/gói MCP.
 
 ## Cài đặt
 
-1. Mở [Releases](https://github.com/hongnam207/antigravity-tieng-viet/releases/latest), tải **`Antigravity-Tieng-Viet-Setup-x64-v2.1.2.exe`** trong **Assets**. Không cần tải Source code hoặc payload cho nhà phát triển.
+1. Mở [Releases](https://github.com/hongnam207/antigravity-tieng-viet/releases/latest), tải **`Antigravity-Tieng-Viet-Setup-x64-v2.2.0.exe`** trong **Assets**. Không cần tải Source code hoặc payload cho nhà phát triển.
 2. Thoát hẳn Antigravity, kể cả biểu tượng ở khay hệ thống.
 3. Chạy bộ cài. Kiểm tra thư mục được nhận; nếu chưa đúng, bấm **Chọn…** và chọn thư mục chứa `Antigravity.exe`.
 4. Bấm **Cài đặt**, đợi thông báo hoàn tất.
@@ -39,7 +43,7 @@ Cài theo từng tài khoản Windows. Nếu ứng dụng ở thư mục đượ
 
 Sau khi cài, bấm liên kết tệp local DOCX/XLSX/PPTX/PDF trong hội thoại. Nội dung hiện ngay trong tab tệp ở khung bên phải, tại vị trí trước đây báo “Preview is not available for this file type”. Trang **Office Preview → Chọn tài liệu** vẫn có nếu muốn mở tệp khác thủ công.
 
-Bản 2.1.2 bổ sung cơ chế tương thích trong hook ASAR để khung tệp gốc hoạt động trên App 2.34.0 đã kiểm tra. **Cần bộ cài EXE đầy đủ** cho chức năng này; ZIP plugin rời chỉ cung cấp trang/panel Office Preview. Nếu App đã có viewer riêng cho một loại tệp thì giữ nguyên viewer đó.
+Bản 2.2.0 bổ sung cơ chế tương thích trong hook ASAR để khung tệp gốc hoạt động trên App 2.34.0 đã kiểm tra. **Cần bộ cài EXE đầy đủ** cho chức năng này; ZIP plugin rời chỉ cung cấp trang/panel Office Preview. Nếu App đã có viewer riêng cho một loại tệp thì giữ nguyên viewer đó.
 
 Để dùng Windows MCP, vào **Tùy chỉnh → Đã cài → Antigravity tiếng Việt · Windows & Office → MCP**, kiểm tra `windows-control` Ready; yêu cầu agent dùng `windows_list`.
 
