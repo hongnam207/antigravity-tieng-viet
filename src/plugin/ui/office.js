@@ -1,9 +1,10 @@
+import {pdfPreview,releasePdf} from './pdf.js';
 import {App} from '@modelcontextprotocol/ext-apps';
 import {renderAsync} from 'docx-preview';
 import ExcelJS from 'exceljs';
 import JSZip from 'jszip';
 
-const app=new App({name:'Office Preview · Tiếng Việt',version:'2.1.0'},{},{autoResize:false});
+const app=new App({name:'Office Preview · Tiếng Việt',version:'2.1.1'},{},{autoResize:false});
 const view=document.querySelector('#view'),status=document.querySelector('#status'),tabs=document.querySelector('#tabs');
 let generation=0;
 const node=(tag,text,cls)=>{const el=document.createElement(tag);if(text!==undefined)el.textContent=text;if(cls)el.className=cls;return el};
@@ -25,17 +26,17 @@ async function presentation(zip){const pres=xml(await zip.file('ppt/presentation
    for(const p of all(shape,'p')){const text=all(p,'t').map(t=>t.textContent).join('');if(!text)continue;const line=node('p',text);const run=first(p,'rPr');if(run?.getAttribute('b')==='1')line.style.fontWeight='bold';const sz=Number(run?.getAttribute('sz'));if(sz>0)line.style.fontSize=Math.min(48,Math.max(9,sz/100))+'px';box.append(line);}canvas.append(box);}section.append(canvas);view.append(section);
  }status.textContent=`${names.length} slide · Bản xem nhẹ: chữ/ảnh cơ bản; chưa tái tạo đầy đủ theme, biểu đồ, SmartArt, animation hoặc thứ tự slide tùy chỉnh.`;
 }
-async function open(file){const ticket=++generation;status.textContent='Đang đọc tệp…';view.replaceChildren();tabs.replaceChildren();document.querySelector('#title').textContent=file.name;
- try {const result=await app.readServerResource({uri:file.resourceUri});if(ticket!==generation)return;const content=result.contents.find(x=>x.blob);if(!content)throw Error('Host không trả về dữ liệu tệp.');if(content.blob.length>Math.ceil(limit/3)*4+4)throw Error('Tệp vượt giới hạn 10 MiB.');const bytes=Uint8Array.from(atob(content.blob),c=>c.charCodeAt(0));if(bytes.length>limit)throw Error('Tệp vượt giới hạn 10 MiB.');const zip=await checkZip(bytes);if(ticket!==generation)return;const extension=file.name.split('.').pop().toLowerCase();
+async function open(file){const ticket=++generation;await releasePdf();if(ticket!==generation)return;status.textContent='Đang đọc tệp…';view.replaceChildren();tabs.replaceChildren();document.querySelector('#title').textContent=file.name;
+ try {const result=await app.readServerResource({uri:file.resourceUri});if(ticket!==generation)return;const content=result.contents.find(x=>x.blob);if(!content)throw Error('Host không trả về dữ liệu tệp.');if(content.blob.length>Math.ceil(limit/3)*4+4)throw Error('Tệp vượt giới hạn 10 MiB.');const bytes=Uint8Array.from(atob(content.blob),c=>c.charCodeAt(0));if(bytes.length>limit)throw Error('Tệp vượt giới hạn 10 MiB.');if(file.name.toLowerCase().endsWith('.pdf')){await pdfPreview(bytes,view,tabs,status);return;}const zip=await checkZip(bytes);if(ticket!==generation)return;const extension=file.name.split('.').pop().toLowerCase();
   if(extension==='docx'){await renderAsync(bytes,view,undefined,{inWrapper:true,breakPages:true,ignoreFonts:true,useBase64URL:true,renderAltChunks:false});status.textContent='DOCX · Chỉ xem; ngắt trang/phông chữ có thể khác Word. Không chạy macro.';}
   else if(extension==='xlsx')await workbook(bytes);else if(extension==='pptx')await presentation(zip);else throw Error('Định dạng chưa hỗ trợ.');
  }catch(e){if(ticket===generation){status.textContent='Không thể xem trước';view.replaceChildren(node('div',e.message,'error'));}}
 }
 document.querySelector('#picker').onchange=async event=>{
- const file=event.target.files[0];if(!file)return;++generation;view.replaceChildren();tabs.replaceChildren();document.querySelector('#title').textContent=file.name;status.textContent='Đang đọc tệp…';
- try{if(file.size>limit)throw Error('Tệp vượt giới hạn 10 MiB.');const bytes=new Uint8Array(await file.arrayBuffer());const zip=await checkZip(bytes);const ext=file.name.split('.').pop().toLowerCase();if(ext==='docx'){await renderAsync(bytes,view,undefined,{inWrapper:true,breakPages:true,ignoreFonts:true,useBase64URL:true,renderAltChunks:false});status.textContent='DOCX · Chỉ xem; bố cục có thể khác Word.';}else if(ext==='xlsx')await workbook(bytes);else if(ext==='pptx')await presentation(zip);else throw Error('Định dạng chưa hỗ trợ.');}catch(e){status.textContent='Không thể xem trước';view.replaceChildren(node('div',e.message,'error'));}
+ const file=event.target.files[0];if(!file)return;const ticket=++generation;await releasePdf();if(ticket!==generation)return;view.replaceChildren();tabs.replaceChildren();document.querySelector('#title').textContent=file.name;status.textContent='Đang đọc tệp…';
+ try{if(file.size>limit)throw Error('Tệp vượt giới hạn 10 MiB.');const bytes=new Uint8Array(await file.arrayBuffer());if(ticket!==generation)return;if(file.name.toLowerCase().endsWith('.pdf')){await pdfPreview(bytes,view,tabs,status);return;}const zip=await checkZip(bytes);const ext=file.name.split('.').pop().toLowerCase();if(ext==='docx'){await renderAsync(bytes,view,undefined,{inWrapper:true,breakPages:true,ignoreFonts:true,useBase64URL:true,renderAltChunks:false});status.textContent='DOCX · Chỉ xem; bố cục có thể khác Word.';}else if(ext==='xlsx')await workbook(bytes);else if(ext==='pptx')await presentation(zip);else throw Error('Định dạng chưa hỗ trợ.');}catch(e){if(ticket===generation){status.textContent='Không thể xem trước';view.replaceChildren(node('div',e.message,'error'));}}
 };
 app.ontoolresult=result=>{if(result.structuredContent?.file)open(result.structuredContent.file)};
 
-status.textContent='Chọn tài liệu DOCX/XLSX/PPTX để xem tại máy.';
+status.textContent='Chọn tài liệu PDF/DOCX/XLSX/PPTX để xem tại máy.';
 app.connect().catch(e=>{if(!view.children.length)status.textContent='Kết nối host chưa hoàn tất; bạn vẫn có thể chọn tài liệu trực tiếp.'});

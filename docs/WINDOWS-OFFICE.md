@@ -1,9 +1,9 @@
-# Windows MCP và Office Preview (2.1.0)
+# Windows MCP và Office Preview (2.1.1)
 
 ## Cài trên máy khác
 
 1. Máy cần Windows 10/11 x64 và **Antigravity App desktop 2.34.0+**, không phải bản IDE dựa trên VS Code.
-2. Tải `Antigravity-Tieng-Viet-Setup-x64-v2.1.0.exe` từ Releases. Không cần tải payload hoặc cài Node/Python riêng.
+2. Tải `Antigravity-Tieng-Viet-Setup-x64-v2.1.1.exe` từ Releases. Không cần tải payload hoặc cài Node/Python riêng.
 3. Lưu công việc và thoát hẳn Antigravity, kể cả khay hệ thống.
 4. Chạy bộ cài, chọn thư mục chứa `Antigravity.exe`, bấm **Cài đặt**.
 5. Mở **Antigravity tiếng Việt** trên Desktop.
@@ -31,23 +31,24 @@ Plugin cung cấp danh sách cửa sổ, cây UI Automation, ảnh màn hình, c
 
 Giữ chế độ duyệt công cụ phù hợp với công việc. Không đưa mật khẩu/OTP hoặc thao tác tài khoản nhạy cảm vào bài thử. Không thể bảo đảm agent luôn chọn đúng nút; quan sát lúc thao tác quan trọng. Bộ cài không đổi thiết lập quyền của Antigravity sang “cho phép tất cả”.
 
-## Xem DOCX/XLSX/PPTX trong tab
+## Xem PDF/DOCX/XLSX/PPTX trong tab
 
 Cách đã kiểm chứng trên App 2.34.0:
 
 1. Bấm **Office Preview** dưới mục **Tiện ích (Plugins)** ở thanh bên.
-2. Bấm **Chọn tài liệu**, chọn DOCX/XLSX/PPTX trên máy rồi bấm Open.
+2. Bấm **Chọn tài liệu**, chọn PDF/DOCX/XLSX/PPTX trên máy rồi bấm Open.
 3. Nội dung hiện ngay trong App; với XLSX, bấm tên sheet để chuyển.
 
 Cũng có thể yêu cầu agent gọi `office_preview` để mở panel. Plugin đăng ký thêm custom file viewer theo phần mở rộng, nhưng việc tự thay viewer của tab file cũ chưa ổn định trên bản 2.34.0 đã thử. Nếu tab vẫn báo “Preview is not available”, dùng mục **Office Preview** ở thanh bên. Không cần tải tài liệu lên dịch vụ khác.
 
 | Loại | Hỗ trợ | Giới hạn |
 | --- | --- | --- |
+| PDF | Chuyển trang, phóng to 75–200%, vừa chiều ngang, xem văn bản trang | Không chỉnh sửa/điền form, không OCR, chưa nhập mật khẩu; một số font/codec đặc biệt có thể không hiển thị đầy đủ |
 | DOCX | Chữ, bảng, ảnh, bố cục trang qua docx-preview | Phông/ngắt trang/trường động có thể khác Word; không bảo đảm đúng bản in |
 | XLSX | Chuyển sheet, chữ/số, định dạng cơ bản, ô gộp, xem công thức bằng tooltip | Không tính lại công thức; dùng kết quả đã lưu, chưa có biểu đồ; tối đa 2000 hàng, 100 cột và 20.000 ô/sheet |
 | PPTX | Trang slide với chữ và ảnh raster cơ bản | Chưa tái tạo đầy đủ theme, shape, SmartArt, biểu đồ, animation; bản xem nhẹ, không thay PowerPoint |
 
-Chỉ xem, không chỉnh sửa hoặc lưu đè. Không chạy macro. Tệp đọc qua host giới hạn **10 MiB**; tổng kích thước giải nén bị giới hạn 64 MiB và 5000 mục. Tệp mã hóa, hỏng hoặc quá lớn sẽ báo lỗi. Chưa hỗ trợ định dạng cũ `.doc`, `.xls`, `.ppt`, tệp macro `.docm`, `.xlsm`, `.pptm` hoặc PDF qua plugin này.
+Chỉ xem, không chỉnh sửa hoặc lưu đè. Không chạy macro. Tệp đọc qua host giới hạn **10 MiB**; với tệp Office dạng ZIP, tổng kích thước giải nén bị giới hạn 64 MiB và 5000 mục. Tệp mã hóa, hỏng hoặc quá lớn sẽ báo lỗi. Chưa hỗ trợ định dạng cũ `.doc`, `.xls`, `.ppt`, tệp macro `.docm`, `.xlsm`, `.pptm`.
 
 Để xem đúng bản in, mở bằng Word/Excel/PowerPoint hoặc xuất PDF. Không cần tải tài liệu lên Google Docs/Office Online cho preview này.
 
@@ -65,3 +66,7 @@ Chỉ xem, không chỉnh sửa hoặc lưu đè. Không chạy macro. Tệp đ�
 - Preview không mở: dùng **Office Preview → Chọn tài liệu**; kiểm tra kích thước/định dạng. Với viewer tự động, plugin khác đăng ký cùng phần mở rộng có thể được ưu tiên trước; cơ chế này chưa được bảo đảm trên mọi bản App.
 - Không nhập/bấm được: quan sát lại, kiểm tra cửa sổ bị che, focus, phiên Windows có màn hình đang hoạt động và mức quyền của ứng dụng. Không tăng quyền toàn bộ công cụ chỉ để thử.
 - Báo lỗi bằng phiên bản App/Windows/bộ cài và bước tái hiện. Không đăng ảnh chứa dữ liệu riêng, cache hoặc toàn bộ cấu hình MCP.
+
+### PDF từ 2.1.1
+
+Dùng Office Preview → Chọn tài liệu → chọn `.pdf`. Bấm Trang trước/Trang sau, chọn mức zoom; mở “Văn bản trang hiện tại” để sao chép nội dung PDF có text. PDF scan chỉ hiển thị ảnh, không tự OCR. PDF mã hóa cần mật khẩu và tệp hỏng sẽ báo lỗi. Tối đa 10 MiB. PDF.js được đóng gói local, không tải worker từ CDN, không chạy JavaScript/annotation action trong PDF. Chỉ giữ canvas trang hiện tại và giải phóng tài liệu cũ khi đổi file.

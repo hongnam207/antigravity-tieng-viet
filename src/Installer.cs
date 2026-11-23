@@ -234,7 +234,7 @@ internal static class Program {
                     if (picker.ShowDialog(this)==DialogResult.OK) appPath.Text=Path.GetDirectoryName(picker.FileName);
                 }
             };
-            Controls.Add(new Label { Text="Thoát Antigravity trước khi cài. Windows 10/11 x64; App 2.34.0+.\r\nPreview chỉ xem DOCX/XLSX/PPTX. Công cụ Windows dùng mô hình của App.\r\nBộ dịch chạy local, mô hình tự tắt khi hết việc. Không dành cho bản IDE.", Location=new Point(30,225),Size=new Size(640,70), ForeColor=Color.FromArgb(65,65,65) });
+            Controls.Add(new Label { Text="Thoát Antigravity trước khi cài. Windows 10/11 x64; App 2.34.0+.\r\nPreview chỉ xem PDF/DOCX/XLSX/PPTX. Công cụ Windows dùng mô hình của App.\r\nBộ dịch chạy local, mô hình tự tắt khi hết việc. Không dành cho bản IDE.", Location=new Point(30,225),Size=new Size(640,70), ForeColor=Color.FromArgb(65,65,65) });
             status = new Label { Text="Bộ Việt hóa tự tạo, không phải sản phẩm chính thức của Google.", Location=new Point(30,305),Size=new Size(640,40) };Controls.Add(status);
             var oldBundle = new Button { Text="Chọn bộ Việt hóa cũ…",Location=new Point(30,355),Size=new Size(220,34) };Controls.Add(oldBundle);
             oldBundle.Click += delegate {
@@ -255,7 +255,7 @@ internal static class Program {
                 try {
                     await Task.Run(()=>InstallCore(chosen,UserInstall,true,previousBundle));
                     status.Text="Đã cài xong. Mở bằng biểu tượng Antigravity tiếng Việt trên Desktop.";
-                    MessageBox.Show(this,"Cài đặt thành công.\r\n\r\nMở Antigravity tiếng Việt trên Desktop. Trong Customizations > Installed, kiểm tra plugin Windows & Office. Bấm Office Preview ở thanh bên rồi Chọn tài liệu để xem DOCX/XLSX/PPTX.\r\n\r\nCông cụ Windows có thể thao tác máy; giữ chế độ duyệt công cụ phù hợp. Nếu chưa thấy plugin, thoát hẳn rồi mở lại App.\r\n\r\nKhôi phục giao diện gốc trong Start chỉ gỡ bản Việt hóa; tắt/gỡ plugin riêng trong Customizations.",Title,MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    MessageBox.Show(this,"Cài đặt thành công.\r\n\r\nMở Antigravity tiếng Việt trên Desktop. Trong Customizations > Installed, kiểm tra plugin Windows & Office. Bấm Office Preview ở thanh bên rồi Chọn tài liệu để xem PDF/DOCX/XLSX/PPTX.\r\n\r\nCông cụ Windows có thể thao tác máy; giữ chế độ duyệt công cụ phù hợp. Nếu chưa thấy plugin, thoát hẳn rồi mở lại App.\r\n\r\nKhôi phục giao diện gốc trong Start chỉ gỡ bản Việt hóa; tắt/gỡ plugin riêng trong Customizations.",Title,MessageBoxButtons.OK,MessageBoxIcon.Information);
                 } catch (Exception error) {
                     status.Text="Chưa hoàn tất. Xem thông báo rồi thử lại.";
                     MessageBox.Show(this,error.Message,Title,MessageBoxButtons.OK,MessageBoxIcon.Warning);

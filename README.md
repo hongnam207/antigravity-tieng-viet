@@ -2,7 +2,7 @@
 
 Việt hóa menu, nút bấm và cài đặt của **Antigravity desktop Electron (`app.asar`)** trên Windows x64, bằng từ điển giao diện và mô hình dịch chạy tại máy.
 
-Từ **2.1.0**, bộ cài tích hợp thêm điều khiển Windows qua MCP và preview DOCX/XLSX/PPTX trong tab. **[Hướng dẫn Windows & Office: cài máy khác, ví dụ, bật/tắt và giới hạn](docs/WINDOWS-OFFICE.md)**.
+Bộ cài **2.1.1** tích hợp thêm điều khiển Windows qua MCP và preview PDF/DOCX/XLSX/PPTX trong tab. **[Hướng dẫn Windows & Office: cài máy khác, ví dụ, bật/tắt và giới hạn](docs/WINDOWS-OFFICE.md)**.
 
 **[Tải bộ cài mới nhất](https://github.com/hongnam207/antigravity-tieng-viet/releases/latest)** · [Xử lý lỗi](docs/TROUBLESHOOTING.md) · [Phát triển](docs/DEVELOPMENT.md)
 
@@ -11,7 +11,7 @@ Từ **2.1.0**, bộ cài tích hợp thêm điều khiển Windows qua MCP và 
 ## Tính năng
 
 - **Windows MCP:** quan sát cửa sổ, chụp màn hình, click, nhập Unicode, phím tắt, cuộn và mở ứng dụng.
-- **Office Preview:** chỉ xem DOCX/XLSX/PPTX, không cần Office cho preview cơ bản.
+- **Office Preview:** chỉ xem PDF/DOCX/XLSX/PPTX, không cần Office cho preview cơ bản.
 - Ưu tiên từ điển tiếng Việt; giữ tên mô hình Gemini, Claude, GPT.
 - Dịch câu giao diện mới bằng OPUS-MT Anh–Việt INT8 trên CPU.
 - Chỉ nạp mô hình khi thiếu bản dịch; tiến trình dịch tự thoát khi xử lý hết các lô đang chờ.
@@ -27,7 +27,7 @@ Từ **2.1.0**, bộ cài tích hợp thêm điều khiển Windows qua MCP và 
 
 ## Cài đặt
 
-1. Mở [Releases](https://github.com/hongnam207/antigravity-tieng-viet/releases/latest), tải **`Antigravity-Tieng-Viet-Setup-x64-v2.1.0.exe`** trong **Assets**. Không cần tải Source code hoặc payload cho nhà phát triển.
+1. Mở [Releases](https://github.com/hongnam207/antigravity-tieng-viet/releases/latest), tải **`Antigravity-Tieng-Viet-Setup-x64-v2.1.1.exe`** trong **Assets**. Không cần tải Source code hoặc payload cho nhà phát triển.
 2. Thoát hẳn Antigravity, kể cả biểu tượng ở khay hệ thống.
 3. Chạy bộ cài. Kiểm tra thư mục được nhận; nếu chưa đúng, bấm **Chọn…** và chọn thư mục chứa `Antigravity.exe`.
 4. Bấm **Cài đặt**, đợi thông báo hoàn tất.
@@ -37,7 +37,7 @@ Cài theo từng tài khoản Windows. Nếu ứng dụng ở thư mục đượ
 
 ## Windows MCP và Office Preview
 
-Sau khi cài, vào **Tùy chỉnh → Đã cài → Antigravity tiếng Việt · Windows & Office → MCP**; kiểm tra `office-preview` và `windows-control` ở trạng thái Ready. Bấm **Office Preview** dưới mục **Tiện ích** ở thanh bên, rồi **Chọn tài liệu** để xem DOCX/XLSX/PPTX ngay trong App. Yêu cầu agent dùng `windows_list` để bắt đầu điều khiển Windows.
+Sau khi cài, vào **Tùy chỉnh → Đã cài → Antigravity tiếng Việt · Windows & Office → MCP**; kiểm tra `office-preview` và `windows-control` ở trạng thái Ready. Bấm **Office Preview** dưới mục **Tiện ích** ở thanh bên, rồi **Chọn tài liệu** để xem PDF/DOCX/XLSX/PPTX ngay trong App. Yêu cầu agent dùng `windows_list` để bắt đầu điều khiển Windows.
 
 Plugin cũng đăng ký viewer theo đuôi tệp, nhưng việc tự thay viewer ở tab file cũ chưa ổn định trên bản 2.34.0 đã thử. Nếu tab vẫn báo không hỗ trợ, dùng mục **Office Preview** đã kiểm chứng thay vì tải file hoặc mở viewer mặc định.
 

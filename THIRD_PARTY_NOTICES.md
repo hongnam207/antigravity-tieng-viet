@@ -17,3 +17,5 @@ MIT ở gốc chỉ áp dụng cho mã do dự án tạo. Thành phần đi kèm
 Trọng số gốc được xác minh SHA-256 từ metadata LFS rồi chuyển INT8 bằng CTranslate2, không huấn luyện thêm. Ghi công Helsinki-NLP, OPUS-MT và các bên đóng góp được nêu trong model card.
 
 Giấy phép đầy đủ nằm trong payload: `MODEL-NOTICE.txt`, `model/README.md`, `licenses/APACHE-2.0.txt`, `NODE-LICENSE.txt`, `runtime/LICENSE.txt` và các thư mục `*.dist-info/licenses`. Các thư viện native giữ thông báo đi kèm bản phân phối. Antigravity phải được người dùng cài riêng; bản phát hành không chứa ứng dụng đó.
+
+PDF Preview 2.1.1 dùng Mozilla PDF.js (`pdfjs-dist` 6.5.438, Apache-2.0), nguồn https://github.com/mozilla/pdf.js. Worker được bundle cùng HTML và xử lý tại máy, không tải từ CDN. Giấy phép có trong plugin/THIRD-PARTY-LICENSES.txt.

@@ -1,6 +1,6 @@
 # Windows & Office · Tiếng Việt
 
-Plugin local cho Antigravity App 2.34.0+: công cụ điều khiển Windows và trình xem DOCX/XLSX/PPTX trong tab tệp.
+Plugin local cho Antigravity App 2.34.0+: công cụ điều khiển Windows và trình xem PDF/DOCX/XLSX/PPTX trong tab tệp.
 
 Bấm **Office Preview** dưới mục **Tiện ích** ở thanh bên, rồi **Chọn tài liệu**. Tệp tối đa 10 MiB; chỉ xem, không chỉnh sửa, không chạy macro. DOCX có thể khác bố cục Word. XLSX xem tối đa 2000 hàng, 100 cột và 20.000 ô mỗi sheet, công thức dùng kết quả đã lưu, không tính lại hoặc hiển thị biểu đồ. PPTX xem nhẹ chữ/ảnh, chưa tái tạo đầy đủ theme, SmartArt, biểu đồ, animation hoặc thứ tự slide tùy chỉnh.
 

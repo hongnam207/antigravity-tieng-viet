@@ -31,7 +31,7 @@ Test DOM dùng Playwright và Chrome ở vị trí tiêu chuẩn Windows; đặt
 Kiểm tra giải nén và mô hình bằng bộ cài:
 
 ```powershell
-$p = Start-Process .\dist\Antigravity-Tieng-Viet-Setup-x64-v2.1.0.exe -ArgumentList '--verify', '"C:\Temp\agvi-verify"' -Wait -PassThru
+$p = Start-Process .\dist\Antigravity-Tieng-Viet-Setup-x64-v2.1.1.exe -ArgumentList '--verify', '"C:\Temp\agvi-verify"' -Wait -PassThru
 $p.ExitCode
 ```
 
@@ -52,3 +52,5 @@ Nếu worker lỗi, giao diện giữ chữ gốc. Không dùng Google Translate
 `npm run build:plugin` tạo `build/plugin` bằng esbuild và C# compiler. `npm run test:plugin` kiểm tra MCP qua stdio, metadata viewer, cài plugin giữ cấu hình khác và UI Office qua mock host trong Chrome. `src/windows/WindowsBridge.cs` chạy theo từng yêu cầu, không thường trú. `src/payload/install-plugin.cjs` thêm plugin vào thư mục user của Antigravity và sao lưu import_manifest trước khi cập nhật. Không đổi MCP khác hoặc tự bật quyền không giới hạn.
 
 Xem [WINDOWS-OFFICE.md](WINDOWS-OFFICE.md) về giới hạn định dạng và quyền riêng tư. `build/plugin/THIRD-PARTY-LICENSES.txt` gom giấy phép phụ thuộc khi build.
+
+PDF dùng import động để chỉ khởi tạo PDF.js khi mở PDF; parser được bundle local trong trang và dùng fallback cùng luồng để không phụ thuộc worker URL trong sandbox. Kiểm tra điều hướng trang, zoom, đổi file và PDF hỏng trong `tests/test-office-ui.mjs`.

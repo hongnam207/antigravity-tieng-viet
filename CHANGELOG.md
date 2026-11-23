@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.1.1
+
+- Thêm preview PDF local bằng PDF.js, chuyển trang, zoom và văn bản trang.
+- PDF chỉ được khởi tạo khi mở; giải phóng tài liệu khi đổi tệp.
+- Kiểm tra PDF nhiều trang, chuyển file, tệp hỏng và giới hạn kích thước.
+
+
 ## 2.1.0
 
 - Office Preview: DOCX/XLSX/PPTX, chỉ xem, trong tab bằng plugin chính thức.

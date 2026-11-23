@@ -7,14 +7,14 @@ import path from 'node:path';
 import {spawn} from 'node:child_process';
 
 const root=__dirname;
-const server=new McpServer({name:'antigravity-vietnamese-tools',version:'2.1.0'});
+const server=new McpServer({name:'antigravity-vietnamese-tools',version:'2.1.1'});
 const uri='ui://antigravity-vietnamese-tools/office.html';
 if(!process.argv.includes('--windows')){
 server.registerResource('office-preview',uri,{mimeType:'text/html;profile=mcp-app'},async()=>({contents:[{uri,mimeType:'text/html;profile=mcp-app',text:fs.readFileSync(path.join(root,'office.html'),'utf8'),_meta:{ui:{csp:{connectDomains:[],resourceDomains:[]}}}}]}));
 const fileSchema=z.object({name:z.string().max(1000),resourceUri:z.string().max(4000)});
-registerAppTool(server,'office_preview',{description:'Open Office Preview. User selects a local DOCX XLSX PPTX file without sharing file content with the model.',inputSchema:{},annotations:{readOnlyHint:true,destructiveHint:false},_meta:{ui:{resourceUri:uri},'com.google.antigravity/ui':{entrypoints:[{type:'aux_pane',title:'Office Preview'},{type:'global',title:'Office Preview'}]}}},async()=>({content:[{type:'text',text:'Chọn tài liệu trong Office Preview để xem tại máy.'}],structuredContent:{picker:true}}));
-registerAppTool(server,'office_file_viewer',{description:'Read-only DOCX XLSX PPTX file viewer, invoked by Antigravity.',inputSchema:{file:fileSchema},annotations:{readOnlyHint:true,destructiveHint:false},_meta:{ui:{resourceUri:uri},'com.google.antigravity/ui':{entrypoints:[{type:'file',title:'Office Preview · Tiếng Việt',extensions:['.docx','.xlsx','.pptx']}]}}},async({file})=>({content:[{type:'text',text:'Xem trước '+file.name}],structuredContent:{file}}));
-server.registerTool('office_preview_help',{description:'Explain the local Office Preview viewer and its limits.',inputSchema:{},annotations:{readOnlyHint:true,destructiveHint:false}},async()=>({content:[{type:'text',text:'Mở tệp .docx, .xlsx hoặc .pptx trong tab Antigravity để xem. Giới hạn tệp 10 MiB. Chỉ xem; không chạy macro. DOCX/PPTX có thể khác Office, biểu đồ/SmartArt/animation chưa được tái tạo; XLSX dùng giá trị công thức đã lưu, không tính lại.'}]}));
+registerAppTool(server,'office_preview',{description:'Open Office Preview. User selects a local PDF DOCX XLSX PPTX file without sharing file content with the model.',inputSchema:{},annotations:{readOnlyHint:true,destructiveHint:false},_meta:{ui:{resourceUri:uri},'com.google.antigravity/ui':{entrypoints:[{type:'aux_pane',title:'Office Preview'},{type:'global',title:'Office Preview'}]}}},async()=>({content:[{type:'text',text:'Chọn tài liệu trong Office Preview để xem tại máy.'}],structuredContent:{picker:true}}));
+registerAppTool(server,'office_file_viewer',{description:'Read-only PDF DOCX XLSX PPTX file viewer, invoked by Antigravity.',inputSchema:{file:fileSchema},annotations:{readOnlyHint:true,destructiveHint:false},_meta:{ui:{resourceUri:uri},'com.google.antigravity/ui':{entrypoints:[{type:'file',title:'Office Preview · Tiếng Việt',extensions:['.pdf','.docx','.xlsx','.pptx']}]}}},async({file})=>({content:[{type:'text',text:'Xem trước '+file.name}],structuredContent:{file}}));
+server.registerTool('office_preview_help',{description:'Explain the local Office Preview viewer and its limits.',inputSchema:{},annotations:{readOnlyHint:true,destructiveHint:false}},async()=>({content:[{type:'text',text:'Mở tệp .pdf, .docx, .xlsx hoặc .pptx trong tab Antigravity để xem. Giới hạn tệp 10 MiB. Chỉ xem; không chạy macro. DOCX/PPTX có thể khác Office, biểu đồ/SmartArt/animation chưa được tái tạo; XLSX dùng giá trị công thức đã lưu, không tính lại.'}]}));
 }
 let queue=Promise.resolve();
 const observations=new Map();
