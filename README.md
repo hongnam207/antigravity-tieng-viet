@@ -53,9 +53,21 @@ Nâng cấp bộ Việt hóa: thoát Antigravity rồi chạy bộ cài mới. G
 
 ## Khôi phục giao diện gốc
 
-1. Thoát Antigravity.
-2. Chọn **Start → Antigravity tiếng Việt → Khôi phục giao diện gốc**.
-3. Mở Antigravity như bình thường.
+1. Thoát hẳn Antigravity, kể cả biểu tượng ở khay hệ thống.
+2. Nhấn **Win + R**, dán đường dẫn sau rồi nhấn **Enter**:
+
+   ```text
+   %APPDATA%\Microsoft\Windows\Start Menu\Programs\Antigravity tiếng Việt
+   ```
+
+3. Trong thư mục vừa mở, nhấp đúp **Khôi phục giao diện gốc**.
+4. Chờ thông báo khôi phục thành công, rồi mở Antigravity bằng biểu tượng gốc của ứng dụng.
+
+Cũng có thể tìm **Khôi phục giao diện gốc** trong Start. Windows có thể không hiện thư mục **Antigravity tiếng Việt** ngay ở trang Start, nên cách **Win + R** ở trên giúp mở đúng thư mục shortcut.
+
+Nếu thiếu shortcut hoặc bấm không thấy phản hồi, xem [hướng dẫn khôi phục khi không tìm thấy shortcut](docs/TROUBLESHOOTING.md#không-tìm-thấy-shortcut-khôi-phục-hoặc-bấm-không-thấy-phản-hồi).
+
+Sau khi khôi phục, mở bằng shortcut **Antigravity tiếng Việt** sẽ áp dụng lại bản Việt hóa nếu ứng dụng còn tương thích. Muốn giữ giao diện gốc, hãy dùng shortcut gốc của Antigravity.
 
 Khôi phục dùng bản gốc khớp hash, không ghi đè một phiên bản đã đổi không xác định. Muốn xóa hoàn toàn bộ dịch, chỉ xóa `%LOCALAPPDATA%\AntigravityVietnamese` và shortcut sau khi khôi phục thành công. Xóa trước sẽ mất bản sao lưu cần cho khôi phục.
 

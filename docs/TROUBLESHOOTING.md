@@ -24,6 +24,26 @@ Thoát Antigravity rồi xóa riêng `%LOCALAPPDATA%\AntigravityVietnamese\cache
 
 Task Manager → Details → bật Image path name. Chỉ kiểm tra Python ở thư mục bộ Việt hóa. Tiến trình phải thoát khi hết việc; RAM Antigravity là phần riêng. Nếu worker ở lại lâu lúc không thao tác, báo phiên bản và trạng thái `runtime-status.json`; không gửi cache.
 
+## Không tìm thấy shortcut khôi phục hoặc bấm không thấy phản hồi
+
+Windows có thể không hiện thư mục shortcut ngay trong Start. Thoát hẳn Antigravity, nhấn **Win + R**, dán đường dẫn sau rồi nhấn **Enter**:
+
+```text
+%APPDATA%\Microsoft\Windows\Start Menu\Programs\Antigravity tiếng Việt
+```
+
+Nhấp đúp **Khôi phục giao diện gốc** trong thư mục vừa mở và chờ thông báo kết quả.
+
+Nếu thiếu thư mục/shortcut, hoặc mở shortcut không thấy thông báo, có thể chạy trực tiếp từ **Win + R**:
+
+```text
+"%LOCALAPPDATA%\AntigravityVietnamese\AntigravityVietnamese.exe" --restore
+```
+
+Nếu Windows báo không tìm thấy tệp, kiểm tra bộ Việt hóa đã được cài cho tài khoản Windows hiện tại. Không xóa `state.json` hoặc `backups`; nếu cần cài lại bộ dịch, giữ nguyên các tệp này. Nếu hiện thông báo lỗi, gửi nguyên văn lỗi qua Issues sau khi che thông tin riêng.
+
+Sau khi khôi phục thành công, mở bằng shortcut gốc của Antigravity. Shortcut **Antigravity tiếng Việt** sẽ áp dụng lại bản Việt hóa nếu còn tương thích.
+
 ## Dòng lệnh
 
 Sau khi thoát Antigravity:
