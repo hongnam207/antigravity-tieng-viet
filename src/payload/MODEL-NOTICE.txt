@@ -1,0 +1,8 @@
+Model: Helsinki-NLP/opus-mt-en-vi
+Source: https://huggingface.co/Helsinki-NLP/opus-mt-en-vi
+Revision: 989c9fb9ec63987901022baf0182dcec3e149be6
+Model card license: Apache-2.0. Full license in licenses/APACHE-2.0.txt.
+Modification: converted from original PyTorch weights to CTranslate2 INT8 with CTranslate2 4.8.4; vocabulary and SentencePiece retained.
+Credits: Helsinki-NLP and OPUS-MT / Tatoeba Challenge contributors.
+Model README retained in model/README.md.
+Runtime: CPython 3.12.10, CTranslate2 4.8.4 (MIT), SentencePiece 0.2.1 (Apache-2.0), NumPy 2.5.5 (BSD); licenses retained with their distributions.

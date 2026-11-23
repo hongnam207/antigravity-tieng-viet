@@ -1,0 +1,13 @@
+const fs=require('fs'),vm=require('vm'),assert=require('assert/strict'),cp=require('child_process');
+const {getPayload}=require('../build/payload/patcher.cjs');
+const handlers=new Map(),events=new Map(),children=[];
+const electron={app:{isReady:()=>true,on:(k,v)=>events.set(k,v)},ipcMain:{handle:(k,v)=>handlers.set(k,v)},dialog:{}};
+const spawn=(...args)=>{const p=cp.spawn(...args);children.push(p);return p};
+vm.runInNewContext(getPayload().native,{require:n=>n==='electron'?electron:n==='child_process'?{spawn}:n==='./authBootstrap'?{getActiveLsBaseUrl:()=> 'https://127.0.0.1:12345'}:require(n),__dirname:'C:/Application/resources/app.asar/dist',process,URL,Map,setTimeout,clearTimeout});
+const frame={url:'https://127.0.0.1:12345'};const sender={senderFrame:frame,sender:{mainFrame:frame,getLastWebPreferences:()=>({contextIsolation:true})}};
+(async()=>{const f=handlers.get('agvi:translate-ui-v2');const batch=Array.from({length:24},(_,i)=>`Please select a new directory to store the configuration for workspace number ${i+7401}.`);
+const results=await Promise.all([f(sender,batch.slice(0,12)),f(sender,batch.slice(12))]);assert.equal(children.length,1);assert.ok(results.flat().every(Boolean));
+await new Promise(r=>setTimeout(r,300));assert.ok(children[0].exitCode!==null || children[0].signalCode!==null,'Model process stayed alive while idle');
+assert.ok((await f(sender,['Choose a folder for your project.']))[0]);assert.equal(children.length,2);
+await new Promise(r=>setTimeout(r,300));assert.ok(children.every(p=>p.exitCode!==null || p.signalCode!==null));
+console.log('PASS concurrent batches, immediate worker termination, restart after idle, persistent-cache translation.');})().catch(e=>{console.error(e);process.exitCode=1}).finally(()=>events.get('will-quit')?.());

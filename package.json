@@ -1,0 +1,12 @@
+{
+  "name": "antigravity-tieng-viet",
+  "version": "2.0.3",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "test": "node tests/test-integration.cjs && node tests/test-lifecycle.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.56.1"
+  }
+}

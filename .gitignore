@@ -1,0 +1,17 @@
+/build/
+/dist/
+/node_modules/
+/payload.zip
+**/__pycache__/
+**/cache/
+**/backups/
+**/state.json
+**/runtime-status.json
+**/*-report.json
+*.exe
+*.dll
+*.asar
+*.bin
+*.zip
+.env
+.env.*

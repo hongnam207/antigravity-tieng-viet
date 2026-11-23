@@ -1,0 +1,10 @@
+Antigravity Vietnamese Offline 2.0.3
+Windows x64. Antigravity desktop Electron ASAR family.
+Model: Helsinki-NLP/opus-mt-en-vi @ 989c9fb9ec63987901022baf0182dcec3e149be6
+Weights: original verified against Hugging Face LFS SHA256; locally converted to CTranslate2 INT8.
+Translation: CPU only, two threads, no remote service or network listener.
+CPython 3.12.10 official embedded distribution; CTranslate2 4.8.4; SentencePiece 0.2.1; NumPy 2.5.5.
+Node.js v24.22.3 official win-x64 binary, SHA256 86fc4785327db5f5c7558dc6156c543b433c313e813a222e088086222ab4afa6.
+No cache, application backup, machine-specific state, user conversation, or credentials included in the installer.
+
+Model loads only on cache misses. Worker exits immediately once outstanding translation batches finish.

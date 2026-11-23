@@ -1,0 +1,45 @@
+ANTIGRAVITY TIẾNG VIỆT OFFLINE 2.0.3
+
+Cài đặt
+Thoát Antigravity, kể cả ở khay hệ thống. Chạy bộ cài, chọn đúng Antigravity.exe,
+rồi bấm Cài đặt. Máy cần Windows 10/11 64-bit, CPU x64 và đủ dung lượng đĩa.
+Bộ cài có sẵn Python, Node.js, bộ chạy mô hình và trọng số; không cần cài thêm
+các công cụ đó. Không cần GPU, API key hay tài khoản dịch vụ dịch.
+
+Cách dùng
+Mở bằng biểu tượng Antigravity tiếng Việt trên Desktop hoặc trong Start.
+Các bản dịch chuẩn được áp dụng ngay. Chữ mới trong các nút, menu và trang
+cài đặt được đưa vào hàng đợi và dịch bằng mô hình Anh–Việt trên CPU.
+Lần đầu gặp chữ mới có thể thấy tiếng Anh trong lúc mô hình nạp và dịch.
+Kết quả được lưu trong cache/translations.json để dùng lại ở lần mở sau.
+Mô hình chỉ nạp khi thiếu bản dịch; tiến trình Python thoát khi xử lý hết các lô đang chờ.
+Không có máy chủ HTTP, không mở cổng mạng và không gửi chữ đi dịch trực tuyến.
+
+Phạm vi
+Mô hình Helsinki-NLP OPUS-MT Anh–Việt, chuyển INT8, trọng số khoảng 74 MB.
+Tổng dung lượng bộ cài và thư mục cài lớn hơn vì có các thư viện chạy mô hình.
+Chỉ dịch chữ giao diện có thể nhận diện. Không dịch nội dung hội thoại, mã,
+giá trị ô nhập, tên cuộc trò chuyện và tên tệp. Chữ không chắc thuộc giao diện
+được giữ nguyên. Một số câu mới hoặc tên dự án không được tự dịch.
+Mô hình nhỏ có thể dịch chưa đúng thuật ngữ hoặc thiếu ý trong câu dài.
+Từ điển chuẩn được ưu tiên; có thể bổ sung vi.json để chỉnh cách dịch.
+Nếu bộ dịch gặp lỗi, giao diện giữ chữ gốc và ứng dụng tiếp tục hoạt động.
+Các hộp thoại hệ điều hành vẫn dùng ngôn ngữ của Windows; hộp thoại đồng bộ
+của ứng dụng ưu tiên từ điển sẵn có để không chặn thao tác trong lúc dịch.
+
+Cập nhật và khôi phục
+Sau khi Antigravity cập nhật, thoát và mở lại bằng biểu tượng tiếng Việt.
+Nếu cấu trúc còn tương thích, bộ dịch được áp dụng lại. Không bảo đảm mọi
+phiên bản tương lai; bộ cài này dành cho họ Antigravity desktop dùng app.asar,
+chưa dành cho bản IDE dựa trên VS Code. Đã kiểm tra trên bản 2.34.0.
+Khôi phục bằng Start > Antigravity tiếng Việt > Khôi phục giao diện gốc.
+Giữ thư mục backups và state.json. Bộ cài không dùng bản đã Việt hóa làm bản gốc.
+Nếu đã dùng bộ cũ, hồ sơ trong thư mục cài được giữ lại. Với bộ rời, chọn
+thư mục có state.json và backups bằng nút Chọn bộ Việt hóa cũ.
+
+Tệp cài nằm tại %LOCALAPPDATA%\AntigravityVietnamese.
+Bản dịch tự tạo, không phải gói ngôn ngữ chính thức của Google.
+Thông tin mô hình và giấy phép được giữ tại MODEL-NOTICE.txt, model/README.md,
+NODE-LICENSE.txt và các thư mục giấy phép của thư viện kèm theo.
+
+Bản 2.0.2 giữ nguyên tên mô hình AI và không dịch lại các bản dịch chuẩn. Nhãn một từ chưa có trong từ điển được giữ tiếng Anh để tránh đoán sai nghĩa.
