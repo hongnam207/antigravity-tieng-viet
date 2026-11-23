@@ -1,4 +1,4 @@
-Antigravity Vietnamese Offline 2.1.1
+Antigravity Vietnamese Offline 2.1.2
 Windows x64. Antigravity desktop Electron ASAR family.
 Model: Helsinki-NLP/opus-mt-en-vi @ 989c9fb9ec63987901022baf0182dcec3e149be6
 Weights: original verified against Hugging Face LFS SHA256; locally converted to CTranslate2 INT8.

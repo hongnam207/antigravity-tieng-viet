@@ -2,7 +2,7 @@
 
 Việt hóa menu, nút bấm và cài đặt của **Antigravity desktop Electron (`app.asar`)** trên Windows x64, bằng từ điển giao diện và mô hình dịch chạy tại máy.
 
-Bộ cài **2.1.1** tích hợp thêm điều khiển Windows qua MCP và preview PDF/DOCX/XLSX/PPTX trong tab. **[Hướng dẫn Windows & Office: cài máy khác, ví dụ, bật/tắt và giới hạn](docs/WINDOWS-OFFICE.md)**.
+Bộ cài **2.1.2** tích hợp điều khiển Windows qua MCP và preview PDF/DOCX/XLSX/PPTX **ngay trong khung tệp bên phải khi bấm vào file trong hội thoại**. Không cần mở trang Office Preview hoặc chọn lại tệp. **[Hướng dẫn Windows & Office](docs/WINDOWS-OFFICE.md)**.
 
 **[Tải bộ cài mới nhất](https://github.com/hongnam207/antigravity-tieng-viet/releases/latest)** · [Xử lý lỗi](docs/TROUBLESHOOTING.md) · [Phát triển](docs/DEVELOPMENT.md)
 
@@ -27,7 +27,7 @@ Bộ cài **2.1.1** tích hợp thêm điều khiển Windows qua MCP và previe
 
 ## Cài đặt
 
-1. Mở [Releases](https://github.com/hongnam207/antigravity-tieng-viet/releases/latest), tải **`Antigravity-Tieng-Viet-Setup-x64-v2.1.1.exe`** trong **Assets**. Không cần tải Source code hoặc payload cho nhà phát triển.
+1. Mở [Releases](https://github.com/hongnam207/antigravity-tieng-viet/releases/latest), tải **`Antigravity-Tieng-Viet-Setup-x64-v2.1.2.exe`** trong **Assets**. Không cần tải Source code hoặc payload cho nhà phát triển.
 2. Thoát hẳn Antigravity, kể cả biểu tượng ở khay hệ thống.
 3. Chạy bộ cài. Kiểm tra thư mục được nhận; nếu chưa đúng, bấm **Chọn…** và chọn thư mục chứa `Antigravity.exe`.
 4. Bấm **Cài đặt**, đợi thông báo hoàn tất.
@@ -37,9 +37,11 @@ Cài theo từng tài khoản Windows. Nếu ứng dụng ở thư mục đượ
 
 ## Windows MCP và Office Preview
 
-Sau khi cài, vào **Tùy chỉnh → Đã cài → Antigravity tiếng Việt · Windows & Office → MCP**; kiểm tra `office-preview` và `windows-control` ở trạng thái Ready. Bấm **Office Preview** dưới mục **Tiện ích** ở thanh bên, rồi **Chọn tài liệu** để xem PDF/DOCX/XLSX/PPTX ngay trong App. Yêu cầu agent dùng `windows_list` để bắt đầu điều khiển Windows.
+Sau khi cài, bấm liên kết tệp local DOCX/XLSX/PPTX/PDF trong hội thoại. Nội dung hiện ngay trong tab tệp ở khung bên phải, tại vị trí trước đây báo “Preview is not available for this file type”. Trang **Office Preview → Chọn tài liệu** vẫn có nếu muốn mở tệp khác thủ công.
 
-Plugin cũng đăng ký viewer theo đuôi tệp, nhưng việc tự thay viewer ở tab file cũ chưa ổn định trên bản 2.34.0 đã thử. Nếu tab vẫn báo không hỗ trợ, dùng mục **Office Preview** đã kiểm chứng thay vì tải file hoặc mở viewer mặc định.
+Bản 2.1.2 bổ sung cơ chế tương thích trong hook ASAR để khung tệp gốc hoạt động trên App 2.34.0 đã kiểm tra. **Cần bộ cài EXE đầy đủ** cho chức năng này; ZIP plugin rời chỉ cung cấp trang/panel Office Preview. Nếu App đã có viewer riêng cho một loại tệp thì giữ nguyên viewer đó.
+
+Để dùng Windows MCP, vào **Tùy chỉnh → Đã cài → Antigravity tiếng Việt · Windows & Office → MCP**, kiểm tra `windows-control` Ready; yêu cầu agent dùng `windows_list`.
 
 Preview tối đa **10 MiB**, chỉ xem; XLSX dùng kết quả công thức đã lưu, PPTX là bản xem chữ/ảnh cơ bản. Công cụ Windows dùng mô hình đang chọn của Antigravity; ảnh/nội dung UI có thể gửi tới dịch vụ mô hình đó, nên phần điều khiển không phải offline. Hai server tách riêng để tắt Windows mà vẫn giữ preview; bộ cài không đổi thiết lập xét duyệt công cụ của bạn. Xem [hướng dẫn đầy đủ](docs/WINDOWS-OFFICE.md).
 
@@ -81,7 +83,7 @@ Nếu thiếu shortcut hoặc bấm không thấy phản hồi, xem [hướng d�
 
 Sau khi khôi phục, mở bằng shortcut **Antigravity tiếng Việt** sẽ áp dụng lại bản Việt hóa nếu ứng dụng còn tương thích. Muốn giữ giao diện gốc, hãy dùng shortcut gốc của Antigravity.
 
-Khôi phục giao diện gốc **không gỡ plugin Windows & Office**; hãy tắt/gỡ plugin riêng trong Tùy chỉnh → Đã cài.
+Khôi phục ASAR gốc sẽ tắt **Việt hóa và preview trực tiếp trong khung tệp**. Việc này **không gỡ plugin Windows & Office**; hãy tắt/gỡ plugin riêng trong Tùy chỉnh → Đã cài.
 
 Khôi phục dùng bản gốc khớp hash, không ghi đè một phiên bản đã đổi không xác định. Muốn xóa hoàn toàn bộ dịch, chỉ xóa `%LOCALAPPDATA%\AntigravityVietnamese` và shortcut sau khi khôi phục thành công. Xóa trước sẽ mất bản sao lưu cần cho khôi phục.
 

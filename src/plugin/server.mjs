@@ -7,7 +7,7 @@ import path from 'node:path';
 import {spawn} from 'node:child_process';
 
 const root=__dirname;
-const server=new McpServer({name:'antigravity-vietnamese-tools',version:'2.1.1'});
+const server=new McpServer({name:'antigravity-vietnamese-tools',version:'2.1.2'});
 const uri='ui://antigravity-vietnamese-tools/office.html';
 if(!process.argv.includes('--windows')){
 server.registerResource('office-preview',uri,{mimeType:'text/html;profile=mcp-app'},async()=>({contents:[{uri,mimeType:'text/html;profile=mcp-app',text:fs.readFileSync(path.join(root,'office.html'),'utf8'),_meta:{ui:{csp:{connectDomains:[],resourceDomains:[]}}}}]}));

@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.1.2
+
+- Sửa đúng khung preview tệp bên phải: bấm tệp local trong hội thoại để xem ngay, không cần chọn lại.
+- Hook chỉ đọc tệp của tab đang được chọn, giới hạn định dạng và 10 MiB; render trong iframe sandbox/CSP không kết nối mạng.
+- Giữ nguyên DOM/header của ứng dụng, xử lý chuyển tab và nút tải lại.
+- Kiểm tra trực tiếp với tệp Word tiếng Việt trong Antigravity 2.34.0; thêm kiểm tra DOCX/XLSX/PDF trong khung gốc.
+
 ## 2.1.1
 
 - Thêm preview PDF local bằng PDF.js, chuyển trang, zoom và văn bản trang.

@@ -31,7 +31,7 @@ Test DOM dùng Playwright và Chrome ở vị trí tiêu chuẩn Windows; đặt
 Kiểm tra giải nén và mô hình bằng bộ cài:
 
 ```powershell
-$p = Start-Process .\dist\Antigravity-Tieng-Viet-Setup-x64-v2.1.1.exe -ArgumentList '--verify', '"C:\Temp\agvi-verify"' -Wait -PassThru
+$p = Start-Process .\dist\Antigravity-Tieng-Viet-Setup-x64-v2.1.2.exe -ArgumentList '--verify', '"C:\Temp\agvi-verify"' -Wait -PassThru
 $p.ExitCode
 ```
 
@@ -54,3 +54,7 @@ Nếu worker lỗi, giao diện giữ chữ gốc. Không dùng Google Translate
 Xem [WINDOWS-OFFICE.md](WINDOWS-OFFICE.md) về giới hạn định dạng và quyền riêng tư. `build/plugin/THIRD-PARTY-LICENSES.txt` gom giấy phép phụ thuộc khi build.
 
 PDF dùng import động để chỉ khởi tạo PDF.js khi mở PDF; parser được bundle local trong trang và dùng fallback cùng luồng để không phụ thuộc worker URL trong sandbox. Kiểm tra điều hướng trang, zoom, đổi file và PDF hỏng trong `tests/test-office-ui.mjs`.
+
+## Preview trong khung tệp gốc (2.1.2)
+
+`npm run test:inline` kiểm tra hook renderer và IPC với native bridge thật: chỉ đọc tab local hiện tại, chặn origin/frame/loại tệp không hợp lệ, đường dẫn tiếng Việt/encode hai lần, hiển thị DOCX/XLSX/PDF trong iframe sandbox/CSP, đổi tab và giữ DOM ứng dụng. Hook tương thích chỉ kích hoạt tại thông báo unsupported-file của App 2.34.0; không thay viewer đã được host hỗ trợ.

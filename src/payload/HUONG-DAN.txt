@@ -1,4 +1,4 @@
-ANTIGRAVITY TIẾNG VIỆT 2.1.1
+ANTIGRAVITY TIẾNG VIỆT 2.1.2
 
 Cài đặt
 Thoát Antigravity, kể cả ở khay hệ thống. Chạy bộ cài, chọn đúng Antigravity.exe,
@@ -44,4 +44,6 @@ NODE-LICENSE.txt và các thư mục giấy phép của thư viện kèm theo.
 
 Bản 2.0.2 giữ nguyên tên mô hình AI và không dịch lại các bản dịch chuẩn. Nhãn một từ chưa có trong từ điển được giữ tiếng Anh để tránh đoán sai nghĩa.
 
-Bản 2.1.1 tích hợp Windows MCP và Office Preview. Vào Tùy chỉnh > Đã cài > Antigravity tiếng Việt · Windows & Office > MCP để kiểm tra. Hai server office-preview và windows-control tách riêng. Preview chỉ xem PDF/DOCX/XLSX/PPTX tối đa 10 MiB; có thể mở panel Office Preview và chọn tài liệu nếu tab mặc định chưa nhận viewer. Điều khiển Windows dùng mô hình của Antigravity; ảnh và nội dung UI có thể gửi tới dịch vụ đó. Khôi phục giao diện gốc không gỡ plugin: tắt/gỡ riêng trong Tùy chỉnh. Hướng dẫn: https://github.com/hongnam207/antigravity-tieng-viet/blob/main/docs/WINDOWS-OFFICE.md
+Bản 2.1.2 tích hợp Windows MCP và Office Preview. Vào Tùy chỉnh > Đã cài > Antigravity tiếng Việt · Windows & Office > MCP để kiểm tra. Hai server office-preview và windows-control tách riêng. Preview chỉ xem PDF/DOCX/XLSX/PPTX tối đa 10 MiB; có thể mở panel Office Preview và chọn tài liệu nếu tab mặc định chưa nhận viewer. Điều khiển Windows dùng mô hình của Antigravity; ảnh và nội dung UI có thể gửi tới dịch vụ đó. Khôi phục giao diện gốc không gỡ plugin: tắt/gỡ riêng trong Tùy chỉnh. Hướng dẫn: https://github.com/hongnam207/antigravity-tieng-viet/blob/main/docs/WINDOWS-OFFICE.md
+
+Từ 2.1.2: bấm tệp local trong hội thoại để xem ngay trong khung bên phải. Không cần mở trang Office Preview hoặc chọn lại tệp. Cần cài EXE đầy đủ. Khôi phục ASAR gốc tắt cả Việt hóa và preview trực tiếp; plugin Windows & Office được tắt/gỡ riêng.

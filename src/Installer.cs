@@ -255,7 +255,7 @@ internal static class Program {
                 try {
                     await Task.Run(()=>InstallCore(chosen,UserInstall,true,previousBundle));
                     status.Text="Đã cài xong. Mở bằng biểu tượng Antigravity tiếng Việt trên Desktop.";
-                    MessageBox.Show(this,"Cài đặt thành công.\r\n\r\nMở Antigravity tiếng Việt trên Desktop. Trong Customizations > Installed, kiểm tra plugin Windows & Office. Bấm Office Preview ở thanh bên rồi Chọn tài liệu để xem PDF/DOCX/XLSX/PPTX.\r\n\r\nCông cụ Windows có thể thao tác máy; giữ chế độ duyệt công cụ phù hợp. Nếu chưa thấy plugin, thoát hẳn rồi mở lại App.\r\n\r\nKhôi phục giao diện gốc trong Start chỉ gỡ bản Việt hóa; tắt/gỡ plugin riêng trong Customizations.",Title,MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    MessageBox.Show(this,"Cài đặt thành công.\r\n\r\nMở Antigravity tiếng Việt trên Desktop. Trong Customizations > Installed, kiểm tra plugin Windows & Office. Bấm tệp trong hội thoại để xem trực tiếp ở khung bên phải.\r\n\r\nCông cụ Windows có thể thao tác máy; giữ chế độ duyệt công cụ phù hợp. Nếu chưa thấy plugin, thoát hẳn rồi mở lại App.\r\n\r\nKhôi phục giao diện gốc trong Start tắt Việt hóa và preview trực tiếp; tắt/gỡ plugin riêng trong Customizations.",Title,MessageBoxButtons.OK,MessageBoxIcon.Information);
                 } catch (Exception error) {
                     status.Text="Chưa hoàn tất. Xem thông báo rồi thử lại.";
                     MessageBox.Show(this,error.Message,Title,MessageBoxButtons.OK,MessageBoxIcon.Warning);

@@ -1,12 +1,13 @@
 {
   "name": "antigravity-tieng-viet",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "private": true,
   "license": "MIT",
   "scripts": {
     "test": "node tests/test-integration.cjs && node tests/test-lifecycle.cjs",
     "build:plugin": "node scripts/build-plugin.mjs",
-    "test:plugin": "node tests/test-plugin.mjs && node tests/test-office-ui.mjs"
+    "test:plugin": "node tests/test-plugin.mjs && node tests/test-office-ui.mjs",
+    "test:inline": "node tests/test-inline-preview.mjs"
   },
   "devDependencies": {
     "esbuild": "0.28.2",

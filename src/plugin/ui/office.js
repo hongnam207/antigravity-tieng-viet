@@ -4,7 +4,7 @@ import {renderAsync} from 'docx-preview';
 import ExcelJS from 'exceljs';
 import JSZip from 'jszip';
 
-const app=new App({name:'Office Preview · Tiếng Việt',version:'2.1.1'},{},{autoResize:false});
+const app=new App({name:'Office Preview · Tiếng Việt',version:'2.1.2'},{},{autoResize:false});
 const view=document.querySelector('#view'),status=document.querySelector('#status'),tabs=document.querySelector('#tabs');
 let generation=0;
 const node=(tag,text,cls)=>{const el=document.createElement(tag);if(text!==undefined)el.textContent=text;if(cls)el.className=cls;return el};
@@ -37,6 +37,9 @@ document.querySelector('#picker').onchange=async event=>{
  try{if(file.size>limit)throw Error('Tệp vượt giới hạn 10 MiB.');const bytes=new Uint8Array(await file.arrayBuffer());if(ticket!==generation)return;if(file.name.toLowerCase().endsWith('.pdf')){await pdfPreview(bytes,view,tabs,status);return;}const zip=await checkZip(bytes);const ext=file.name.split('.').pop().toLowerCase();if(ext==='docx'){await renderAsync(bytes,view,undefined,{inWrapper:true,breakPages:true,ignoreFonts:true,useBase64URL:true,renderAltChunks:false});status.textContent='DOCX · Chỉ xem; bố cục có thể khác Word.';}else if(ext==='xlsx')await workbook(bytes);else if(ext==='pptx')await presentation(zip);else throw Error('Định dạng chưa hỗ trợ.');}catch(e){if(ticket===generation){status.textContent='Không thể xem trước';view.replaceChildren(node('div',e.message,'error'));}}
 };
 app.ontoolresult=result=>{if(result.structuredContent?.file)open(result.structuredContent.file)};
+let inlineMode=false;
+addEventListener('message',event=>{const data=event.data;if(event.source!==parent||data?.type!=='agvi:inline-preview-v1'||typeof data.name!=='string'||typeof data.blob!=='string'||data.blob.length>Math.ceil(limit/3)*4+4)return;inlineMode=true;try{const bytes=Uint8Array.from(atob(data.blob),c=>c.charCodeAt(0));const transfer=new DataTransfer();transfer.items.add(new File([bytes],data.name));const picker=document.querySelector('#picker');picker.files=transfer.files;picker.dispatchEvent(new Event('change'));}catch(e){status.textContent='Không thể đọc dữ liệu xem trước.';}});
+document.addEventListener('click',event=>{if(inlineMode&&event.target.closest?.('a'))event.preventDefault();},true);
 
 status.textContent='Chọn tài liệu PDF/DOCX/XLSX/PPTX để xem tại máy.';
 app.connect().catch(e=>{if(!view.children.length)status.textContent='Kết nối host chưa hoàn tất; bạn vẫn có thể chọn tài liệu trực tiếp.'});

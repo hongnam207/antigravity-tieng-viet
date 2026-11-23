@@ -1,9 +1,9 @@
-# Windows MCP và Office Preview (2.1.1)
+# Windows MCP và Office Preview (2.1.2)
 
 ## Cài trên máy khác
 
 1. Máy cần Windows 10/11 x64 và **Antigravity App desktop 2.34.0+**, không phải bản IDE dựa trên VS Code.
-2. Tải `Antigravity-Tieng-Viet-Setup-x64-v2.1.1.exe` từ Releases. Không cần tải payload hoặc cài Node/Python riêng.
+2. Tải `Antigravity-Tieng-Viet-Setup-x64-v2.1.2.exe` từ Releases. Không cần tải payload hoặc cài Node/Python riêng.
 3. Lưu công việc và thoát hẳn Antigravity, kể cả khay hệ thống.
 4. Chạy bộ cài, chọn thư mục chứa `Antigravity.exe`, bấm **Cài đặt**.
 5. Mở **Antigravity tiếng Việt** trên Desktop.
@@ -33,13 +33,11 @@ Giữ chế độ duyệt công cụ phù hợp với công việc. Không đưa
 
 ## Xem PDF/DOCX/XLSX/PPTX trong tab
 
-Cách đã kiểm chứng trên App 2.34.0:
+Cách mặc định từ bộ cài EXE **2.1.2**: bấm tệp local trong hội thoại để xem ngay trong tab tệp ở khung bên phải. Không phải mở trang Office Preview hoặc chọn lại file. Đã kiểm tra trực tiếp với tệp Word tiếng Việt và tab khôi phục từ phiên cũ trên App 2.34.0.
 
-1. Bấm **Office Preview** dưới mục **Tiện ích (Plugins)** ở thanh bên.
-2. Bấm **Chọn tài liệu**, chọn PDF/DOCX/XLSX/PPTX trên máy rồi bấm Open.
-3. Nội dung hiện ngay trong App; với XLSX, bấm tên sheet để chuyển.
+Khi viewer mặc định báo không hỗ trợ, hook tương thích sẽ đọc đúng file của tab đang được chọn và hiển thị tại chỗ trong iframe cách ly. Chỉ nhận PDF/DOCX/XLSX/PPTX local tối đa 10 MiB; không đọc URL web, UNC/network share hoặc loại tệp khác. Không truyền đường dẫn tùy ý từ trang sang main process. Nội dung không gửi tới mô hình hoặc dịch vụ preview ngoài.
 
-Cũng có thể yêu cầu agent gọi `office_preview` để mở panel. Plugin đăng ký thêm custom file viewer theo phần mở rộng, nhưng việc tự thay viewer của tab file cũ chưa ổn định trên bản 2.34.0 đã thử. Nếu tab vẫn báo “Preview is not available”, dùng mục **Office Preview** ở thanh bên. Không cần tải tài liệu lên dịch vụ khác.
+Trang Office Preview ở thanh bên vẫn dùng được để chọn một tệp khác thủ công. ZIP plugin rời chỉ cung cấp trang/panel này; cần EXE đầy đủ để cài hook preview trong khung gốc. Nếu vẫn thấy thông báo cũ sau nâng cấp, thoát hẳn App và mở qua shortcut Antigravity tiếng Việt; kiểm tra đã dùng EXE 2.1.2, không chỉ ZIP. Cấu trúc/phiên bản App tương lai có thể cần bản tương thích mới.
 
 | Loại | Hỗ trợ | Giới hạn |
 | --- | --- | --- |
@@ -56,7 +54,7 @@ Chỉ xem, không chỉnh sửa hoặc lưu đè. Không chạy macro. Tệp đ�
 
 - **Chỉ dùng preview:** trong tab MCP của plugin, mở menu của `windows-control` để tắt server hoặc tắt các công cụ Windows. Giữ `office-preview` hoạt động.
 - **Tắt/gỡ cả hai:** dùng menu plugin ở **Tùy chỉnh → Đã cài** và chọn Disable/Uninstall tương ứng. Có thể dùng `agy plugin disable antigravity-vietnamese-tools` / `agy plugin uninstall antigravity-vietnamese-tools` nếu máy có CLI.
-- **Khôi phục giao diện tiếng Anh:** dùng shortcut **Khôi phục giao diện gốc** như README. Thao tác này chỉ khôi phục ASAR, không gỡ plugin; cần tắt/gỡ plugin riêng.
+- **Khôi phục giao diện tiếng Anh:** dùng shortcut **Khôi phục giao diện gốc** như README. Thao tác này khôi phục ASAR, tắt Việt hóa và preview trực tiếp, không gỡ plugin; cần tắt/gỡ plugin riêng.
 - Cài lại bộ 2.1.0 sẽ đăng ký lại plugin. Nếu không muốn plugin sau lần nâng cấp, tắt/gỡ lại trong Antigravity.
 
 ## Khi có lỗi
