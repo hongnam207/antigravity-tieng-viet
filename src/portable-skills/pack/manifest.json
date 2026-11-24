@@ -1,0 +1,1105 @@
+{
+  "schema": 2,
+  "version": "2.0.0",
+  "adaptations": [
+    {
+      "source_name": "local-runtime",
+      "target": "agy-local-runtime",
+      "status": "local-helper-tested",
+      "sources": []
+    },
+    {
+      "source_name": "documents",
+      "target": "agy-documents",
+      "status": "workflow-adapted",
+      "sources": [
+        {
+          "path": ".codex\\plugins\\cache\\openai-primary-runtime\\documents\\26.1123.11515\\skills\\documents\\SKILL.md",
+          "skill_sha256": "ec359f860a595072fd7f6daefc00fcc43dc5a95b56e323a9b274ff9495212c1a",
+          "file_signature": {
+            "agents/openai.yaml": "8fc41ecccfae0d0310060235a43f9c4aea6e6c2aa05cec737a59599968ec22c4",
+            "assets/file-document.png": "faec8ad51ed2c8db6bb7ba51aa4be1d5d88b80974f7f3c167d56781fbb8d3218",
+            "examples/end_to_end_smoke_test.md": "2abd9bdec48f2dcb905bf950423e021b61ca8169f56bcff58b4b3131663aec50",
+            "LICENSE.txt": "d31e7017b70c25daf83b7b01804816ddad6bd984b724e03d52b20b9a81746bd1",
+            "manifest.txt": "8ea87b8ff8bd1a83d2f0feeba4e6aa21e522d196f0174e3d10a053ec6ac9ab51",
+            "ooxml/comments.md": "aa8004a76499c36a4046041eaff8966fd3ec43fab3a48e1b158e95534ec61557",
+            "ooxml/hyperlinks_and_fields.md": "88b8615aabd48727086208d981958dc1d74a4432b81060707d97c3ded9d7764c",
+            "ooxml/rels_and_content_types.md": "d64fe64dc3daa56f4c90baa9098f94f6fcf52e5d4ce041ab548392e06c9691c2",
+            "ooxml/tracked_changes.md": "9293157ade79498db26fdb79b3d7835896f4f87ebb73c28eddc6a5e48aae47f3",
+            "references/template-elicitation.md": "ceb9dc18ab22e26cc03eaf7fe62381f5be34a836dd0766b6caa99a099cb3683c",
+            "render_docx.py": "8b48b8f05f30cc6c7b5a7bd8e18e7ea93a61aec1ea601026a3358b2105f0903a",
+            "scripts/a11y_audit.py": "a832e288503704a24ae4e7d9bde4444dee01c835c651f746f19167c4ef4632bf",
+            "scripts/accept_tracked_changes.py": "7842a79bc73941a50318bfb4178fd9c01cec8984a4f10565a08f485282799f06",
+            "scripts/add_tracked_replacements.py": "2c66d170f70335dbfab691e6d76c73e49dd14b753ead0728a55dbf228c510ba5",
+            "scripts/apply_template_styles.py": "47dbba6245fc1f9b5237cb975981ce5c42bb96d513a030ba93c3ad80497ecde9",
+            "scripts/captions_and_crossrefs.py": "2d8db89e3f18b7287877c61b9851d083163d3888c8e8d57b52708c1e63db6d03",
+            "scripts/comments_add.py": "78fbfc023c644466fd0eb9cdf2ac55983bb6aed1c070e8e7a9126b1a6233efe0",
+            "scripts/comments_apply_patch.py": "0c82868fd104f121a830e0394cbf6d6a288e84d8aafddb334ae1298de178edc2",
+            "scripts/comments_extract.py": "9eedfdb515111b77cc04bc30030bae13de907ff2202b838cc9ba37a9b1060c09",
+            "scripts/comments_strip.py": "b3b27cd86527248a54b3794e7e907b244ea4a2e0e9efa726485aa0b296b906ab",
+            "scripts/content_controls.py": "783b38cdbc36864c757c20ec3473d033ead50f2db78b1741405481d070d7c56c",
+            "scripts/docx_ooxml_patch.py": "39a998f10e786d892854246accff85c86548fd58ed1429e94eb98a984023f7bb",
+            "scripts/docx_table_to_csv.py": "fa993cce50372ae2f647387547d5037c9eca66f0bd6d7f94bc0b2ef481c0d55e",
+            "scripts/fields_materialize.py": "d8d0cfe5b0f637e5324bd4ac7d5f384953167acdc247987f491a7d00b4d51889",
+            "scripts/fields_report.py": "807537b56e333c613eac74c4cf288c88908bec5a450d7018c612afd5ef879af7",
+            "scripts/flatten_ref_fields.py": "01e1089664f005e9aa4590dccc4156addc49c9668a8fbb404bde04fe5678cb39",
+            "scripts/footnotes_report.py": "3318c8d535beeee94db3496d80e42a03aeb6522e20f4a4776771f7be677919cb",
+            "scripts/google_docs_title_sanitize.py": "c8dafcef80220593411103ea3caefaa221e0ec7970bf31237f6ffbe762b0d4bf",
+            "scripts/heading_audit.py": "6c95509da0932cf870ead927a5d9f8d0170cdf31d2f6718d64a3641b8f3931dc",
+            "scripts/images_audit.py": "57443a088015fa7a3f28b1f2785d0839cd78b6c6f6dd08eee9601bd7b840bb2c",
+            "scripts/insert_note.py": "9584b502051317923e183b3f45fb78cbb855e1a8e944948976ea854e18f4e5ed",
+            "scripts/insert_ref_fields.py": "4b20bbc5c297d7f607db6428e6ad00580c5411c949dfe52fb13710d7301c917c",
+            "scripts/insert_toc.py": "b069ad3a0c1824742e31c84f417f08b9abba7aff236494544f9a22055ed68943",
+            "scripts/internal_nav.py": "53e1695c08f1abb81b4cd07c97c7e27019214f7dda0e37ca84697bce4cc01292",
+            "scripts/make_fixtures.py": "c11118357e78084345544c2c232c7d0fc785e766c7c7fcc481f59abf4154968c",
+            "scripts/merge_docx_append.py": "0fac13945db9cf61b9cfaa708862dd7ee37fb02d72ae1e8b4745c38ba636d414",
+            "scripts/privacy_scrub.py": "ae8d9bc7ef52cc91370a17070f4ee12b400fa7baf2af0ee403099d7762d072a4",
+            "scripts/redact_docx.py": "cd02f988732823adb6c1524398bf499cf7d93236871262bbab0074b95b7f4310",
+            "scripts/render_and_diff.py": "7b2d613289047a54e8d747520f079c276ab899bd99f76556d5c2827bef2ddb67",
+            "scripts/section_audit.py": "c718d416f0d7512ceadc07f76fefd42d633f443dda3412b0722470ce0302d482",
+            "scripts/set_protection.py": "3a9fa60ee0fe11ba40a97b84ea1b3a10c8595173aedb35f5b95e18911a91bf14",
+            "scripts/style_lint.py": "52e485a8fb96dda954a7f7e88ce3a59714ee1a4c945a41e7dff0d1d77ee5da4d",
+            "scripts/style_normalize.py": "9e293590db1e6b71d932dc3b811d9f8b6d1a4351dc07f8d1ccccd868dcddafe0",
+            "scripts/table_geometry.py": "c792883c6785663588e80900b73f1bbf696a5e48dd2d56718af3bfbfa2d2b42e",
+            "scripts/watermark_add.py": "44f7556f7e6a57ab6ac78f7b9ff35b78e6fa10f2b0c94cf4dc12e5b135330542",
+            "scripts/watermark_audit_remove.py": "ed2b0eb4d58970e8f215656f130240c6bd561fdd4fd1b4887366d7ec055ce156",
+            "scripts/xlsx_to_docx_table.py": "181c3bc9fd8789aab352df984da5ef0cccc4d664a967f51dccaab79815e3c9f2",
+            "SKILL.md": "6fe8b617533549d7b4ab74c6fbf0b2fd6112bf6caae2fceff2c35ab2f8e5a368",
+            "tasks/accessibility_a11y.md": "951dca7ba7e520792776a636c22e512a9a3c53699c6da80c5c3e47b0690c1374",
+            "tasks/captions_crossrefs.md": "20a50a2663b2d020d8a7e1bd3a31ae60a45ba41e40b437c9ada4e958987c421f",
+            "tasks/clean_tracked_changes.md": "6bd628bce5a571b73b59993a474bae039a7ea2e63e85f1292996688e1e2fa446",
+            "tasks/comments_manage.md": "2ec577fca8ef24d2ee3df9bbd3268eda9ca54a84169499c2fbb293d08a3bbbe0",
+            "tasks/compare_diff.md": "e06551fbfadd651aa761ba497c04c98449150ddd61ae1221f0ec6f9947fe30a9",
+            "tasks/create_edit.md": "a842b20c8709f8bc19526de246e9f8722b4304d30c7a3d9fb7b111fdd6f8ec65",
+            "tasks/equations.md": "add25da4ccc4a796db1dd4e793e0b45c68c355d531495df9b42539d2076db947",
+            "tasks/fields_update.md": "1ea14774b8e39b37884187e98059e0829e6bc9e0db502b26d4aea38ab68a4148",
+            "tasks/fixtures_edge_cases.md": "41718f5b067990ca5e32f4065bb24ec152b3e9ec110fad6e81e81cc08af48cef",
+            "tasks/footnotes_endnotes.md": "6e8bd0a290fc5261e85c2dfcfcde483c685a0cacd00b24950f1fadad8b7b7072",
+            "tasks/forms_content_controls.md": "d09c066658b0fd8cda6fc51413d57f37dfc12d6828799f52a6137cba20568ec7",
+            "tasks/headings_numbering.md": "36bbf196fecac25e2e8c1239356fa2af6994a8939048eb7b59f14d2c5bc1999c",
+            "tasks/images_figures.md": "482e14799b7021a9c191b320c60e492ab58f6f36a16187586c7f5bff38c85b45",
+            "tasks/multi_doc_merge.md": "9706902b4f91fd8e9af87297a8a66e2767c512a357511ca3ae9bcc56f1a4cd35",
+            "tasks/navigation_internal_links.md": "33ee4fa5c4e051a0216728a43f92d4de8319169080834b008c48a837bc5acdbd",
+            "tasks/privacy_scrub_metadata.md": "6a1360d873bcade5dd2989f5406ea1c415dbcb52da25cc6c3580da3126880b93",
+            "tasks/protection_restrict_editing.md": "97024dcc16af3b3666a2d1fc7ae8199f18d881ea62cdb367bd4d37ad0e9e8f53",
+            "tasks/read_review.md": "ed1bce5450e03011225dbd2974f307cd5dec6fa48bde0a071e4907fd06f6bb16",
+            "tasks/redaction_anonymization.md": "df3b89d5bacc8405e73f4ec16056a78dc655c6d181086a1b37464038cae2bd02",
+            "tasks/sections_layout.md": "3b36b7f96ee095c66d4e3d24681b0b9cd1b6b82b1b3b5491aeb748545c89f5cf",
+            "tasks/style_lint_normalize.md": "993bb9c5129dc6ccb63d28b95f4e3bc5f716eee9fd6a6c75c106031ed42b12e8",
+            "tasks/tables_spreadsheets.md": "eeb08bc4d64db98679a5648a041f7786dca160f35c0909a10b7963e1af3f88db",
+            "tasks/templates_style_packs.md": "a75db63fcdfd135bab27b164fe7747adda75c63501e6300d7eb5d56b9fc6a580",
+            "tasks/toc_workflow.md": "ae2c36431d7ba8f7be1fad51c5af79831f4e38441060ca5fb0058247a54e9ab9",
+            "tasks/verify_render.md": "e94db9fefda34eefb65ea527467d8307eb0e834dca2705b04d027a426ebc9d9b",
+            "tasks/watermarks_background.md": "9f87e23d4b5e54edb1560367e231bb3c0a6ef88193c600af8842d8537dcb9757",
+            "template-create.md": "f02df8f6fa8f764de7a9b0ed4dcd38ae3560df364edd259b127bf53c3f496dd3",
+            "template-distill.md": "dd01e59b5ffc7fb28f43fd4bd0eeb02a7d0e881f7d24780d195e6b3f6fc1f658",
+            "troubleshooting/libreoffice_headless.md": "929b2b124ce2e65b3de17565a8aad2ff9d569f38ae648ec7ca0e3bed87041ae8",
+            "troubleshooting/run_splitting.md": "37df942902847797e8060308121d3db10273f71fd9dac748e0157e3c29624b85",
+            "writing_quality.md": "f3b37e02e3a2b4890f036ae9f279c2f3ce673b9b2c2d0dd893b998b028261129"
+          }
+        }
+      ]
+    },
+    {
+      "source_name": "spreadsheets",
+      "target": "agy-spreadsheets",
+      "status": "workflow-adapted",
+      "sources": [
+        {
+          "path": ".codex\\plugins\\cache\\openai-primary-runtime\\spreadsheets\\26.1123.11515\\skills\\spreadsheets\\SKILL.md",
+          "skill_sha256": "07193edc35b521df08035b0f73d093dc90b46d756aa58ba0157b3e1038c4531b",
+          "file_signature": {
+            "agents/openai.yaml": "18eb739db3a18e7d1bbd2c17b6884eff011f9b07814ab23216aba926b4de9cd7",
+            "artifact_tool_docs/API_QUICK_START.md": "313e2256d212671638006006926bd80474ba04c9347d2caff7f575e9ea958ab2",
+            "artifact_tool_docs/DATA_TABLES.md": "627423c5c263a0df909c3f7b2253098d80a2c10f068c0756a828d68509d3021e",
+            "artifact_tool_docs/SPARKLINES.md": "284d40cb8624604c638bd3131b004db73fc193bce421e0a085959e0ea6f1afef",
+            "assets/file-spreadsheet.png": "3a1c5e6c52a1877942b8ef8654247fbe1c4a82f6df8ef464dc99983fc72cd6fb",
+            "domain_guidance/financial_models.md": "3169cc0e2453f3c34f63ef639aab22abc5686c6e2639f1d4ad7dc0235e8480ee",
+            "domain_guidance/healthcare.md": "8edae030b3abb0ef178f5a38691f64d7d9f4a462a70c0656ae8650605363f921",
+            "domain_guidance/marketing_advertising.md": "b2e087facba8e407fb5d47d55505ea544ca7c7ff5d402fd6a535093df740d086",
+            "domain_guidance/scientific_research.md": "bad46ddb8561c02b5460cd8dcb9bc9018b8b24df03a6688af7b9a3977b5b298c",
+            "features/charts.md": "a5bb73e5a3c0f7ec44cf0737d5dc25ae690e420a99d37e23cf8144d8316f56a3",
+            "references/image-references.md": "7fe546860468950ed80f428c79eea269383aa30f421b957546666ee15161e6b8",
+            "references/read_only_qna.md": "993fa777f0f3003c2a1c3b2021a1f9d78f7a177620603e47cc9cff097cf156fd",
+            "references/template-elicitation.md": "3f87388cf81f6cbc72949a6842b614bbc373238bf0f52f7d43d25e9b4dab757a",
+            "routing/google_sheets.md": "1f55af62cc2819f5610a35abde281aa7b0b105ef6edb2c49996809760ddc0685",
+            "SKILL.md": "c1f1792e4bc28379df9d9922b919a67f247363fa30fc25ef4bc5cc641ce05c16",
+            "style_guidelines.md": "a0e328147991a4acc3d867d8e10a0a6697373ff2fe43eefd41646c83b29ad630",
+            "workflows/create_workflows.md": "b24cbf85c4358c2269352bf44002ad5a1e24174983010a836f5ead6e6c0b3958",
+            "workflows/edit_workflows.md": "d195ef03edbb07036706659bfc899b97afd0aa6121f7d607c1d1e0cd8a47f8e8"
+          }
+        }
+      ]
+    },
+    {
+      "source_name": "presentations",
+      "target": "agy-presentations",
+      "status": "workflow-adapted",
+      "sources": [
+        {
+          "path": ".codex\\plugins\\cache\\openai-primary-runtime\\presentations\\26.1123.11515\\skills\\presentations\\SKILL.md",
+          "skill_sha256": "3605bb9bdcffe8f5eb93f6e1e9a3d2578c990c7b0515dd7976c98e525ab29de4",
+          "file_signature": {
+            "agents/openai.yaml": "35fa03254b9d9e2c859a2e1d343406df161e70c07af43a352fc6424d01c03776",
+            "artifact_tool_docs/api/API_DOCS.md": "d84ac9d97358d00349f555e6042519f52c1c34ea56ea929246a094a2521af352",
+            "artifact_tool_docs/api/references/auto-layout.spec.md": "e58ac421e5aed6e944cab4fb3e59e3d5b33874844485fe89571ee2b6e3319051",
+            "artifact_tool_docs/api/references/charts.spec.md": "d05629f6ea9d75a84a877360ff156749adef8336deac7c4d2ade2c9d4ecca78d",
+            "artifact_tool_docs/api/references/comments.md": "7289cf3218ca948898f3d38a0a7951062b719277472c18ce2f672314dea0c416",
+            "artifact_tool_docs/api/references/connectors.md": "6b99f5e3962d54d947bc9d3b54802b736c996b0f4c043ed18e0d89fef273ac7f",
+            "artifact_tool_docs/api/references/cookbook/imported-deck.md": "39bf668bea76b5e7dc5ab452741bf0f9e6241ad26f3621b36ac312ceb7e0fb45",
+            "artifact_tool_docs/api/references/cookbook/layout.md": "a9fdbdba442b3ed2e27ca75de358b4f0e475d2c82cd0d1e309fbdae425bd3aa1",
+            "artifact_tool_docs/api/references/fill.spec.md": "0c081891cb2355aa9a562a7f43cf168d2fafad8aa6af6ae11ed62115c162fb81",
+            "artifact_tool_docs/api/references/help.md": "ff40023e1f3465b111e289634b33a908aa183d592e0f8121133e7ac0c1f7662f",
+            "artifact_tool_docs/api/references/images.spec.md": "aec35bd9a5cb1c7475355554d13ead479ae1efaffdeaed10cb4bf301c0ad4f6e",
+            "artifact_tool_docs/api/references/inspect.md": "8c24f99ff340909e5ef52c0b94cf9bf389b382f7c497226cb4125dd27ad322ed",
+            "artifact_tool_docs/api/references/inspect.schema.json": "1a60266cc79bef1ff04ae15143480495c206a3fd5e2b48002d2efbb77a82e134",
+            "artifact_tool_docs/api/references/jsx.md": "0a7308e4626b3f7a2daa959faf94d6f923365f1a107c05705e466be982342fc3",
+            "artifact_tool_docs/api/references/layout.spec.md": "0f003841d75c1c6243c990aaf090c7ae1aaa878d4d830032f07744521f4075e6",
+            "artifact_tool_docs/api/references/master.spec.md": "25f5032926c3bd7345ca46ca4bc7401d837e8c3d4645853ebd0c21e4d842ac4f",
+            "artifact_tool_docs/api/references/presentation.spec.md": "b339a4f8401738aed157bb33d8a507dd95f8f6e8b52b07f8e766804957b3ebb0",
+            "artifact_tool_docs/api/references/rich-text.spec.md": "a0e6eb63b858acaa6079c5587c3d3c31b3aeef602b8a055eb6f5e3c9590825da",
+            "artifact_tool_docs/api/references/shapes.spec.md": "981a6da5452713ce61b4f7614d068031e344b11e1c45575c44fa632fe0de14ae",
+            "artifact_tool_docs/api/references/slide.spec.md": "e5883418959a97231ddfc6332dc0645dd3a4d36962adfd03977d4eae253f7a6a",
+            "artifact_tool_docs/api/references/speaker-notes.spec.md": "52b09b2cf44fa3eb5224a7507a784cea17b37601520d587fb9e29a4ea3666eb9",
+            "artifact_tool_docs/api/references/styles.spec.md": "142d7abd0e54404fa49067f9a294bf20512540b89d304174386c4db90a73e74c",
+            "artifact_tool_docs/api/references/tables.spec.md": "5d294873f5ca630f4400f627e176517b170ef1a61414be008c926c8c216414d4",
+            "artifact_tool_docs/api/references/theme.spec.md": "604ee9da13a6dcf2512e5d0fb8506c770b343e89c15accd893f5855b934effe7",
+            "artifact_tool_docs/api/references/tokens.md": "bc333c0ddf45169f0273576cfafc15210f48873b1da03adb0914c072020bfa52",
+            "artifact_tool_docs/api/references/widgets.spec.md": "d9c4af4e6e696e2c9ebc8f5f3507ed614b35754838f364375893debe5c50624b",
+            "artifact_tool_docs/API_QUICK_START.md": "31ef240d140e99931cac075b84431997186adc088bf94994fac0ac9f2d0a4404",
+            "assets/file-presentation.png": "a3c03edcadfe5af5a06c709b264d276d7e8ac6e150d69729c502459998b2a680",
+            "container_tools/artifact_tool_utils.mjs": "17e988ef8c486800328e624154aa20b42c30fa85a236f60fbc9254d7a86bf18f",
+            "container_tools/create_montage.py": "1b9031247132b787748ccd5f65d29f2be6e25bc362578e2cf040b3394811e86b",
+            "container_tools/ensure_raster_image.py": "2c3bc18a8cddf737f5b3f769561b2cf8c55fe190387e53c2487f7c1b4d0ae8a7",
+            "container_tools/inspect_presentation_layout_geometry.py": "cfdc5076ffc4bc8c0c1d4578b6ce64c883e2d514780348bb278365fdb9f0e10d",
+            "container_tools/inspect_presentation_package_integrity.py": "b54cb6004fe58213bcf4268c355e3f15ea78cd9dbfe0c955d65e92024fe080c8",
+            "container_tools/materialize_literal_chart_workbooks.py": "5f9c89e72f0dd3e8aeca48d2ac7c429fb57dd801e4d3fb57d9c71d189154c8bd",
+            "container_tools/native_chart_title_gate.py": "494f8dddc3de753fda80f61498c07ca0e744e585a0b84f46ba9e2a88dfb1613f",
+            "container_tools/native_quantitative_chart_gate.py": "047ac10a0acda115d95a551c91fe16225aaa8d44735170091c80294518225c60",
+            "container_tools/native_table_arithmetic_gate.py": "604db17de8cce452c515a8e7929bf1fccfc08ad7851ac29eff1a9b70879a50b0",
+            "container_tools/rasterize_svg.mjs": "73d9ed4573d4a286c1dae520245df86885520f6c85dc83e19649d962e4852982",
+            "container_tools/render_presentation.mjs": "49024ae5949965f2d163daafb05d4e33b543ea59007a95253a78183b9357c1b8",
+            "container_tools/render_slides.py": "af5fbe8caf40be4ba57ad42993ff0c3792c0a7e97bd65bbba86ed1494911a220",
+            "container_tools/runtime_helpers.mjs": "79ed0013a2d5ae7d45ad111cbc9188a5c804d461c24a123725832c5eeaab11f1",
+            "container_tools/runtime_helpers.py": "93322ca08c0bf5e29e7fd1297d1b3cfc307550cf4251098b366bf4cc42b4370a",
+            "container_tools/slides_test.py": "e0f660c3a03c524e54a2b0ac4cdd55646502f18bad409593d056a1ea570f5de0",
+            "container_tools/template_source_fidelity_gate.py": "0e070dce9102403cdd418bfe0810c23f8886d074430ba8fe597cde352a83b7be",
+            "domain_guidance/finance.md": "0182623353b8d0ca47abffbe3b4005f9ee4128df234440033cf5957bc28ddcf8",
+            "references/artifact_sessions.md": "f8a25e324921821a58cbb5f7e07c42a75207c7858461bb475980f4b1d1e04b39",
+            "references/cover_art_direction.md": "753e58efd6da31fc68076c554ae919e46893d7a0a15f37c4cf357e7c41025d00",
+            "references/finalization.md": "32f8ff54baba353425f5b5ca11f0390f4daa991630a5bd2f2a2727f2c1726dab",
+            "references/implementation.md": "2354b703815e1a2698e2cc1e1b2895eb0e603f9cb155e391482b7e0af7ef9ba9",
+            "references/native_bullets.md": "719a0410bbb997f055f207aa8b4b8967360a81b4dbade9719a564745cfe16a2c",
+            "references/native_evidence.md": "dc4de24c99d504c10b8c3d0b0971d1137c2fb3f24538097fe1c3f925f05365d5",
+            "references/template-elicitation.md": "b0aab045f830d6a05dbab2bd7d9ca747bd68826e69328e01479589026f7ab7c0",
+            "references/template_following.md": "881875960ffa6bc59c9f6351552d9f499ac053884c780f0725cc8ccf1125c4d2",
+            "routing/google_slides.md": "fd3998117596a48fd73eb22bb8c1e7998d0e53949382b837ff6922deaf5bfa3a",
+            "SKILL.md": "81af64ddb7026ea3ab5880a12501cc4144429c46a9f3cfb0286a7c26b6a64d10",
+            "style_guidelines.md": "b682d1beb638b6ce77ecab86f83afcbde7a68207a749bc7994d8fd805feec619",
+            "template_following_scripts/check_template_fidelity.mjs": "204c580f53818ca188b04af66b2cec6e588520d832bc9f25305686893bf0bd18",
+            "template_following_scripts/inspect_template_deck.mjs": "03a8ea3b36a7b1859ccda3b2cce7c3c73bb0c691fa0114548b804bf5a5465661",
+            "template_following_scripts/make_contact_sheet.py": "69a1f031bca5e0a214aaa848460b36ee17c641b8865d7a5d0a9a0308dea320e8",
+            "template_following_scripts/prepare_template_starter_deck.mjs": "67b18d023a5c28e6c8e9c8d7a139ec441b55ae73f8f3159d122f4b2d34c371bf",
+            "template_following_scripts/validate_template_plan.mjs": "d8aad11b03275eaf800f96ec6c58731c68033312f5b13a44f5c9291ca5e3bacf"
+          }
+        }
+      ]
+    },
+    {
+      "source_name": "pdf",
+      "target": "agy-pdf",
+      "status": "workflow-adapted",
+      "sources": [
+        {
+          "path": ".codex\\plugins\\cache\\openai-primary-runtime\\pdf\\26.1123.11515\\skills\\pdf\\SKILL.md",
+          "skill_sha256": "96663ed757e9572fb408fec9c0a88281ae131a0c991d4e5543d7fa6a2d9f578b",
+          "file_signature": {
+            "agents/openai.yaml": "5819dd168e544e3293d1501174130c56e139eb37c7d176884d8c6de4b9354f56",
+            "assets/file-document.png": "bbb3c29874cb3bc706eef9ba4436c7ef8ef33462a173c4c3d4deeec774e4da79",
+            "SKILL.md": "1f3160f93bad11e086014dd646b1106667be4ea2cd28ee921ba1133aed47409f"
+          }
+        }
+      ]
+    },
+    {
+      "source_name": "excel-live-control",
+      "target": "agy-excel-live-control",
+      "status": "requires-excel-or-desktop-tool",
+      "sources": [
+        {
+          "path": ".codex\\plugins\\cache\\openai-primary-runtime\\spreadsheets\\26.1123.11515\\skills\\excel-live-control\\SKILL.md",
+          "skill_sha256": "55335802aeb641f8819f0020d4fa172b069376aaa00ab7934f3426d8a121509a",
+          "file_signature": {
+            "agents/openai.yaml": "e7dd753d45019ad2196cef0e2dd866e50bb14832f0653d019d69b0eb4d1a82ea",
+            "domain_guidance/financial_models.md": "3169cc0e2453f3c34f63ef639aab22abc5686c6e2639f1d4ad7dc0235e8480ee",
+            "domain_guidance/healthcare.md": "8edae030b3abb0ef178f5a38691f64d7d9f4a462a70c0656ae8650605363f921",
+            "domain_guidance/marketing_advertising.md": "b2e087facba8e407fb5d47d55505ea544ca7c7ff5d402fd6a535093df740d086",
+            "domain_guidance/scientific_research.md": "bad46ddb8561c02b5460cd8dcb9bc9018b8b24df03a6688af7b9a3977b5b298c",
+            "features/charts.md": "a5bb73e5a3c0f7ec44cf0737d5dc25ae690e420a99d37e23cf8144d8316f56a3",
+            "officejs.md": "cb3d4292191d6a6adfc5251b88ea5a62aab75bb5c9c863fc1ed546b881045955",
+            "references/image-references.md": "7fe546860468950ed80f428c79eea269383aa30f421b957546666ee15161e6b8",
+            "references/read_only_qna.md": "993fa777f0f3003c2a1c3b2021a1f9d78f7a177620603e47cc9cff097cf156fd",
+            "SKILL.md": "d04b10b1e95c7066ecd34db7f883495761820546bf34bd879660c5239e974602",
+            "style_guidelines.md": "a0e328147991a4acc3d867d8e10a0a6697373ff2fe43eefd41646c83b29ad630",
+            "workflows/create_workflows.md": "b24cbf85c4358c2269352bf44002ad5a1e24174983010a836f5ead6e6c0b3958",
+            "workflows/edit_workflows.md": "d195ef03edbb07036706659bfc899b97afd0aa6121f7d607c1d1e0cd8a47f8e8"
+          }
+        }
+      ]
+    },
+    {
+      "source_name": "computer-use",
+      "target": "agy-computer-use",
+      "status": "requires-desktop-mcp",
+      "sources": [
+        {
+          "path": ".codex\\plugins\\cache\\openai-bundled\\computer-use\\26.1117.41037\\skills\\computer-use\\SKILL.md",
+          "skill_sha256": "8211e4b11a19a0dc4f0ace91096c74c5b36037ca4cb2c8988f0f535bb209e951",
+          "file_signature": {
+            "SKILL.md": "ee256642116350e107197c6336f23a322e864c52019fb8add5bf891f9d91b653"
+          }
+        }
+      ]
+    },
+    {
+      "source_name": "imagegen",
+      "target": "agy-imagegen",
+      "status": "requires-native-image-tool",
+      "sources": [
+        {
+          "path": ".codex\\skills\\.system\\imagegen\\SKILL.md",
+          "skill_sha256": "706d4d96e1d5c9e6023fe3ccabba1bb34b364024d344fd25b8515ec7d28fe3c4",
+          "file_signature": {
+            "agents/openai.yaml": "1797be4076717806df54aa9331c07ac8eebe32c69f32132d5858712b05406146",
+            "assets/imagegen-small.svg": "087c1632a3b8a2ed4d6218952e7ba7ae2221a979f84233667ed2c587998784da",
+            "assets/imagegen.png": "95952f644064eb9e890f98d8db07216347186526e4c41ad66d3420629eb86e20",
+            "LICENSE.txt": "44e03f7e263eb3ad256440c1eeab5e49168baff5a78ecef9a5447261cf3a91bc",
+            "references/cli.md": "29dc8c1e3e5d9a20aee587fedb46a464552b6ec118d93bbd90c8d86e30502c8c",
+            "references/codex-network.md": "cba3b4d24d30f38adf8021b6e9b49ec5261a9e45e7df31047ec451c916c99b0a",
+            "references/image-api.md": "695909437b792aff171477dba127476a11235c220beb06533cce7c1495a042c8",
+            "references/prompting.md": "d957a45cb24fe2cf1a85858674fc533f15a5f4621355f559a13a93168999c2dd",
+            "references/sample-prompts.md": "76cc8a2988efb6e844a99ff9908b2b11cc07467510fc909002abcc0ee3f0701b",
+            "scripts/image_gen.py": "3666b807de3f0a1d0a4a767b886d612c0b8f71025c500bba6693d1c6995a0873",
+            "scripts/remove_chroma_key.py": "fa2989807052b857bed08f7fee0caa2502b54c46afc0a6f28cd706c25f636630",
+            "SKILL.md": "9c07e2009c8010c49ed0238813f947d76eb20d07dec66ed015e4a01a45eaaa36"
+          }
+        }
+      ]
+    },
+    {
+      "source_name": "visualize",
+      "target": "agy-visualize",
+      "status": "workflow-adapted",
+      "sources": [
+        {
+          "path": ".codex\\plugins\\cache\\openai-bundled\\visualize\\1.0.109\\skills\\visualize\\SKILL.md",
+          "skill_sha256": "05af0c7753ee8bf5074905570d9cda9f51e1550b90c3ba816228c587c579ca56",
+          "file_signature": {
+            "agents/openai.yaml": "6882440afd1978a5324ea7adc5c3c62ed1efa11caabd1b97f58e8be721e89c2f",
+            "assets/calendar.js": "f6517bf5584f34b36ae024188b2c93715e8e4e86869afdbe0fe7a8265b0fa74e",
+            "assets/dashboard-sources.js": "239ac4d7492efb727ed8db84b927bc3eecc8fb98a40b7eaaacd2d9b8834c3a47",
+            "assets/share-shell.css": "4a657cf0d1d12b62451941879fdead0bad0063ce0ac015c86e479ecfa6af2a67",
+            "assets/share-shell.js": "860b8a19b2f9513d7a173c316b7fe3cd9ed319fbd7e6f7f307621eba98d2d79f",
+            "assets/standalone-host-bridge.js": "432e97f96905290e9e18bb4189777a5bd985bc21c75970e640e055e08e812353",
+            "assets/standalone-shell.js": "88374bdc364ec6be0375aa87567ac684988ae1da0167653ce083cbd7ac28869e",
+            "assets/visualize.css": "4db808d6860eed640a6c601b5134b4f9ea4b9336bced83f86d8d5a5c499b09c8",
+            "assets/visualize.html": "5c659237f28d9cbcb59d8bcc14dc8f6b001d02775e5194a3c95b94ccf73b9cd5",
+            "charts/annotations.md": "e0b0852329c7fd0785efeb193120cb9d54f86a026bf6960b2dfd8fa3c5ff1d97",
+            "charts/area.md": "26be3c5b6a1165bf9faadb333288e37fc03e8a7adad0c75b6df61361b4a95331",
+            "charts/bar.md": "e180208c42539019a461c165c12b96b2bbc100e650ff107b0e799970ba0c33b5",
+            "charts/box-plot.md": "664c86d6f927b6d8b667a4059c3a89309a2fee640de39382b2072275d192df73",
+            "charts/cartesian-inputs.md": "4226817b832b6039e6be57960ad6d52c63037d5b38c3f5afba7edc4311d0f13f",
+            "charts/composition.md": "6c1aa8dd6cd4df8ba53ede8fc12a32c501c464f07248efdb5c572f1150b76ccb",
+            "charts/controls.md": "43c15e1c5cc410e900e4753700a7c871d216f03e6e219055b7018fbd19f3f027",
+            "charts/coordinated.md": "cdd47f0e351d0456b63ef9117fc3315d87b750ec2b26026462d1b03e393c533e",
+            "charts/funnel.md": "2ef5922c92c213928c0d3bd140a5e17d5dab1e6e978a2b3364f4aef33ba6c285",
+            "charts/heatmap.md": "d83de6453299277bcc7e2128d7040fb420dc5e5a6b7a3db70d924f44cb9ed17c",
+            "charts/histogram.md": "9283fc4177f6cfaaf724175b198d1b073338e773866e72f534f9272c941ed906",
+            "charts/instructions.md": "1152cfecc0226620217aea314d1ee1b2213b08e144b198b529f7addb8224343f",
+            "charts/line.md": "08d45021a37c9a11a9323c225e06b2ef760d52730b70ce819d13621264cdfce3",
+            "charts/pie.md": "a09e0c0fcabca20991234653d6aaa9c18d95278648097dc9787c6e42efd6c7a3",
+            "charts/public-api.d.ts": "893c5178e38b2d1d2f06a65f4e01e394e3a2e6e40c5aa28ad72f878ad4d068b1",
+            "charts/ranking.md": "e08a4eab82b92137dd530c414ea86272ba2ec84c922a2c230d9fbba62dd8498e",
+            "charts/sankey.md": "726d805b003e40b74fdfc21ef2d7d124bfd053260d948e9fa2d8fc0a2b689905",
+            "charts/scatter.md": "8c6a518f06a8bc421ba63ed2ec135ab3e44273c194e14ed5f1111dc5d08a316f",
+            "charts/sparkline.md": "a4cdba0fa114eb9ab09254a10898baf21999fd2185ca55b0f7f1a1ec07ae0b50",
+            "charts/waterfall.md": "85409878cec32f737c5c868fb4be75b0dee3f2221367ac996ce31b429b1415ff",
+            "maps.md": "78a1030cf709ebe2ac395c1db78965844e3233825f8958e6c883d97344b31c17",
+            "mockups.md": "dfc249cda6e49bda24db9b1fb8884d6225fc35cd7abfe9e6d51d4e172760e13c",
+            "scripts/chart_check.mjs": "d20f20c137f14eb7bfc49ae7f28e4db5a489b330aca949586fa72d0931a8cd38",
+            "scripts/chart_check.NOTICES.txt": "49af0edc450916ef3e61ebbb874e81474bcde9c6c255eefe1ed658fe4b77ee9f",
+            "scripts/chart_structure.py": "507149b652682bd3ea2af09ca265a8c526e591be6947388b64e0cfc37a8785e5",
+            "scripts/connector_mocks.py": "e69268c6069d7de55fc4f5879f134424e99d31b98836f9681e242f68751599dc",
+            "scripts/dashboard_check.py": "05c582ef6d6b65f13e920043255347eba1aaed47d6b063baf2ab44b275c84a87",
+            "scripts/render.py": "69db55cf1fc35f2357d3633d73bfcc050c9fefb2442f77b8ec7d7bd8a94b37f6",
+            "SKILL.md": "587b1613919f6dcd89efc0c7cb19d2d5e0c5d594d646dc0e2b983df2328f192f",
+            "technical-illustrations.md": "9d8bd5202539c981eb8b095274a27bd0120fbfad436113bab561822fcc598ee7",
+            "tweak.md": "197aae99fc9d4d263fece0eacc81117be12a7f1ae18b75afe916aae015dd177c",
+            "widgets/calendar.md": "c5ca5b90a270816318f623b725d40fc003b2cadfbd5d0618b22c33fc5d9a0148",
+            "widgets/flamechart.md": "d669aee37dc7791db8f56a0c19a93a8498db5ceb475c08a306a27275c7a64e0d",
+            "widgets/stacktrace.md": "6c5c4f92d3de4aa10d03d0de4365c6d2653b0d76ca816d2e774be23266190636",
+            "widgets/waterfall.md": "11e851bcd09a33fa36f79138dbcf7058e136436a859448bddb9aa3940431b80e"
+          }
+        },
+        {
+          "path": ".codex\\plugins\\cache\\openai-curated-remote\\visualize\\1.0.89\\skills\\visualize\\SKILL.md",
+          "skill_sha256": "4a24dd004e9a255b96ef03bfc854e0f0f74a0d8d9e7166b0f880658b47d8e7bb",
+          "file_signature": {
+            "agents/openai.yaml": "47abbdea0198c9efc6c11fd99ff82f0762e9da4f61538dba77a851de6f3691a8",
+            "assets/calendar.js": "19f40e0a15ae7a9b9a4e17bc53c5bb47c5b21e6d32317d80cf030f9e012c221b",
+            "assets/share-shell.css": "9907aabef5ef59224a054c023876d58ecf570b3f5489aec89e9fa7e1bc653840",
+            "assets/share-shell.js": "d59b7c78572f23322f02251889a6c0d0e441523861f90879b6354b548fcfa975",
+            "assets/standalone-host-bridge.js": "e0d90987f462310bb991505cc8659950c05dff667f84d8056f5c70a2ad29f912",
+            "assets/standalone-shell.js": "a87b5c3f5066cac1537b04ba98f8eccac0e03537922e701f8722704f3cbd1f67",
+            "assets/visualize.css": "056d5cbc98ee66a128369fedeabf26311cc4836b9d35d03a881eebf070a54c49",
+            "assets/visualize.html": "df39736294d31bb85f04ab4b8e379d85bb0f1179b83ab4b432a2475bd0c8b1d8",
+            "charts/annotations.md": "f78d71cbd37324adec3c39c3cd98859d2ef5d12c96c9534517c4b4bd079ce3fa",
+            "charts/area.md": "cfb4c7d5dc5be57ad9ce4786876fbd1a231380110937c8b72b54d4b7d4d5f9e2",
+            "charts/bar.md": "d4c59a25d382685e9f04d433defab2a51cf4b9ca54d876df9cabb9e6d8cabae3",
+            "charts/box-plot.md": "1d5357525999a9da0566e7e81b1f253b753689d210ce38188ed0ba0d766dd545",
+            "charts/cartesian-inputs.md": "c970a709fc29cdba84fdebbb524a6dccdf8e052bd7f9fbf71c1a47315b39cce6",
+            "charts/composition.md": "03723a12bffa8f8aae8b78949414e9c70408a1bde0f353f521c003cbc787fce4",
+            "charts/controls.md": "8efda741134362b27d07cb70c97133a45159d8a3e0e33a7890426f81a48302ea",
+            "charts/coordinated.md": "5e71d6f6bb5c7f497b09e9400a9ae15ee60632b32c5df1f0cf03a5dc4af36c38",
+            "charts/funnel.md": "399e03acf66d033401ad55907b43ad2c079aac5ee26f847aff0ff4d07d735d5f",
+            "charts/heatmap.md": "58237f63db2aae3d4473daf1972df3e59e0bcb0451736c0a21ea054e3f57d730",
+            "charts/histogram.md": "8a915627e5b9bb39b0c0beb0126d1b3d4128bdc259405e6e394dcd4866ee1d06",
+            "charts/instructions.md": "04a39b2150b25269feeb4e5f4aac58345ff6c4174e41a177198d5481dcf45bcd",
+            "charts/line.md": "fe06552fbdb9ad75539e3416764853c1eb89f98f5e9b9453caa16a74c97f31bf",
+            "charts/pie.md": "b1bdf7549e657884111c0c7874d2771a75b6c11cbc714cf4e42542398237d4c0",
+            "charts/public-api.d.ts": "ccc6857b99da311ce48584e2f91a78a32570655aa1d7c84e3b5c75e7d8b39eeb",
+            "charts/ranking.md": "38129e16e1821eb8058630ffc05d03050b30075e6b441817b72841dd0063479c",
+            "charts/sankey.md": "4ff5b744257221efa6f2f09bebca3b9ad84a0d211decf3cb621e242542085b67",
+            "charts/scatter.md": "dd8b609788fb613c8a87a4104f8349d697a73960c283db6014b92dbf1acd34a0",
+            "charts/sparkline.md": "543495dc76982ff467ef1d0636d6954e3b0c87c82b5e851a924c0fcbb5c9d7fb",
+            "charts/waterfall.md": "db174ebd76a11a563a30532ecb5b0c8b5639fe771c0daa36d60f7c7120d2e1a4",
+            "maps.md": "721f2723d09d6dc31b2c9283e8faf9aacc9d76c6db0bce7a19a996b8b9168dbc",
+            "mockups.md": "07988a559e7915830a741fe6d95474a8ea52b0e6aaf0ddbe0e8e132e436aeea5",
+            "scripts/chart_check.mjs": "51cae741b87bb395972996641de73ce33ba99fe87a69cf63c83417d8d0f19506",
+            "scripts/chart_check.NOTICES.txt": "49af0edc450916ef3e61ebbb874e81474bcde9c6c255eefe1ed658fe4b77ee9f",
+            "scripts/chart_structure.py": "22246223dce06856fe1fcac2e0db2f77febe992a97b34a8ab384ade8ddc92e96",
+            "scripts/connector_mocks.py": "3bdab244be30f073645d793012f9dbc4283217d294e261921dcfb0e7de7527ad",
+            "scripts/render.py": "5d7d193fbac118e1ee275727142dc36be88e1a30f99e9199c1283ec0f2743a80",
+            "SKILL.md": "587b1613919f6dcd89efc0c7cb19d2d5e0c5d594d646dc0e2b983df2328f192f",
+            "technical-illustrations.md": "4a55ba7e2e4ed9dd1138f62dfce119d8e9d01a4bff79c0d6cab99d51d475491c",
+            "tweak.md": "7d914a63d761f0f7663cc74d2b91e53fcdce57c5f5a840b87e2f162917f22237",
+            "widgets/calendar.md": "f4404c9f6fdc27971fe162d6bd97753a1a5472ad7b1da5821a2d7e210e5a0866",
+            "widgets/flamechart.md": "8d03714e765bf8857b32f6ca53c3cae322bde9940785c88b1657490a044bacdf",
+            "widgets/stacktrace.md": "83cf2769393583bf837cd299b18b0bb001f08f776547abd441c0da3c31e98883",
+            "widgets/waterfall.md": "8d3a0daa6ede2189eff0d42e65a0664aede582a056822cba8552e4bb7c48ae0a"
+          }
+        }
+      ]
+    },
+    {
+      "source_name": "write-page",
+      "target": "agy-write-page",
+      "status": "local-substitute-not-cloud-equivalent",
+      "sources": [
+        {
+          "path": ".codex\\plugins\\cache\\openai-curated-remote\\pages\\0.1.26\\skills\\write-page\\SKILL.md",
+          "skill_sha256": "39cb2ab7aa056cd00a38067f833cf5a7f19206e104e58320fc113ba699c14493",
+          "file_signature": {
+            "agents/openai.yaml": "b33464c83ab6cf5506a5097fb96ff13a0e3956a4ddf852b5c538b46580fa27a0",
+            "references/artifact-runtime.md": "862275f55b7937cda4618d07dd612a515b48619c01e5bd95b05a492a0eb546b6",
+            "references/edit-requests.md": "b57bcdede9f3ebd132949a0171f0506e5dafa32c6a2b44d67618e35aef7bf2e9",
+            "references/page-content.md": "9b8dda798dee0bca977746111fac1bd21a7486a55dd828d371f34dca3dee7e07",
+            "SKILL.md": "df1c010ff8a185d8c2bd0644f44dcc5a5cfc24d58e8a01123949ed95fe3450a3",
+            "writing_quality.md": "13923774ee99756b3cce6ee94b7378f6db94fc5f632bb814ff4cba82c73eee8a"
+          }
+        }
+      ]
+    },
+    {
+      "source_name": "maintain-space",
+      "target": "agy-maintain-space",
+      "status": "local-substitute-not-cloud-equivalent",
+      "sources": [
+        {
+          "path": ".codex\\plugins\\cache\\openai-curated-remote\\pages\\0.1.26\\skills\\maintain-space\\SKILL.md",
+          "skill_sha256": "53570e6cb8663d370dce15ed0d67208876c3b13015832c352daa759213e7378e",
+          "file_signature": {
+            "agents/openai.yaml": "3c7b43e378888955e9be6f02133b7522a0614f94f86d7066d72322ce2dc71325",
+            "SKILL.md": "96f829cee46f9815ae83aea991ff3b35eb85c77ad27a8aef9dd44538d1f94574"
+          }
+        }
+      ]
+    },
+    {
+      "source_name": "organize-space",
+      "target": "agy-organize-space",
+      "status": "local-substitute-not-cloud-equivalent",
+      "sources": [
+        {
+          "path": ".codex\\plugins\\cache\\openai-curated-remote\\pages\\0.1.26\\skills\\organize-space\\SKILL.md",
+          "skill_sha256": "fe553fb15809c972ae528d64917489e958f8cbf9432629caa79fd6da6b207da4",
+          "file_signature": {
+            "agents/openai.yaml": "a6e28b204d44f1312cdf715a73c9dacfda8b3d742ed5a57ef926bf4a15219f8f",
+            "SKILL.md": "f04394990e75ae5a26d30a94ab4cec188c517668c32f724da254717b446c01f0"
+          }
+        }
+      ]
+    },
+    {
+      "source_name": "manage-schedules",
+      "target": "agy-manage-schedules",
+      "status": "requires-native-scheduling",
+      "sources": [
+        {
+          "path": ".codex\\plugins\\cache\\openai-curated-remote\\pages\\0.1.26\\skills\\manage-schedules\\SKILL.md",
+          "skill_sha256": "e0a464a83f15a6e896c5536cab775f667ebd0dd61eb64fe3c877a41935d64bd9",
+          "file_signature": {
+            "agents/openai.yaml": "502b266f394596a35919f7d77948e803fecc8f0ab7044893918b87a6fa8e45f6",
+            "SKILL.md": "71ba30e7b90943ccce2e5f5e2ca63199719f7694b6ea992a2073c8ae5b6ca076"
+          }
+        }
+      ]
+    },
+    {
+      "source_name": "sites",
+      "target": "agy-sites",
+      "status": "local-substitute-no-managed-hosting",
+      "sources": [
+        {
+          "path": ".codex\\plugins\\cache\\openai-curated-remote\\sites\\1.1.7\\skills\\sites\\SKILL.md",
+          "skill_sha256": "b3b6c890c559c422387882e8b2324487b2dc179d9881b933c63043ef1eea1ed1",
+          "file_signature": {
+            "agents/openai.yaml": "bc8d5487d5f8ac41ff8af079d569f46f00120a9cdac4c1aa30d8fa7df868ba34",
+            "references/app-integrations.md": "a80725b71e0e3308fa0827e21d6a3c9428d43685579d059a47091c376c91c220",
+            "references/browser-agent-support.md": "02aed5c7077d24745de1aefba14039873acb6a3920a82af4c3a8cde5fe1c8c7e",
+            "references/design/presentation-led.md": "e5ba3863c71d0397e90d7adee8424eb37feb10aab0245f46c3934f7f1cd2c00f",
+            "references/identity-and-secrets.md": "0ade4af1dad4cef94ba104781bfdbd466a26f6a0227d366ec02c6447453d108f",
+            "references/preview/local.md": "63534bdbc795f590707374c4484d7d13a0c2dd758df8179058cc78b9a20fd720",
+            "references/preview/managed.md": "5edbe06d3dd94872bc4ea352ba4ae295dd4138ec063af01c4b412f18b2db4cb0",
+            "references/recurring-updates.md": "08bd1618634109053e1316519a220c14b06333ff04acd2334e12f42f8ea00b01",
+            "references/site-mcp-server.md": "b1d304a65d7cdffab4a0b2234cebcddd44c6af52a84f8ee9ca360b1b2403999e",
+            "references/storage.md": "608efea142e68b80e88a466bd4b1523a19c6c4c74af6662aff9718caa605ce16",
+            "references/troubleshooting.md": "419f31d19da7541b46009788464916bae6bff9bc9b197ba9240ab79e5808f8ea",
+            "scripts/prepare-site-build.cjs": "32496143dcc6f7e7c5410444e319469e2525c1d2eda0d2ed7c65e7c67995dbe3",
+            "SKILL.md": "85099c39250d205f57723b84ceaa7d894a18046204578c54d688835c159791bf",
+            "templates/vinext-starter/.gitignore": "5ca3c39bdc1288c108a1931b3f6bc5795464b6253e9457390617774259deed0c",
+            "templates/vinext-starter/.npmrc": "a3909ac0447c469fda12c57374993be70f47ce73e49fd3124678c7c047f2214d",
+            "templates/vinext-starter/.openai/hosting.json": "d532abb65cf9ae20634b464d954cb4a08a0de9f3cd3cdf7f9c3ec8948826d947",
+            "templates/vinext-starter/app/chatgpt-auth.ts": "4265a2e7c2dcb3a6f4b7026f762bf5b6e4caec76cc13c0a45987ee9a9f2e42cc",
+            "templates/vinext-starter/app/globals.css": "8546d9b115f0addd582f7ceaaa6b1c069310bcc77c43ee7b8acfe0020be3afd7",
+            "templates/vinext-starter/app/layout.tsx": "fb20da0ae67bb49128afe28c32dba4ff1588e70d6c913a64ef8a0b95f94d63da",
+            "templates/vinext-starter/app/page.tsx": "c2293d77b0cff0d149cc153eae96eb6f807f0967b12a177b387f8d9b695f6d7f",
+            "templates/vinext-starter/cloudflare-env.d.ts": "8b0eca84aa3364cc7ccc43cc3af6beb88dd34ebd410de08690bf094ce39fbcb0",
+            "templates/vinext-starter/components/connector-error.tsx": "2d0d04559952ce9c9a327cca499f4b99f35d885cccfce375230e116695d3f155",
+            "templates/vinext-starter/components/ui/accordion.tsx": "a4f153089ba886dfcf73fac26b5c01ca933fa12fbe88df6fb723912bfffdfbb0",
+            "templates/vinext-starter/components/ui/alert-dialog.tsx": "9a8d950f2b9b4352d5ebb762fb44d5c28c2d353aa29712071973656a8736e311",
+            "templates/vinext-starter/components/ui/alert.tsx": "2cc59b5f7bda91c1670884b1bf46bfc8a2a6f226cef184f5762acc037188885b",
+            "templates/vinext-starter/components/ui/aspect-ratio.tsx": "b1c157886236782cb92d8fbcd4749532aaf6d8aabefd6e157ca40358f902f407",
+            "templates/vinext-starter/components/ui/attachment.tsx": "ae8a25dd1a896d3964e3ef54d97e51221b418cde287dfd794428b89951c5c790",
+            "templates/vinext-starter/components/ui/avatar.tsx": "58a846bf1617b94b9681921db9b8461d0145f311424663d11678a06b6153cb34",
+            "templates/vinext-starter/components/ui/badge.tsx": "46a0de5224f6a5d5d63d45246534288518dce888f031064bff925bbc7fe6ad97",
+            "templates/vinext-starter/components/ui/breadcrumb.tsx": "d4c0831bba2212e778248f54a6ace6ef378df8bba4616d1abf27787a31eabae5",
+            "templates/vinext-starter/components/ui/bubble.tsx": "870cc0c5cfc8a515053f7e41e706a6bd017a909b45f1305fd3b164a52cc4483b",
+            "templates/vinext-starter/components/ui/button-group.tsx": "784c89d8ee683e1bc972ae69e6ea8225a7f63abe22aa1b5fc3423ae8a2a399c0",
+            "templates/vinext-starter/components/ui/button.tsx": "cc36af0f8b5019c33cc039fbf03bb952a513072b15b55b53c592b78af3e5f4c4",
+            "templates/vinext-starter/components/ui/calendar.tsx": "3855fbe0d3f8ad3a4b93071f98b76a9f6782d46ec8b05f5d2ddbee1e4e39bc84",
+            "templates/vinext-starter/components/ui/card.tsx": "c48dd3b96be90a7066f1aebf294f0af9d00ebcdc367d5d4aca55429ade570c1c",
+            "templates/vinext-starter/components/ui/carousel.tsx": "b7ea0dda3903d972c186f739e23da61f547bc83b5a0bf13b16856577846d5fc3",
+            "templates/vinext-starter/components/ui/chart.tsx": "45aa5ea4a386f4fb5b8869ff4bab3a08cf89255190ee322043baf84c3e950b6a",
+            "templates/vinext-starter/components/ui/checkbox.tsx": "b23ab9d4deeedf2ac8f512c368361ede681aa383437ef48563a6f9b7dbe95f27",
+            "templates/vinext-starter/components/ui/collapsible.tsx": "c6598e5584f4258b5d9fefadbc5ad6a66888ad58729f4b634a0bb2d9c513188b",
+            "templates/vinext-starter/components/ui/combobox.tsx": "2d68e78b2dc7e38a085f222dede60a80b4f8229a6e91732c484605e204d46735",
+            "templates/vinext-starter/components/ui/command.tsx": "361193df1e3d64a9e9b5048f045264782fcb387aab3f00f2b805fdcbf538b16a",
+            "templates/vinext-starter/components/ui/context-menu.tsx": "2cf1fcf59df0649a3e2a126d1df2f639145f6b6bf5689ee54af1f40ab1245017",
+            "templates/vinext-starter/components/ui/dialog.tsx": "dce39c6adc47d997bd2567f8b7a72f466b0134715105cd42f9194007b8ecdb14",
+            "templates/vinext-starter/components/ui/direction.tsx": "84ae2ad658207f0e0f367978e5508cd8027cd00c29c41d3d13db21a708c3d1e6",
+            "templates/vinext-starter/components/ui/drawer.tsx": "cb6eaf58eb0757ca91af284e5d925b89a42ad7eb19cb3f44c575a3487aa9350f",
+            "templates/vinext-starter/components/ui/dropdown-menu.tsx": "98f0dcdae38225b73734aceeb9213dd751fea2c72ea520df31003cd133deac8a",
+            "templates/vinext-starter/components/ui/empty.tsx": "ae95bdcf367a076ae02e7925f14522a148798f72d9651749c6d55497dba584c0",
+            "templates/vinext-starter/components/ui/field.tsx": "ba67d76f017ac059fc86cf8c344e0b2991c4322d3619e125498c19b87f6eefbd",
+            "templates/vinext-starter/components/ui/form.tsx": "315b46bb75ab7d1c6061b5d750aa4bedf6e7a455e15e2d7f9182f053d5972b1e",
+            "templates/vinext-starter/components/ui/hover-card.tsx": "f5d8df42c59370ec14d61bcc54f7d68e9bb7dfa0d6a872b2f7cffc2aafbf23b8",
+            "templates/vinext-starter/components/ui/input-group.tsx": "6afbd58fea4c438e6252dc4568bddc122e84ababead4ad5cee50ace01100c9a0",
+            "templates/vinext-starter/components/ui/input-otp.tsx": "161946daa89f0eda2575b9271c0494e35807c4ffb55598a49f67160c17fec299",
+            "templates/vinext-starter/components/ui/input.tsx": "8c4612a7c41319ac5049daa3b34b080f9784b6245c17780eb87c127e58e473db",
+            "templates/vinext-starter/components/ui/item.tsx": "6e2144d6d87142dbbe56d568810bf546318c8aa661447ebb0d76ebbf382cb45f",
+            "templates/vinext-starter/components/ui/kbd.tsx": "6088c3a5432338b1719c17e9b5d0e1fa74fd1f66060f248fc88909d33a82cd13",
+            "templates/vinext-starter/components/ui/label.tsx": "a476e41f08b9de5bd447de66a33d8bc2ad18f2fa6b96c064778bab4b6f439f4c",
+            "templates/vinext-starter/components/ui/marker.tsx": "3d798763f094b2bb5e7ade2d5cd1b9bab498bc8ca7fd4cfaf4e5835bdedc34a0",
+            "templates/vinext-starter/components/ui/menubar.tsx": "9243af8afcea03703398ccd1c2a8c0a87ad6cbaf2bd272fb609f5b79fe46aebb",
+            "templates/vinext-starter/components/ui/message-scroller.tsx": "bb7660a248e4e9589c3816c7c1c199ea1381a70d2c8476ae895b567a7a4d86cf",
+            "templates/vinext-starter/components/ui/message.tsx": "9d2952bf3b641081f09aa2739535e6bbd1be0a4946789752a2c20d8aaef43185",
+            "templates/vinext-starter/components/ui/native-select.tsx": "007516b111fca8c98a6c40c94ab91bb68cc5b52afce1ed1f5e510c3d86e7347c",
+            "templates/vinext-starter/components/ui/navigation-menu.tsx": "889d358a77de88e9cb6f39ea4895ea4c76eaf01d731b74e44f1c41e97a78a044",
+            "templates/vinext-starter/components/ui/pagination.tsx": "374ad135c3d4ff3ec080a0009cd9745cdd0e12faa89d2b0e86074f11e5127fd1",
+            "templates/vinext-starter/components/ui/popover.tsx": "31c350309ff5d3034e6ecf1b0eda75ba8855bdbf987fc7ad6d71f0ef07c5a447",
+            "templates/vinext-starter/components/ui/progress.tsx": "c8c26e8f5f041c3cdf4915347dc1d9c022f9448f149990fadcaf303e952fa57d",
+            "templates/vinext-starter/components/ui/radio-group.tsx": "fe5ce39636d0818c2bf9c4eebddff893d1225fa2c81b5fa4bb8cbb39a8c913ce",
+            "templates/vinext-starter/components/ui/resizable.tsx": "bc63958467aa00557c551bb0d96a5ae4c965c1e1ba2380e595949d933b132f7c",
+            "templates/vinext-starter/components/ui/scroll-area.tsx": "8bd9d986b2844c9a87de825c6de4787b6739b36c3dc9a05ccf3eb107160e4043",
+            "templates/vinext-starter/components/ui/select.tsx": "0b796a108a4eb5ba52d9ad938b7aea36dc56ae66c703a6d0a23dbc24f96daff3",
+            "templates/vinext-starter/components/ui/separator.tsx": "6da346505c8629a4668420d2a5ca48891383bbe0b0ceb14163537c671879427e",
+            "templates/vinext-starter/components/ui/sheet.tsx": "63863cf2df8f8973e52b3459ac9bdbf81be1262dbc70eb53d5271ffb03488e16",
+            "templates/vinext-starter/components/ui/sidebar.tsx": "4a8d73e7730a2b1fcecfca31299ed26db65c2307b84197a59c6ec7c01c7ad28e",
+            "templates/vinext-starter/components/ui/skeleton.tsx": "ba48dd5be5a6a1378bd4e011028654b5bf419f1e7d20ee4b9f8330c1264e7239",
+            "templates/vinext-starter/components/ui/slider.tsx": "0e37484f4b416e79ac18c655cac961aefacf6e67085cfc2b320ea8af545635a3",
+            "templates/vinext-starter/components/ui/sonner.tsx": "13ccc9b0fe4248e622f83a1d3b2f0566b72b5e04162d7d0c8db8945ecc71b55f",
+            "templates/vinext-starter/components/ui/spinner.tsx": "3e6e6e8d37fb4069f8e43e55318f8db06fbc36e6c8be0096da3c9337c1c798b9",
+            "templates/vinext-starter/components/ui/switch.tsx": "386d4d4deb39f34126f9700fe9bf5393d238485dd94018bba9d154dda84c62ae",
+            "templates/vinext-starter/components/ui/table.tsx": "20e5a7f224959c6b75802995706a97e9da171f693d4b6b1b436388fcd9df96f3",
+            "templates/vinext-starter/components/ui/tabs.tsx": "865d0194331b9b2be36723fa79d3575dc83078b4cb941cafee87cb72fc2cff46",
+            "templates/vinext-starter/components/ui/textarea.tsx": "253cdeb487c73beaaccdf47fc163e36e7d5b7ae6ddf09a4f64998a109a112979",
+            "templates/vinext-starter/components/ui/toggle-group.tsx": "69f643e889e933f05c1439084480d8646f66a161c7d1cf0730ee926382ade35e",
+            "templates/vinext-starter/components/ui/toggle.tsx": "ba4d0b0a2b2fee75dc36dfc19e32082e721024b919050c97fd5dc70faa924e16",
+            "templates/vinext-starter/components/ui/tooltip.tsx": "a0784eb77831a799fad7991df4f1b666f876201565a80175e1aa68733574a2e4",
+            "templates/vinext-starter/components.json": "31f4ca67a4a62572571003d3d5aac85ee6fbfca67a192924bac6b168d95e98fd",
+            "templates/vinext-starter/db/index.ts": "dc7610b00b918e0ffff1360a63626f16655ced3064b2eaf96095a4101fb14bcd",
+            "templates/vinext-starter/db/schema.ts": "13ddacbf0be50e054d450a6c642b7fdc1aa943fd6b99084711e07e58b600390d",
+            "templates/vinext-starter/drizzle/meta/_journal.json": "90cb374e093894d0efce6f1830d873a42aadd8ba49d2f024495e5cb2e1c8c303",
+            "templates/vinext-starter/drizzle.config.ts": "af081f7384aaeb0082cf422e29f139d137ca2f6a57c69b2c37b9fb1f8479867b",
+            "templates/vinext-starter/eslint.config.mjs": "eeda7faabe9560fa9fdb26675b0011fa78461ca7061989732f5da9245b87e315",
+            "templates/vinext-starter/examples/d1/app/api/notes/route.ts": "a3d4a74fd53b7bf53e2df41f169d9d9d44a8b22aeb6d92f4e754956079af8909",
+            "templates/vinext-starter/examples/d1/db/schema.ts": "d89eabd95716ce404f5f7ca2a254220435be8ddce7c899d7ef461ff22ec80454",
+            "templates/vinext-starter/hooks/use-mobile.ts": "ad0936f84f1df79d3697bfbff9c18f8ad58431c1cbaf2359c6a853b0fcc9f28b",
+            "templates/vinext-starter/lib/connector-context.ts": "bbddff68689cb0f6926fecd4b8b96f12f2054277c296e97b0df07d4ad5ece24e",
+            "templates/vinext-starter/lib/connector-contract.mts": "e1a7b24a8793af34b595690d9b1300c897c7321c14f215cedf58ad95799d7c3e",
+            "templates/vinext-starter/lib/connector-errors.mts": "a22edf13d6873ae832c4a2a0d579fc666c73ec996ef0722d39172649d38f0871",
+            "templates/vinext-starter/lib/connector-preview.d.ts": "abd69a94f7f61f1359063bb557574faae35e8ff5a028cc4c04b9ee248ef52642",
+            "templates/vinext-starter/lib/connectors.ts": "1c93d747e384c8e17e3e3dd5361b24412babf5eba2a11d2ae7a75f4e0924112c",
+            "templates/vinext-starter/lib/utils.ts": "53f3d3d070f0a9082934da25b875f9499855c2b0693868dd28be8c23d8730f68",
+            "templates/vinext-starter/next.config.ts": "614bce25b089c3f19b1e17a6346c74b858034040154c6621e7d35303004767cc",
+            "templates/vinext-starter/package-lock.json": "eedaeab6870c0f70f9db869fcaa24abae9b0f945cbc9acb8a43b6e7ed6bcbfca",
+            "templates/vinext-starter/package.json": "eb7b53ec5bdce1db5a8576b2ffc3b63ddd8c5fdee0f97dcb341674abbf69843a",
+            "templates/vinext-starter/postcss.config.mjs": "dfac7ac2d86d326a0e5adb024e7943c181393ed17a5fcb8f0315b24c7da6ddde",
+            "templates/vinext-starter/public/favicon.svg": "e6d2e59b7b5bbb0342e0fb496dfc262decbfe4426bbb7b047aec8d467d1dc6f7",
+            "templates/vinext-starter/README.md": "6a8169063d2b024fcbe791837621e0f2bd9863968b5d654d2a0975e76e2ad7f8",
+            "templates/vinext-starter/scripts/build-verified.sh": "2ae5329ac860076070c9217a43106a15cb5ecf907a0f7baeb9ef903f76b53c68",
+            "templates/vinext-starter/scripts/connector-preview/connector-preview-session.mjs": "57224ad185a25115a14fccc68d3217e55b199260c3dd98a2c807beffec1a0a9b",
+            "templates/vinext-starter/scripts/connector-preview/host-binding.mjs": "9e44ab6864133a5c82f834a5904ebb7d6104cb783c24efba3c0fe1a161182cea",
+            "templates/vinext-starter/scripts/connector-preview/protocol.mjs": "111e062ebf08d3f180130f5bc3dcb3c1414c1d7be3c032c9d675a61c0c7513a8",
+            "templates/vinext-starter/scripts/connector-preview/worker.mjs": "bd9c98fc68f29d975fe10508dfc9029bb681dc5789a62861d5c938bdea2064bb",
+            "templates/vinext-starter/scripts/execution-profile.mjs": "2e71116f4d2b70cff8bb70436f8dd5c709ec7ff62893424530f404e0193d3630",
+            "templates/vinext-starter/scripts/install-ci.mjs": "4a5a92d60a08d0ba54effd8373da2da06284312c55b767287c68a0bec7200da7",
+            "templates/vinext-starter/scripts/install-ci.sh": "10d8764a61be50351dc3496e13588270de7956f0aa5f1189c49cabb2d89fe5c0",
+            "templates/vinext-starter/scripts/install-pnpm.sh": "a684c02c2b493dfbf262a66252a5cd36f81ca995a4024761728662ae63aa40c0",
+            "templates/vinext-starter/scripts/npm-install.mjs": "9715c6a32d1d4a0289ef6376a0e819c3b6a6416b8a9877733d9fb4339ce626b6",
+            "templates/vinext-starter/scripts/pnpm-install.mjs": "a83164e344c1947053def83b546be8115deaa827314bbaead7afe6b6451c5cdf",
+            "templates/vinext-starter/scripts/run-framework.mjs": "9bf9f41a29314cabe0238b8e9c540ec3f7b5a6adafc7c8fb6c3940722d061dca",
+            "templates/vinext-starter/scripts/sites-env.mjs": "21d7bde6acb9f716287e652c1b0e43ae4803d79be367ca2192fcba14740b5338",
+            "templates/vinext-starter/scripts/sites-env.sh": "d18af7b222db748c9de257d5955b9d7f77ec350dab6321f114f0bc44c20388ac",
+            "templates/vinext-starter/scripts/tool-environment.mjs": "6da99286e0eb7905595ca851e68983bedf94a0f93814819d61f2b1f3a0342ba2",
+            "templates/vinext-starter/scripts/vite/connector-preview-plugin.mjs": "a6a9fe2086e302f94a3f91e3c1a68a45bb3aa07d4a79faf01b14732191eb4e80",
+            "templates/vinext-starter/scripts/vite/sites-vite-plugin.LICENSE": "7de1e115d165f176e68f962acdb809b5ab8d8ae78d3981e0701392b2ac50c713",
+            "templates/vinext-starter/scripts/vite/sites-vite-plugin.ts": "07af20e7097d9ed1d76f7c446d02997550b8fc5ca89668b249e25eabd62c6834",
+            "templates/vinext-starter/tsconfig.json": "a4c1cc83b63ef9d39641d3babaefffa063dccbbc93338e18017b5013d713163e",
+            "templates/vinext-starter/vendor/shadcn-tailwind-4.13.0.css": "bc7d83425702955b4cb67cb14ede9d603f9d912376d57a2d81d661094d2a782a",
+            "templates/vinext-starter/vendor/shadcn-tailwind-4.13.0.LICENSE.md": "1564074e13439397221ffd522e2e504d56561994a23d371aa5e3ad43e4f5423f",
+            "templates/vinext-starter/vite.config.ts": "22ff558b1636d251e076f74c1697c7166079861667af10922d6bc505cb8f8290",
+            "templates/vinext-starter/worker/index.ts": "a0a10229cdda6f5fdb32234e3539007412233bb4938a671866c9295a44a3bdb6",
+            "templates/worker-esm-starter/.gitignore": "d0fc69648a6324ef66f032712b68ae1f0f24a2a954daa8308da38a45c6a6057b",
+            "templates/worker-esm-starter/.openai/hosting.json": "d532abb65cf9ae20634b464d954cb4a08a0de9f3cd3cdf7f9c3ec8948826d947",
+            "templates/worker-esm-starter/package.json": "5314513e9a77e1bf5602ae4db24ef674bbaf6e6dbc9a006eccd852b33b66f5a5",
+            "templates/worker-esm-starter/README.md": "a96449d81e90c01df1eb3a51e1178df813577712d00ca3695b77bd9a81714e99",
+            "templates/worker-esm-starter/scripts/build.sh": "76bddebeb2accb38b37de0673778d7bf3119bc7da7ed5ae4c1d4c9884969848f",
+            "templates/worker-esm-starter/scripts/validate-artifact.mjs": "39d9df53ac2461962466d5965c5f4d06f08024ceca40605952d8b753b88d41fd",
+            "templates/worker-esm-starter/worker/index.js": "2917434bd856c428f5ea636148dfd0161804c14a2f81e019980d573af28ef883"
+          }
+        }
+      ]
+    },
+    {
+      "source_name": "sites-remix",
+      "target": "agy-sites-remix",
+      "status": "local-substitute-no-managed-hosting",
+      "sources": [
+        {
+          "path": ".codex\\plugins\\cache\\openai-curated-remote\\sites\\1.1.7\\skills\\sites-remix\\SKILL.md",
+          "skill_sha256": "34a249750d98e38f676fa391819593ab5c14e5f46f9137832a8c49180d47022d",
+          "file_signature": {
+            "agents/openai.yaml": "bc8d5487d5f8ac41ff8af079d569f46f00120a9cdac4c1aa30d8fa7df868ba34",
+            "SKILL.md": "75ebf6bf6dac88f145d5f719fd00dc61b272a27702fd136b476a2f3fb0255689"
+          }
+        }
+      ]
+    },
+    {
+      "source_name": "plugin-management",
+      "target": "agy-plugin-management",
+      "status": "workflow-adapted",
+      "sources": [
+        {
+          "path": ".codex\\plugins\\cache\\openai-curated-remote\\plugin-management\\0.1.0\\skills\\plugin-management\\SKILL.md",
+          "skill_sha256": "653841cc21205269f08b0ce135891e1518dac616a766bcfb0b57d788d3f68b10",
+          "file_signature": {
+            "SKILL.md": "fa0857d1022c0be2e84239ca616269857f775c81cc0916f830487742f3f1f891"
+          }
+        }
+      ]
+    },
+    {
+      "source_name": "template-creator",
+      "target": "agy-template-creator",
+      "status": "workflow-adapted",
+      "sources": [
+        {
+          "path": ".codex\\plugins\\cache\\openai-primary-runtime\\template-creator\\26.1123.11515\\skills\\template-creator\\SKILL.md",
+          "skill_sha256": "244bfef01d3e17c6013952ccf34621a90ddfee9c7828058245c3c46f51114944",
+          "file_signature": {
+            "agents/openai.yaml": "d98af7dcec7cb30c53b5de0e914d92a8d0de0b250328f272754bdaa3038e6e44",
+            "assets/site-preview.png": "0f644a80c9832957d40fb50ba72fc13a75c4f7f6085f59aaa62fdd5f361ae871",
+            "host/export-google-workspace-file.mjs": "e3f569243d0a7243e2e9579d26e24d95315dd7a69f70f06fa6fcb027f07f12e9",
+            "host/google-workspace-export-stdin-receiver.mjs": "d4dbac9ee213eb3b8cd6ac656af0268f1fb826f2020967dc0a6e4dd8c4d9a111",
+            "scripts/create-template-skill.mjs": "5bb6f574c46ccffbbad39405414b43a04d49360be3421ee58a4acfd2373659d2",
+            "SKILL.md": "cf3cec2adef83bfcee949190b5b9cf6efbe076d9ab807a7b9edc93a1b26a8bda"
+          }
+        }
+      ]
+    },
+    {
+      "source_name": "skill-creator",
+      "target": "agy-skill-creator",
+      "status": "workflow-adapted",
+      "sources": [
+        {
+          "path": ".codex\\skills\\.system\\skill-creator\\SKILL.md",
+          "skill_sha256": "cccd291077ec57c6f50ca6529f0f3fb93212da09473effb2fcec808e81b21288",
+          "file_signature": {
+            "agents/openai.yaml": "b750627cdd588fdbb5b46e854d3384d1a504fad3b8ed73ca5d7ead3804df78b6",
+            "assets/skill-creator-small.svg": "edb19a0c59f9a1b5253b9af6d2f9f03cac27b2fe6a0275ebccbbdbff07891a1a",
+            "assets/skill-creator.png": "a4024b0306ddb05847e1012879d37aaf1e658205199da596f5145ed7a88d9162",
+            "license.txt": "3ddf9be5c28fe27dad143a5dc76eea25222ad1dd68934a047064e56ed2fa40c5",
+            "references/openai_yaml.md": "7039d465b05342cbacf861f08d20192ab1eeee112bc5d8ff0fb66234756887a9",
+            "scripts/generate_openai_yaml.py": "30c73f1ea7d47dbab2b231bb92c5bf9026f1ad14ba8e3b3a4a544092c4d24ebe",
+            "scripts/init_skill.py": "74dfa9361a93bee6932d6cbb332ed19ac26a27ba3800e69fb07ba7512c1025f9",
+            "scripts/quick_validate.py": "6068513d924ed3559e186dfcdead7439129828dcf402167fd925c06dffbf2806",
+            "SKILL.md": "b6422aad3e6a7327cc16884b2ea3ed496c1efbf810fd3548215a141baee504a2"
+          }
+        }
+      ]
+    },
+    {
+      "source_name": "skill-installer",
+      "target": "agy-skill-installer",
+      "status": "workflow-adapted",
+      "sources": [
+        {
+          "path": ".codex\\skills\\.system\\skill-installer\\SKILL.md",
+          "skill_sha256": "2892d8b2fb11631132118f340aed80ae17e59d5a571fc2c4f4a4a7e73f139d52",
+          "file_signature": {
+            "agents/openai.yaml": "bd64b4d6893138706b3e3540f266ab809ccdcd08375652ae9f9d1e029fe50d02",
+            "assets/skill-installer-small.svg": "099e5a4b5e5f0f918a8de0d2059f0a86211da623dbb75f86f13dc9f7c08c778d",
+            "assets/skill-installer.png": "d0a230b1a79b71b858b7c215a0fbb0768d6459c14ea4ef80c61592629bf0e605",
+            "LICENSE.txt": "3ddf9be5c28fe27dad143a5dc76eea25222ad1dd68934a047064e56ed2fa40c5",
+            "scripts/github_utils.py": "2f9702afb9f0da740181fa4a3214f663e460f80cd5cea2e7dcaab00ad269082e",
+            "scripts/install-skill-from-github.py": "110cc7e4e395c2c9ba070d47db7d21be5164591c35015ae364fc9c9905b08de8",
+            "scripts/list-skills.py": "2cd6eecbaf9be7c86e80a14d7042f95d6abb83b6baee5f17dd075fa7a71c83de",
+            "SKILL.md": "96c85babbe2b2b0969431f10a221a02cba5c761a3de9d47dfab708a99bd4f0fd"
+          }
+        }
+      ]
+    },
+    {
+      "source_name": "openai-docs",
+      "target": "agy-openai-docs",
+      "status": "workflow-adapted",
+      "sources": [
+        {
+          "path": ".codex\\skills\\.system\\openai-docs\\SKILL.md",
+          "skill_sha256": "60e2a9ae371c11b0686aa802ab19c542bb1bbaf360dab0d7fc0cd495748178e6",
+          "file_signature": {
+            "agents/openai.yaml": "a4e37375d0f096a27867dbb39a2ce917c96035b37692afe8206c3d3335077d97",
+            "assets/openai-small.svg": "85ef0a2cde497872edec1525f1d538ccc42b33ff47acdbb88499a1631a4bdb21",
+            "assets/openai.png": "156cc84d7332bfe95b310350bd470b690d22aa33d65340cc6c2e06022946194c",
+            "LICENSE.txt": "44e03f7e263eb3ad256440c1eeab5e49168baff5a78ecef9a5447261cf3a91bc",
+            "references/codex-self-knowledge.md": "f945bf2a7cea6892d7a11ac38fb18b744fefd6d273654a8410c4c79e9f647fbe",
+            "references/latest-model.md": "66303f714cd51408fcd6eaa81acef1769cbeb6af844883fef2847926fe324fe4",
+            "references/mcp-diagnostics.md": "e9df2b2f8faa28930db4a2937cdb3665b4548ac958e80a8601a5dd0da1e6fad0",
+            "references/model-migration.md": "469229631360fa6899ebc4cbbad8c4161ccf9e6b38b241054e8fe499dcd45cc2",
+            "references/model-selection.md": "ce020100a28004500c927abcd57cff154c5c360eb72d918ef7d72492e2484cce",
+            "references/official-docs.md": "b2301d72b8092be5f5727d8d1cbc75740887d836f4f13b469f40c1db16b39fe3",
+            "references/prompting-guide.md": "69517cde6c3bac945100a9da946d65c9effdd145d7600dead41f8adc1c1a7e38",
+            "references/upgrade-guide.md": "3ec7763f8adab0e2d35d752cc762f1382726108e166bbf10dbe9d38608d3fc5a",
+            "references/upgrading-to-gpt-6-astra.md": "789fcaf0999f56cebf801d0f6e6bdfe347dcfb5eff3d9a40ff815c15336f8699",
+            "scripts/fetch-codex-manual.mjs": "6172bd2caa95593b735c3e60c0bd5d7ae49ca0a345440f2d2a36e0dfc556801a",
+            "scripts/resolve-latest-model-info": "8f5006efa15c034ede29821b627d7b86c43f7dfaab422d335f45b9be8d04e2d5",
+            "scripts/resolve-latest-model-info.cjs": "2eee6052aa77c9e98d7ea8a59caca73c3158eded7ee707308ec563211c30692f",
+            "SKILL.md": "7b1f4d80d4302adc4744f351a29935d3d9ba563d06875896eedef6825d8bd0c6"
+          }
+        }
+      ]
+    },
+    {
+      "source_name": "artifact-template-analytics-dashboard",
+      "target": "agy-artifact-template-analytics-dashboard",
+      "status": "project-template-local-workflow",
+      "sources": [
+        {
+          "path": ".codex\\plugins\\cache\\openai-curated-remote\\openai-templates\\0.1.1\\skills\\artifact-template-analytics-dashboard\\SKILL.md",
+          "skill_sha256": "cf5360fd8b197673bb237c52c603c97fa319c875c3dfa2cd8efff52d4422f513",
+          "file_signature": {
+            "agents/openai.yaml": "392f620a50c2a39bb3b3e80e376a27385d312ba7a8abf14cfabb7f02f761a273",
+            "artifact-template.json": "7aea630ddafb1add3869c6c046e2b8c83464771a29f7e47a59d482480d13d0be",
+            "assets/preview.png": "b5c458e744d46ef4211d167d3451864148853aa73708323068504da956ce03b3",
+            "assets/reference.xlsx": "ab655c867ea1c9eed617ec0eeec643946c1e49e9d5227e9db740c95daba26e46",
+            "SKILL.md": "358e93d75351b71abcf1c9fc7ab4da302170ef5d4aa7a53adc89d3e0d00b2e51"
+          }
+        }
+      ]
+    },
+    {
+      "source_name": "artifact-template-business-review",
+      "target": "agy-artifact-template-business-review",
+      "status": "project-template-local-workflow",
+      "sources": [
+        {
+          "path": ".codex\\plugins\\cache\\openai-curated-remote\\openai-templates\\0.1.1\\skills\\artifact-template-business-review\\SKILL.md",
+          "skill_sha256": "27721fc1d67d1b41949caa75ac8f94f81952ff124406878af6524047929e60d2",
+          "file_signature": {
+            "agents/openai.yaml": "cde1beac06ca33c9a0a12c1cbf2b5834dd208a5f732069fd790d7bf9483bcbdd",
+            "artifact-template.json": "809c64b42be1f603434873698306295e5344a7871d8a173d6665b89470f62b78",
+            "assets/preview.png": "af6b092987472013920bb251e0e9d60b97fdb02cc1fd3109abf2b0951bc6aa3c",
+            "assets/reference.pptx": "595b9a314c7e8e9b5f22180e7c7db167afba2437c8623d57e3f9dbc20af392c1",
+            "SKILL.md": "f8c099702d15c2e0b8aa96c3e3e3dd205b49fbe58957a5773d33c8a93b5142a8"
+          }
+        }
+      ]
+    },
+    {
+      "source_name": "artifact-template-design-report",
+      "target": "agy-artifact-template-design-report",
+      "status": "project-template-local-workflow",
+      "sources": [
+        {
+          "path": ".codex\\plugins\\cache\\openai-curated-remote\\openai-templates\\0.1.1\\skills\\artifact-template-design-report\\SKILL.md",
+          "skill_sha256": "563722f53854e606f8a9f87e37e72d7ef70a22d46d5836b8e4d6abfb1b79e9e0",
+          "file_signature": {
+            "agents/openai.yaml": "bd8e8ba79937d8fc087ced20bab5f25fa9a160303762f7567ef2bdcb739d3f9a",
+            "artifact-template.json": "54586c722449d873eb16ed211e8591a179f31da5e245dcc82800df649380b127",
+            "assets/preview.png": "19cd1f36fbc8d7efbf27a674004f2c22145514e77bee3459fb8cc4a89caf870d",
+            "assets/reference.docx": "ba1e11258ff52659318a321462a5e598c7bed33cf991329eb91150788fcd1a7b",
+            "SKILL.md": "bd92cedeed56cba3793a72197325d444be1b3808cd175e685caaf35537d245fd"
+          }
+        }
+      ]
+    },
+    {
+      "source_name": "artifact-template-experiment-analysis",
+      "target": "agy-artifact-template-experiment-analysis",
+      "status": "project-template-local-workflow",
+      "sources": [
+        {
+          "path": ".codex\\plugins\\cache\\openai-curated-remote\\openai-templates\\0.1.1\\skills\\artifact-template-experiment-analysis\\SKILL.md",
+          "skill_sha256": "0b05effc47df0a14f8e0c3e3597e6722224747435546385d38a2cae279bd20b9",
+          "file_signature": {
+            "agents/openai.yaml": "861a34c68d0d899bb17029316ca8a3d3951a20c206cb8c1890652c2ff06ca626",
+            "artifact-template.json": "54586c722449d873eb16ed211e8591a179f31da5e245dcc82800df649380b127",
+            "assets/preview.png": "847743ae181c5547e9244823c236408765cff5038e2264e3d72c9e958d30929c",
+            "assets/reference.docx": "d823cd0115186b34c01c6e4b4da3be28b64ee73cac849dbd62d6f4bb6385b0fb",
+            "SKILL.md": "6c24b1a8827695f0a778a012e4049c18d68b59812889b002f8e864fd028f6da9"
+          }
+        }
+      ]
+    },
+    {
+      "source_name": "artifact-template-financial-budget",
+      "target": "agy-artifact-template-financial-budget",
+      "status": "project-template-local-workflow",
+      "sources": [
+        {
+          "path": ".codex\\plugins\\cache\\openai-curated-remote\\openai-templates\\0.1.1\\skills\\artifact-template-financial-budget\\SKILL.md",
+          "skill_sha256": "c0b6b7a62a15597aaf2b1ec679e21da48f533b756127f0aef957cdfe9f3da738",
+          "file_signature": {
+            "agents/openai.yaml": "ac5c29e75dc2e335aa4cab9999d291c081cb07b3eaab6eaaae7f6e6068aba2a4",
+            "artifact-template.json": "7aea630ddafb1add3869c6c046e2b8c83464771a29f7e47a59d482480d13d0be",
+            "assets/preview.png": "ed0298a7e15051887ad2e9ca775314de1dfae41de33f7f82fee89f39cdcf20e3",
+            "assets/reference.xlsx": "b15aecd03ee94fc3e29fb5c6de33c6090b75287845ab337afe0376cc0330e052",
+            "SKILL.md": "c8c6b9b92d7885a62e62b01308a8e8d580d5b511d0d9bdb5a6c2134a87d6c7b3"
+          }
+        }
+      ]
+    },
+    {
+      "source_name": "artifact-template-investment-committee-memo",
+      "target": "agy-artifact-template-investment-committee-memo",
+      "status": "project-template-local-workflow",
+      "sources": [
+        {
+          "path": ".codex\\plugins\\cache\\openai-curated-remote\\openai-templates\\0.1.1\\skills\\artifact-template-investment-committee-memo\\SKILL.md",
+          "skill_sha256": "68abd08cfe5e073e3c446a3f675f44c5bf98f57434dba679e8acd8a763379a8b",
+          "file_signature": {
+            "agents/openai.yaml": "0264537a7b51ef28e41907d34bd09c3e0259045a84f0591e13fd2efd44a3ac69",
+            "artifact-template.json": "54586c722449d873eb16ed211e8591a179f31da5e245dcc82800df649380b127",
+            "assets/preview.png": "4f5efed31db5f4468e8619e6ca579be1c57d84d4a023fe9a7c5ec0deafb0812a",
+            "assets/reference.docx": "0a8a4c5b8b1d8c055e19c9eadcc7eac898899f067cbbd20602c4e7c078e545de",
+            "SKILL.md": "2a58af7f4151f17bb3cbeb688d4bd500de10a42bc4b849fecafc2ac4cd719dcb"
+          }
+        }
+      ]
+    },
+    {
+      "source_name": "artifact-template-legal-memorandum",
+      "target": "agy-artifact-template-legal-memorandum",
+      "status": "project-template-local-workflow",
+      "sources": [
+        {
+          "path": ".codex\\plugins\\cache\\openai-curated-remote\\openai-templates\\0.1.1\\skills\\artifact-template-legal-memorandum\\SKILL.md",
+          "skill_sha256": "51fb9d21baf6119c4ccb1903638a6bac0e859210de63460fffa7025d52e997e0",
+          "file_signature": {
+            "agents/openai.yaml": "bfd77de2f34d5222e9db4b469aab576426c73b0850f5c3a628e4a5e8f8587887",
+            "artifact-template.json": "54586c722449d873eb16ed211e8591a179f31da5e245dcc82800df649380b127",
+            "assets/preview.png": "362e4d26521d6eadc5be3c0dec37d7000ef8c967883485e94db60149e4f28660",
+            "assets/reference.docx": "d3006f9074e46823d103fe283be19901f55f75c19811558455d7a16c61797355",
+            "SKILL.md": "6a66aac09f513dd7798242776a8eea43a91770dd8e86c0aceedd639b3b4a08f8"
+          }
+        }
+      ]
+    },
+    {
+      "source_name": "artifact-template-market-trends-report",
+      "target": "agy-artifact-template-market-trends-report",
+      "status": "project-template-local-workflow",
+      "sources": [
+        {
+          "path": ".codex\\plugins\\cache\\openai-curated-remote\\openai-templates\\0.1.1\\skills\\artifact-template-market-trends-report\\SKILL.md",
+          "skill_sha256": "d58d019b89cb6f292ac3ab991d561489eef477ff53ce05fb024a0c936f5af26a",
+          "file_signature": {
+            "agents/openai.yaml": "fe84725e0c898778a5ed33bfab12a99beb171b08e98a834ebdc55860ac0d4efd",
+            "artifact-template.json": "809c64b42be1f603434873698306295e5344a7871d8a173d6665b89470f62b78",
+            "assets/preview.png": "a27d80525678a8b0b4e2242dd13aca95f7920ac790b1a66e96d8b39cc4a74e8f",
+            "assets/reference.pptx": "52396c3a70dc11d35989bb4e3f9a96d2c728c5eba8a1aad96920cfe24cff59fa",
+            "SKILL.md": "f676dbb276b4ad46b1b3c09c478c0c792c9bd9be7cd41fd9e42334d2f3f8e1ee"
+          }
+        }
+      ]
+    },
+    {
+      "source_name": "artifact-template-minimal-letterhead",
+      "target": "agy-artifact-template-minimal-letterhead",
+      "status": "project-template-local-workflow",
+      "sources": [
+        {
+          "path": ".codex\\plugins\\cache\\openai-curated-remote\\openai-templates\\0.1.1\\skills\\artifact-template-minimal-letterhead\\SKILL.md",
+          "skill_sha256": "880ef094d4d0c89a7bde5ce9bbe4086625c186651e9e6efc8ba8bdd7cc77f9d5",
+          "file_signature": {
+            "agents/openai.yaml": "f5b9311a53150e4d19c5c90664942a1537a73cec687b128dc6c6301261b803ad",
+            "artifact-template.json": "54586c722449d873eb16ed211e8591a179f31da5e245dcc82800df649380b127",
+            "assets/preview.png": "827df9ab20cdcf07a62955c568343c27f1c597336444c84ad98d7c0ca7983b6b",
+            "assets/reference.docx": "5dd55e0f5bbdb603d98db5b8560b8babc6005cbb7f31ce8ed63569417c5cae86",
+            "SKILL.md": "ab4e262ebbc15dffcaedc0f60c56ef3bc854560ef9d5f707cbe399ac07213692"
+          }
+        }
+      ]
+    },
+    {
+      "source_name": "artifact-template-operating-calendar",
+      "target": "agy-artifact-template-operating-calendar",
+      "status": "project-template-local-workflow",
+      "sources": [
+        {
+          "path": ".codex\\plugins\\cache\\openai-curated-remote\\openai-templates\\0.1.1\\skills\\artifact-template-operating-calendar\\SKILL.md",
+          "skill_sha256": "33bb660791a0b9a21628a42c34934932220203b6aabd84e98cb1b45327d0384c",
+          "file_signature": {
+            "agents/openai.yaml": "cd41437c7fd39159b21d5decedcb3b53c9737e3854b7f9e46efcddfb73f610d5",
+            "artifact-template.json": "7aea630ddafb1add3869c6c046e2b8c83464771a29f7e47a59d482480d13d0be",
+            "assets/preview.png": "9511212decb870cdded2c5ef0388c1bf4b3ee1747020a61f1c3a7078b2cfa6f2",
+            "assets/reference.xlsx": "fef758154889db179aa701a3916d6e6d30c61935b92ad259dd603322888e7f5f",
+            "SKILL.md": "f3c98e35ab189165e4fb079744a16e98ba505f70cc205c15c94466083f4f19fc"
+          }
+        }
+      ]
+    },
+    {
+      "source_name": "artifact-template-operating-review",
+      "target": "agy-artifact-template-operating-review",
+      "status": "project-template-local-workflow",
+      "sources": [
+        {
+          "path": ".codex\\plugins\\cache\\openai-curated-remote\\openai-templates\\0.1.1\\skills\\artifact-template-operating-review\\SKILL.md",
+          "skill_sha256": "6d63c5cd025ffe936e7bab5db3023672bbaec26af55c2bb8b057d38c202c9c32",
+          "file_signature": {
+            "agents/openai.yaml": "871a705a344c2461bb3fa43495ac9fb9724ee583649cafce9b97a054702b6cae",
+            "artifact-template.json": "809c64b42be1f603434873698306295e5344a7871d8a173d6665b89470f62b78",
+            "assets/preview.png": "e8f1dd91d1258c3bb06d2b1d0c52a49fce454e6682732e2e8f43b37c494e3c19",
+            "assets/reference.pptx": "ec2084d143a4d52857cc06c24129abbb45c45d04b90cca06e319ac26d3cadd4f",
+            "SKILL.md": "7fd53648881d52dd008cab7a849e7d85526266c9b731c30a81629479bcdd9da9"
+          }
+        }
+      ]
+    },
+    {
+      "source_name": "artifact-template-project-kickoff",
+      "target": "agy-artifact-template-project-kickoff",
+      "status": "project-template-local-workflow",
+      "sources": [
+        {
+          "path": ".codex\\plugins\\cache\\openai-curated-remote\\openai-templates\\0.1.1\\skills\\artifact-template-project-kickoff\\SKILL.md",
+          "skill_sha256": "aa893ebd89e7c8d1db4261d01cc2b1add35d78d00785871ccaaa5fc8db783ec9",
+          "file_signature": {
+            "agents/openai.yaml": "3f62c61df6cd23f81c6f412994f40ff176b006d40b913b3c423480279eb4aff5",
+            "artifact-template.json": "809c64b42be1f603434873698306295e5344a7871d8a173d6665b89470f62b78",
+            "assets/preview.png": "02823427c2552cc894d333fb96fd2fb3e3ac04503904ab6f73643ca877362df5",
+            "assets/reference.pptx": "b1b15cb0c23ad524f9832749ec31b775719bae2bdba897de9c9d8556ca00a44c",
+            "SKILL.md": "e422ede507ad256c59d187670cb174eff3ded5c979d9ea185bc841d742f6909c"
+          }
+        }
+      ]
+    },
+    {
+      "source_name": "artifact-template-project-tracker",
+      "target": "agy-artifact-template-project-tracker",
+      "status": "project-template-local-workflow",
+      "sources": [
+        {
+          "path": ".codex\\plugins\\cache\\openai-curated-remote\\openai-templates\\0.1.1\\skills\\artifact-template-project-tracker\\SKILL.md",
+          "skill_sha256": "d97d5be20189b7f53dd269b6e1c5f694eaf53e5a72f6559fcb1578911b7cda82",
+          "file_signature": {
+            "agents/openai.yaml": "e858f66b2cd5a17a12ce7059be560d47c429faf34c1665b716c62e67b6b10496",
+            "artifact-template.json": "7aea630ddafb1add3869c6c046e2b8c83464771a29f7e47a59d482480d13d0be",
+            "assets/preview.png": "02811cec6d9b7d493342e03e08b6b56719af1eb6087a50dc6696c600ada90381",
+            "assets/reference.xlsx": "dd8bd283784a189061a328040e845a6d26807e2ee1005a9a195e6dc7baeefe80",
+            "SKILL.md": "9fd5e7239483f4138275c1fe85b1ae1e75e753c834587ef30d333138da6a1b43"
+          }
+        }
+      ]
+    },
+    {
+      "source_name": "artifact-template-sales-pipeline",
+      "target": "agy-artifact-template-sales-pipeline",
+      "status": "project-template-local-workflow",
+      "sources": [
+        {
+          "path": ".codex\\plugins\\cache\\openai-curated-remote\\openai-templates\\0.1.1\\skills\\artifact-template-sales-pipeline\\SKILL.md",
+          "skill_sha256": "15cfeeedf440021f16ed3f3ad8c7c1ef6d48898b9447741e223d2fb41cfc9800",
+          "file_signature": {
+            "agents/openai.yaml": "ea4d9150379ec34447137c436a7459c5f8863e7532a6a87ef1d0871412ee4410",
+            "artifact-template.json": "7aea630ddafb1add3869c6c046e2b8c83464771a29f7e47a59d482480d13d0be",
+            "assets/preview.png": "3208ad8051412202774cfe3f34de468d89a6c1e27cf00166933085f6a167cabe",
+            "assets/reference.xlsx": "a6ac1045a0602cbb4d90878949c2970d0e815dd9f98fe34d0ff92b69ebbb4db3",
+            "SKILL.md": "7a38156d02ecd44d4bf5eb58e4c936f76b74d1efeb2c3e02e3c1c32163a7b3bb"
+          }
+        }
+      ]
+    },
+    {
+      "source_name": "artifact-template-simple-dark-mode",
+      "target": "agy-artifact-template-simple-dark-mode",
+      "status": "project-template-local-workflow",
+      "sources": [
+        {
+          "path": ".codex\\plugins\\cache\\openai-curated-remote\\openai-templates\\0.1.1\\skills\\artifact-template-simple-dark-mode\\SKILL.md",
+          "skill_sha256": "b7c8d0c05f75878b9bc21e56a57c41ec1aa29700aca0a24822be0f9f1bd53207",
+          "file_signature": {
+            "agents/openai.yaml": "a5c3103290b5e28efec73cf5ad7af7c5a9212ff422256e2e831f11b456e995b9",
+            "artifact-template.json": "809c64b42be1f603434873698306295e5344a7871d8a173d6665b89470f62b78",
+            "assets/preview.png": "2082897b4e30c9a2ed137e51fa32503b1e85afb53c8555521ba374b75df622ec",
+            "assets/reference.pptx": "042ef2fcb8726524a1e773e3c73bf8b8c10b98f67ae675eb01c4501b9365a897",
+            "SKILL.md": "1ef0ccde367713d7895cf137d8172aab0950b9d8dc21c4f727f2689db41cb927"
+          }
+        }
+      ]
+    },
+    {
+      "source_name": "artifact-template-simple-light-mode",
+      "target": "agy-artifact-template-simple-light-mode",
+      "status": "project-template-local-workflow",
+      "sources": [
+        {
+          "path": ".codex\\plugins\\cache\\openai-curated-remote\\openai-templates\\0.1.1\\skills\\artifact-template-simple-light-mode\\SKILL.md",
+          "skill_sha256": "7c68430c6cf57b55b457d4735dbd1a46b889bef135a32222902dd0848b6e1752",
+          "file_signature": {
+            "agents/openai.yaml": "82d2ce0edb52134049718151db345ad1748a358ae1d20c2efe9e274404a1d029",
+            "artifact-template.json": "809c64b42be1f603434873698306295e5344a7871d8a173d6665b89470f62b78",
+            "assets/preview.png": "9c12751105bbdea9e74df059b0b86c6eef22b3af34ba38c090edb7e2e4acf3ac",
+            "assets/reference.pptx": "2ae8105571f68403f438458cd51e6ad14f0d989c7af64239e280437a4ac2a633",
+            "SKILL.md": "831397dcc515f5e302dd83ddd26c320f0314a7aa533b328498a4b75f75b855d8"
+          }
+        }
+      ]
+    },
+    {
+      "source_name": "artifact-template-strategy-memorandum",
+      "target": "agy-artifact-template-strategy-memorandum",
+      "status": "project-template-local-workflow",
+      "sources": [
+        {
+          "path": ".codex\\plugins\\cache\\openai-curated-remote\\openai-templates\\0.1.1\\skills\\artifact-template-strategy-memorandum\\SKILL.md",
+          "skill_sha256": "51d7882ac94e8e57b323394825728c33925af878806e37277217c2dc12a912e5",
+          "file_signature": {
+            "agents/openai.yaml": "1a277cd3a6fd6be41fee1546183f5ea1119ea7c661e1cf156c6cce9b55c65bd3",
+            "artifact-template.json": "54586c722449d873eb16ed211e8591a179f31da5e245dcc82800df649380b127",
+            "assets/preview.png": "2a615bd6c983a2a747b8cb5ea82e47e92ff3b1736a1d94742c57a9ce42aa1d55",
+            "assets/reference.docx": "13bd3ae7aef4b3ae76c5d65200acd654c922782974dac18672e973fad93bd453",
+            "SKILL.md": "5478a874fd606e0c9c90f63ffabb3db57ce186c8f0f472f717aee0d101cfa274"
+          }
+        }
+      ]
+    },
+    {
+      "source_name": "artifact-template-system-design",
+      "target": "agy-artifact-template-system-design",
+      "status": "project-template-local-workflow",
+      "sources": [
+        {
+          "path": ".codex\\plugins\\cache\\openai-curated-remote\\openai-templates\\0.1.1\\skills\\artifact-template-system-design\\SKILL.md",
+          "skill_sha256": "87f7b7ed1b0d8410f5e5971cd7f7db9a4165e2f37069e97e52dbfb469b75a57c",
+          "file_signature": {
+            "agents/openai.yaml": "fe728562ab2857373f460a25b5954ef532034ab21e10c38b36c739bc5c5ffd77",
+            "artifact-template.json": "54586c722449d873eb16ed211e8591a179f31da5e245dcc82800df649380b127",
+            "assets/preview.png": "703c8a85a22ebaaa129dc99f82e530532b5b46ad862d7cb253716e9759d5dfe0",
+            "assets/reference.docx": "13504f6c221a42c1726460a9e865e563355539ff97d702d6c9b2267b4b261d76",
+            "SKILL.md": "1be906c0b171a07f103c5adaa50d79bb4c73b54dbe65756cbe261a953297e224"
+          }
+        }
+      ]
+    },
+    {
+      "source_name": "artifact-template-team-alignment",
+      "target": "agy-artifact-template-team-alignment",
+      "status": "project-template-local-workflow",
+      "sources": [
+        {
+          "path": ".codex\\plugins\\cache\\openai-curated-remote\\openai-templates\\0.1.1\\skills\\artifact-template-team-alignment\\SKILL.md",
+          "skill_sha256": "26d7cafdcd1899a937b325c5d02ac57c162d45002153be33a934d35f81eb6110",
+          "file_signature": {
+            "agents/openai.yaml": "dea3d32230b1e7e62d3f4844d3b1ddceb5f2855cd5fbe31e0849e51e1aa11c1d",
+            "artifact-template.json": "809c64b42be1f603434873698306295e5344a7871d8a173d6665b89470f62b78",
+            "assets/preview.png": "8b91c66156be4dec9eca517ca330c246ca8e863ee9b97b3b93cc159eee362c2d",
+            "assets/reference.pptx": "72b9f23a07bfd679cde36757acb11ec99900b4be0f5d393a5b4e8c6fdce4286d",
+            "SKILL.md": "611bdf5a5795eac45d67ba00f83862bd7c09fef1e080e3f1a927067166cfa742"
+          }
+        }
+      ]
+    },
+    {
+      "source_name": "artifact-template-three-statement-forecast",
+      "target": "agy-artifact-template-three-statement-forecast",
+      "status": "project-template-local-workflow",
+      "sources": [
+        {
+          "path": ".codex\\plugins\\cache\\openai-curated-remote\\openai-templates\\0.1.1\\skills\\artifact-template-three-statement-forecast\\SKILL.md",
+          "skill_sha256": "74f4a5cccec0107b861548b157e04c51d9b58ec13a990c86394b4c529b8ecf41",
+          "file_signature": {
+            "agents/openai.yaml": "240d75e1e7b2f33a16a10538e125342ee6c701637e12c0fbe0d8aad5919b48eb",
+            "artifact-template.json": "7aea630ddafb1add3869c6c046e2b8c83464771a29f7e47a59d482480d13d0be",
+            "assets/preview.png": "2fb61600384025e1266d5f8b9c641cba4b535b78a03173b5d051662f4df48e68",
+            "assets/reference.xlsx": "4a4709ff9b860f762f4c3bb224c5084e9820d9a8d8085395aa121728c899d0c2",
+            "SKILL.md": "e1bc369dc12ac5313aa7d783292e440b14b40ff57484eee1558584127021a1cd"
+          }
+        }
+      ]
+    }
+  ],
+  "unavailable": [
+    {
+      "source_name": "create-pet",
+      "reason": "ChatGPT pet registration, uploads and activation have no equivalent account service in this pack. Image/sprite assets can be authored through agy-imagegen, but that does not install a pet."
+    },
+    {
+      "source_name": "pets",
+      "reason": "Listing, selecting and deleting ChatGPT account pets requires the original account service; a local asset directory is not equivalent."
+    },
+    {
+      "source_name": "update-pet",
+      "reason": "Updating a stable ChatGPT pet ID requires the original service. No replacement endpoint is invented."
+    },
+    {
+      "source_name": "create-statusline",
+      "reason": "This configures the Codex CLI footer, not an Antigravity App capability. It is not auto-activated."
+    }
+  ]
+}

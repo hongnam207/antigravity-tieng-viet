@@ -1,4 +1,6 @@
-# Bộ cài tích hợp 2.2.0
+# Bộ cài tích hợp 2.3.0
+
+Có thêm [40 skill và đồng bộ từ Codex](PORTABLE-SKILLS.md), runtime Office/PDF offline và bản sửa launcher AutoCAD MCP.
 
 ## Những gì được cài
 
@@ -16,8 +18,8 @@ Bộ cài không kèm ứng dụng/giấy phép Autodesk AutoCAD, Microsoft Offi
 
 ## Cài mới trên máy khác
 
-1. Chuẩn bị Windows 10/11 **x64**, Antigravity **App desktop Electron** đã cài. Đã kiểm tra họ App 2.34.0; bản IDE dựa trên VS Code không dùng bộ vá này. Dành khoảng **3 GB trống**, nhiều hơn nếu có bản sao lưu/nhiều phiên bản cũ.
-2. Mở [Releases](https://github.com/hongnam207/antigravity-tieng-viet/releases/latest), tải **Antigravity-Tieng-Viet-Setup-x64-v2.2.0.exe**. Không cần tải ZIP plugin rời, Python hoặc Node.js.
+1. Chuẩn bị Windows 10/11 **x64**, Antigravity **App desktop Electron** đã cài. Đã kiểm tra họ App 2.34.0; bản IDE dựa trên VS Code không dùng bộ vá này. Dành khoảng **4 GB trống**, nhiều hơn nếu có bản sao lưu/nhiều phiên bản cũ.
+2. Mở [Releases](https://github.com/hongnam207/antigravity-tieng-viet/releases/latest), tải **Antigravity-Tieng-Viet-Setup-x64-v2.3.0.exe**. Không cần tải ZIP plugin rời, Python hoặc Node.js.
 3. Lưu công việc và thoát hẳn Antigravity. Nếu Computer Use đang thao tác, kết thúc công việc trước. Bộ cài không cưỡng bức dừng tiến trình hoặc xóa trạng thái Stop.
 4. Chạy EXE, chọn thư mục chứa `Antigravity.exe`, bấm **Cài đặt**. Chờ thông báo hoàn tất. Chỉ chọn thư mục ứng dụng được hỗ trợ, không chọn thư mục tài liệu.
 5. Mở shortcut **Antigravity tiếng Việt** và bắt đầu một cuộc trò chuyện mới.
@@ -28,7 +30,7 @@ Sau khi tải EXE, quá trình cài các runtime, AutoCAD MCP và Computer Use k
 Đối chiếu tệp tải về với `SHA256SUMS.txt` trong cùng release:
 
 ```powershell
-Get-FileHash .\Antigravity-Tieng-Viet-Setup-x64-v2.2.0.exe -Algorithm SHA256
+Get-FileHash .\Antigravity-Tieng-Viet-Setup-x64-v2.3.0.exe -Algorithm SHA256
 ```
 
 Bộ cài cộng đồng chưa có chữ ký số. Không cần đổi ExecutionPolicy hoặc tắt phần mềm bảo vệ để cài.

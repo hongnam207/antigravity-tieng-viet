@@ -1,8 +1,8 @@
-# Antigravity tiếng Việt · Office/PDF · AutoCAD · Computer Use
+# Antigravity tiếng Việt · Office/PDF · MCP · Skills
 
 Việt hóa menu, nút bấm và cài đặt của **Antigravity desktop Electron (`app.asar`)** trên Windows x64, bằng từ điển giao diện và mô hình dịch chạy tại máy.
 
-Bộ cài **2.2.0** tích hợp AutoCAD MCP Pro và skill **`/computer-use`**, sửa lỗi XLSX có biểu đồ, chuyển nhanh giữa tệp và thứ tự slide PPTX. Đồng thời giữ điều khiển Windows qua MCP và preview PDF/DOCX/XLSX/PPTX **ngay trong khung tệp bên phải khi bấm vào file trong hội thoại**. Không cần mở trang Office Preview hoặc chọn lại tệp. **[Hướng dẫn Windows & Office](docs/WINDOWS-OFFICE.md)**.
+Bộ cài **2.3.0** tích hợp 40 skill chuyển đổi, runtime Office/PDF offline, AutoCAD MCP Pro và skill **`/computer-use`**. Giữ điều khiển Windows qua MCP và preview PDF/DOCX/XLSX/PPTX **ngay trong khung tệp bên phải khi bấm vào file trong hội thoại**. **[Hướng dẫn Windows & Office](docs/WINDOWS-OFFICE.md)** · **[40 skill và đồng bộ Codex](docs/PORTABLE-SKILLS.md)**.
 
 **[Tải bộ cài mới nhất](https://github.com/hongnam207/antigravity-tieng-viet/releases/latest)** · [Xử lý lỗi](docs/TROUBLESHOOTING.md) · [Phát triển](docs/DEVELOPMENT.md)
 
@@ -10,8 +10,13 @@ Bộ cài **2.2.0** tích hợp AutoCAD MCP Pro và skill **`/computer-use`**, s
 
 **[Hướng dẫn cài đầy đủ, AutoCAD và Computer Use](docs/INTEGRATED-SETUP.md)**
 
+[40 skill và đồng bộ từ Codex](docs/PORTABLE-SKILLS.md) · [Cấu hình Fetch, Excel, MarkItDown, Playwright và Node sandbox](docs/EXTRA-MCPS.md). Nhóm MCP tiện ích là cấu hình tùy chọn, cần launcher và mạng khi chạy lần đầu; không nằm trong runtime offline của AutoCAD/Office.
+
 ## Tính năng
 
+- **40 skill chuyển đổi:** Office/PDF, biểu đồ, Markdown, web và tích hợp công cụ, kèm 20 mẫu do dự án tạo theo MIT.
+- **Đồng bộ từ Codex:** shortcut trong Start để chạy lại trên máy đang dùng, giữ MCP và skill đã chỉnh sửa riêng.
+- **Sửa AutoCAD MCP:** chuyển đúng launcher `uvx autocad-mcp-pro` sang runtime đi kèm, tránh cài dependency qua cache khi mở server.
 - **Computer Use 1.0.6:** skill `/computer-use` và sidecar từ shayann07/antigravity-computer-use.
 - **AutoCAD MCP Pro 1.8.0:** phụ thuộc đi kèm; tự chọn COM nếu có AutoCAD, DXF nếu chưa có.
 - **Windows MCP:** quan sát cửa sổ, chụp màn hình, click, nhập Unicode, phím tắt, cuộn và mở ứng dụng.
@@ -26,12 +31,12 @@ Bộ cài **2.2.0** tích hợp AutoCAD MCP Pro và skill **`/computer-use`**, s
 ## Yêu cầu
 
 - Windows 10/11 **x64**, đã cài Antigravity desktop Electron thuộc họ được hỗ trợ.
-- Có quyền ghi vào thư mục Antigravity. Nên để trống ít nhất 3 GB cho bộ chạy, mô hình và bản sao lưu.
+- Có quyền ghi vào thư mục Antigravity. Nên để trống ít nhất 4 GB cho bộ chạy, mô hình và bản sao lưu.
 - Bộ cài đầy đủ kèm mô hình, plugin, Computer Use và phụ thuộc AutoCAD; xem kích thước thực tế ở Releases. Sau khi tải, có thể cài các thành phần tích hợp mà không tải thêm Python/Node/gói MCP.
 
 ## Cài đặt
 
-1. Mở [Releases](https://github.com/hongnam207/antigravity-tieng-viet/releases/latest), tải **`Antigravity-Tieng-Viet-Setup-x64-v2.2.0.exe`** trong **Assets**. Không cần tải Source code hoặc payload cho nhà phát triển.
+1. Mở [Releases](https://github.com/hongnam207/antigravity-tieng-viet/releases/latest), tải **`Antigravity-Tieng-Viet-Setup-x64-v2.3.0.exe`** trong **Assets**. Không cần tải Source code hoặc payload cho nhà phát triển.
 2. Thoát hẳn Antigravity, kể cả biểu tượng ở khay hệ thống.
 3. Chạy bộ cài. Kiểm tra thư mục được nhận; nếu chưa đúng, bấm **Chọn…** và chọn thư mục chứa `Antigravity.exe`.
 4. Bấm **Cài đặt**, đợi thông báo hoàn tất.

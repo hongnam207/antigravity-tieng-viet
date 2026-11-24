@@ -1,0 +1,12 @@
+const {configure}=require('../src/integrations/extra-mcps/configure.cjs');
+const fs=require('node:fs'),path=require('node:path'),os=require('node:os'),assert=require('node:assert/strict');
+const root=fs.mkdtempSync(path.join(os.tmpdir(),'agvi-extra-mcps-'));
+const file=path.join(root,'mcp_config.json');
+const initial={keep:42,mcpServers:{excel:{command:'custom-excel',env:{PRESERVE:'yes'}}}};
+fs.writeFileSync(file,JSON.stringify(initial));
+assert.equal(configure(root).added.length,4);assert.deepEqual(JSON.parse(fs.readFileSync(file)),initial);
+assert.equal(configure(root,true).added.length,4);
+const saved=JSON.parse(fs.readFileSync(file));assert.equal(saved.keep,42);assert.deepEqual(saved.mcpServers.excel,initial.mcpServers.excel);
+assert.equal(configure(root,true).added.length,0);
+assert.equal(fs.readdirSync(root).filter(x=>x.includes('extras-backup')).length,1);
+console.log('PASS optional MCP recipes: dry run; preserve existing command/env and unrelated keys; backup; idempotent merge.');

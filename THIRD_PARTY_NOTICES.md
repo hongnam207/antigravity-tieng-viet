@@ -1,5 +1,11 @@
 # Thành phần bên thứ ba
 
+## Portable skills và Office runtime 2.3.0
+
+Workflow chuyển đổi và 20 mẫu khởi tạo của bản công khai do dự án tạo theo MIT. Không phân phối lại mẫu tham chiếu từ plugin OpenAI. Script đồng bộ chỉ đọc những tài nguyên đó trên máy người chạy nếu đã có.
+
+Runtime Office dùng các phiên bản khóa tại `scripts/office-requirements.txt`, gồm python-docx, openpyxl, python-pptx, PyMuPDF, pypdf, reportlab, Pillow và matplotlib. Giấy phép được giữ trong `integrations/portable-skills/site/*.dist-info` và các tệp LICENSE liên quan; danh sách nằm ở `integrations/portable-skills/THIRD-PARTY-NOTICES.txt`. PyMuPDF/MuPDF có giấy phép AGPL hoặc thương mại riêng; mã và thông báo upstream tại https://github.com/pymupdf/PyMuPDF/tree/1.26.7. MIT ở gốc không thay thế giấy phép của các thư viện.
+
 Từ 2.2.0, bộ cài đầy đủ phân phối thêm:
 
 - **AutoCAD MCP Pro 1.8.0**, MIT, [U-C4N/Autocad-MCP](https://github.com/U-C4N/Autocad-MCP). Runtime giữ toàn bộ metadata và giấy phép wheel; danh sách đóng băng ở `scripts/autocad-requirements.txt`. Python site-packages riêng có cả pywin32, matplotlib, Pillow và openpyxl.

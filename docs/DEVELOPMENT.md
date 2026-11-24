@@ -35,13 +35,19 @@ Test DOM dùng Playwright và Chrome ở vị trí tiêu chuẩn Windows; đặt
 Kiểm tra giải nén và mô hình bằng bộ cài:
 
 ```powershell
-$p = Start-Process .\dist\Antigravity-Tieng-Viet-Setup-x64-v2.2.0.exe -ArgumentList '--verify', '"C:\Temp\agvi-verify"' -Wait -PassThru
+$p = Start-Process .\dist\Antigravity-Tieng-Viet-Setup-x64-v2.3.0.exe -ArgumentList '--verify', '"C:\Temp\agvi-verify"' -Wait -PassThru
 $p.ExitCode
 ```
 
 Mã 0 là thành công. Thử vá thật chỉ trên bản ứng dụng thử nghiệm có sao lưu. Không commit ASAR hoặc dữ liệu tài khoản.
 
 ## Kiến trúc
+
+### Portable skills 2.3.0
+
+`src/portable-skills` chứa workflow chuyển đổi và script cài/đồng bộ. `prepare-portable-skills.py` tạo 20 mẫu Office của dự án và hash payload; không lấy tệp mẫu gốc từ plugin riêng. `office-requirements.txt` khóa phụ thuộc Office vào site riêng. Máy cài không gọi pip/uv để cài skill hoặc CAD.
+
+Chạy `python tests/test-portable-skills.py` sau build để thử cài/reuse trong home riêng bằng Python embedded, giữ nội dung người dùng, tạo/mở lại tệp Office và render PDF. `npm run test:integrations` kiểm tra nâng cấp launcher uvx có giữ env/cwd. Không dùng cấu hình người dùng làm fixture công khai.
 
 1. Launcher kiểm tra cấu trúc ASAR, sao lưu bản gốc có hash, thêm hook main/preload.
 2. Renderer nhận diện nhãn, tra từ điển/cache, gom câu đủ điều kiện.

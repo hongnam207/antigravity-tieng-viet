@@ -5,13 +5,16 @@ function mergeAutocad(bundle,configRoot){
  const config=fs.existsSync(file)?JSON.parse(fs.readFileSync(file,'utf8').replace(/^\uFEFF/,'')):{};
  if(config.mcpServers!==undefined&&(!config.mcpServers||typeof config.mcpServers!=='object'||Array.isArray(config.mcpServers)))throw Error('Cấu hình MCP hiện tại không hợp lệ; không ghi đè.');
  config.mcpServers||={};
- // Existing user installations and their engine/policy settings take priority.
- if(Object.hasOwn(config.mcpServers,'autocad'))return {preserved:true};
- config.mcpServers.autocad={command:path.join(bundle,'runtime','python.exe'),args:['-I',path.join(bundle,'integrations','autocad','launch.py')],env:{AUTOCAD_MCP_BACKEND:'auto'}};
+ // Migrate only the known cache-install launcher. Keep custom servers, env/cwd,
+ // backend selection and policy settings; never replace arbitrary user commands.
+ const existing=config.mcpServers.autocad;
+ const knownUvx=existing&&typeof existing==='object'&&['uvx','uvx.exe'].includes(path.basename(existing.command||'').toLowerCase())&&Array.isArray(existing.args)&&existing.args.length===1&&/^autocad-mcp-pro(?:==1\.8\.0)?$/.test(existing.args[0]);
+ if(Object.hasOwn(config.mcpServers,'autocad')&&!knownUvx)return {preserved:true};
+ config.mcpServers.autocad={...(existing||{}),command:path.join(bundle,'runtime','python.exe'),args:['-I',path.join(bundle,'integrations','autocad','launch.py')],env:{AUTOCAD_MCP_BACKEND:'auto',...(existing?.env||{})}};
  fs.mkdirSync(configRoot,{recursive:true});
  if(fs.existsSync(file))fs.copyFileSync(file,file+'.agvi-backup-'+Date.now());
  const temporary=file+'.agvi-tmp';fs.writeFileSync(temporary,JSON.stringify(config,null,2));fs.renameSync(temporary,file);
- return {preserved:false};
+ return {preserved:false,migratedFromUvx:!!knownUvx};
 }
 function verify(bundle){
  for(const name of ['autocad/launch.py','autocad/site/server.py','computer-use/bundle/bundle-manifest.json','computer-use/quick-install.mjs'])if(!fs.existsSync(path.join(bundle,'integrations',name)))throw Error('Thiếu thành phần tích hợp '+name);

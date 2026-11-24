@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.3.0 — 2026-11-24
+
+- Cài sẵn 40 skill chuyển đổi, runtime Office/PDF offline và 20 mẫu do dự án tạo theo MIT.
+- Thêm shortcut đồng bộ skills và MCP từ Codex trong Start; giữ bản chỉnh sửa riêng và lưu báo cáo theo từng lần chạy.
+- Nâng cấp đúng launcher uvx của AutoCAD MCP sang runtime đi kèm, giữ env/cwd và backend. Giữ nguyên lệnh tùy chỉnh khác.
+- Giữ preview trong khung tệp, Việt hóa offline, Windows MCP và Computer Use từ 2.2.0.
+
 ## 2.2.0
 
 - Sửa XLSX có chart-only drawing làm ExcelJS báo `anchors`; đọc dữ liệu/ô gộp/công thức đã lưu từ bản sao trong RAM, không sửa file gốc. Chưa render biểu đồ/ảnh trong sheet.

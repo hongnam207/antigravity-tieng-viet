@@ -33,7 +33,20 @@ if(!(Test-Path (Join-Path $site 'server.py'))){
     if($LASTEXITCODE -ne 0){throw 'AutoCAD dependencies failed'}
 }
 Copy-Item (Join-Path $root 'src/integrations/autocad/launch.py') $cad -Force
-& $Python -c 'import importlib.metadata as m,pathlib,sys; site=pathlib.Path(sys.argv[1]); req=pathlib.Path(sys.argv[2]); ds=list(m.distributions(path=[str(site)])); norm=lambda s:s.lower().replace("_","-"); got={norm(d.metadata["Name"]):d.version for d in ds}; expected=dict(line.strip().split("==") for line in req.read_text().splitlines() if line.strip() and not line.startswith("#")); assert all(got.get(norm(k))==v for k,v in expected.items()), "Pinned CAD packages differ"; lines=["Bundled Python dependencies; individual licenses are retained in site/*.dist-info/licenses and LICENSE files."]+[d.metadata["Name"]+" "+d.version+" | "+str(d.metadata.get("License-Expression") or d.metadata.get("License") or "See distribution license files")[:300] for d in ds]; (site.parent/"THIRD-PARTY-NOTICES.txt").write_text("\n".join(lines),encoding="utf-8")' $site (Join-Path $PSScriptRoot 'autocad-requirements.txt')
+& $Python (Join-Path $PSScriptRoot 'python-notices.py') $site (Join-Path $PSScriptRoot 'autocad-requirements.txt')
 if($LASTEXITCODE -ne 0){throw 'CAD dependency verification failed'}
 Copy-Item (Join-Path $PSScriptRoot 'integrations-lock.json') (Join-Path $output 'SOURCES.json') -Force
+$extraTarget=Join-Path $output 'extra-mcps'
+New-Item -ItemType Directory -Force $extraTarget | Out-Null
+Copy-Item (Join-Path $root 'src/integrations/extra-mcps/*') $extraTarget -Force
+$officeSite=Join-Path $output 'portable-skills/site'
+New-Item -ItemType Directory -Force $officeSite | Out-Null
+$uv=(Get-Command uv -ErrorAction SilentlyContinue).Source
+if(!$uv){$uv=Join-Path $env:USERPROFILE '.local/bin/uv.exe'}
+& $uv pip install --python $Python --target $officeSite --requirements (Join-Path $PSScriptRoot 'office-requirements.txt')
+if($LASTEXITCODE -ne 0){throw 'Portable Office dependency build failed'}
+& $Python (Join-Path $PSScriptRoot 'prepare-portable-skills.py') $officeSite
+if($LASTEXITCODE -ne 0){throw 'Portable skills preparation failed'}
+& $Python (Join-Path $PSScriptRoot 'python-notices.py') $officeSite (Join-Path $PSScriptRoot 'office-requirements.txt')
+if($LASTEXITCODE -ne 0){throw 'Office notices generation failed'}
 Write-Output 'Pinned AutoCAD and Computer Use payloads prepared (offline installation).'

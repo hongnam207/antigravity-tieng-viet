@@ -47,6 +47,10 @@ internal static class Program {
             if (args.Length == 2 && args[0] == "--install") {
                 InstallCore(args[1], UserInstall, true); return 0;
             }
+            if (args.Length == 1 && args[0] == "--sync-skills") {
+                MessageBox.Show(RunPortableSkills(Here,true),Title,MessageBoxButtons.OK,MessageBoxIcon.Information);
+                return 0;
+            }
             if (args.Length > 0 && (args[0] == "--launch" || args[0] == "--restore" || args[0] == "--status")) {
                 string app = ReadAppPath(Here);
                 if (args[0] == "--restore") {
@@ -99,6 +103,7 @@ internal static class Program {
         RunProcess(Path.Combine(destination,"runtime","python.exe"),"-I "+Q(Path.Combine(destination,"translator.py"))+" --self-test",destination);
         RunProcess(Path.Combine(destination,"node.exe"),Q(Path.Combine(destination,"install-plugin.cjs"))+" --verify",destination);
         RunProcess(Path.Combine(destination,"node.exe"),Q(Path.Combine(destination,"install-integrations.cjs"))+" --verify",destination);
+        RunProcess(Path.Combine(destination,"runtime","python.exe"),"-I "+Q(Path.Combine(destination,"integrations","portable-skills","manage.py"))+" --verify",destination);
         File.WriteAllText(Path.Combine(destination, "verification.txt"), "Embedded payload extraction and bundled Node.js execution passed.\r\n", Encoding.UTF8);
     }
 
@@ -126,6 +131,9 @@ internal static class Program {
     }
     static string RunNode(string bundle, string command, string app) {
         return RunProcess(Path.Combine(bundle, "node.exe"), Q(Path.Combine(bundle, "patcher.cjs")) + " " + command + " " + Q("--app=" + app), bundle);
+    }
+    static string RunPortableSkills(string bundle,bool sync) {
+        return RunProcess(Path.Combine(bundle,"runtime","python.exe"),"-I "+Q(Path.Combine(bundle,"integrations","portable-skills","manage.py"))+(sync?" --sync":""),bundle);
     }
     static string ReadAppPath(string bundle) {
         string config = Path.Combine(bundle, "antigravity-path.txt");
@@ -194,6 +202,7 @@ internal static class Program {
         if(shortcuts) {
             RunProcess(Path.Combine(destination,"node.exe"),Q(Path.Combine(destination,"install-plugin.cjs")),destination);
             RunProcess(Path.Combine(destination,"node.exe"),Q(Path.Combine(destination,"install-integrations.cjs")),destination);
+            RunPortableSkills(destination,false);
         }
         RunNode(destination, "apply", app);
         string installedExe = Path.Combine(destination, "AntigravityVietnamese.exe");
@@ -205,6 +214,7 @@ internal static class Program {
             Shortcut(Path.Combine(start, "Antigravity tiếng Việt.lnk"), installedExe, "--launch", app);
             Shortcut(Path.Combine(start, "Khôi phục giao diện gốc.lnk"), installedExe, "--restore", app);
             Shortcut(Path.Combine(start, "Trạng thái bản Việt hóa.lnk"), installedExe, "--status", app);
+            Shortcut(Path.Combine(start, "Đồng bộ skills và MCP từ Codex.lnk"), installedExe, "--sync-skills", app);
             Shortcut(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), "Antigravity tiếng Việt.lnk"), installedExe, "--launch", app);
         }
     }
@@ -229,7 +239,7 @@ internal static class Program {
             StartPosition = FormStartPosition.CenterScreen; Font = new Font("Segoe UI",10);
             BackColor = Color.White; AutoScaleMode = AutoScaleMode.None; MaximizeBox = false;
             Controls.Add(new Label { Text = "Cài đặt Antigravity tiếng Việt", Font = new Font("Segoe UI",18,FontStyle.Bold), Location=new Point(28,23), Size=new Size(640,42) });
-            Controls.Add(new Label { Text = "Việt hóa · Preview Office/PDF · AutoCAD MCP · /computer-use.\r\nKèm bộ chạy; không cần cài Python, Node.js hoặc API key riêng.", Location=new Point(30,77),Size=new Size(640,53) });
+            Controls.Add(new Label { Text = "Việt hóa · Preview Office/PDF · MCP · 40 skills chuyển đổi.\r\nKèm runtime Office/PDF; không cần cài Python hoặc Node.js riêng.", Location=new Point(30,77),Size=new Size(640,53) });
             Controls.Add(new Label { Text="Thư mục chứa Antigravity.exe",Location=new Point(30,145),Size=new Size(600,25) });
             appPath = new TextBox { Text=FindApp(), Location=new Point(30,175),Size=new Size(525,28) };Controls.Add(appPath);
             var browse = new Button { Text="Chọn…",Location=new Point(565,172),Size=new Size(100,32) };Controls.Add(browse);
@@ -259,7 +269,7 @@ internal static class Program {
                 try {
                     await Task.Run(()=>InstallCore(chosen,UserInstall,true,previousBundle));
                     status.Text="Đã cài xong. Mở bằng biểu tượng Antigravity tiếng Việt trên Desktop.";
-                    MessageBox.Show(this,"Cài đặt thành công.\r\n\r\nMở Antigravity tiếng Việt trên Desktop. Trong Customizations > Installed, kiểm tra plugin Windows & Office. Bấm tệp trong hội thoại để xem trực tiếp ở khung bên phải.\r\n\r\nCông cụ Windows có thể thao tác máy; giữ chế độ duyệt công cụ phù hợp. Nếu chưa thấy plugin, thoát hẳn rồi mở lại App.\r\n\r\nKhôi phục giao diện gốc trong Start tắt Việt hóa và preview trực tiếp; tắt/gỡ plugin riêng trong Customizations.",Title,MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    MessageBox.Show(this,"Cài đặt thành công.\r\n\r\nMở Antigravity tiếng Việt trên Desktop. Gọi /agy-documents, /agy-spreadsheets, /agy-presentations hoặc /agy-pdf trong lượt chat mới. Start có mục Đồng bộ skills và MCP từ Codex.\r\n\r\nTrong Customizations > Installed, kiểm tra plugin Windows & Office. Bấm tệp trong hội thoại để xem ở khung bên phải. Công cụ Windows giữ chế độ duyệt hiện tại.\r\n\r\nKhôi phục giao diện gốc trong Start tắt Việt hóa và preview trực tiếp; tắt/gỡ plugin riêng trong Customizations.",Title,MessageBoxButtons.OK,MessageBoxIcon.Information);
                 } catch (Exception error) {
                     status.Text="Chưa hoàn tất. Xem thông báo rồi thử lại.";
                     MessageBox.Show(this,error.Message,Title,MessageBoxButtons.OK,MessageBoxIcon.Warning);
